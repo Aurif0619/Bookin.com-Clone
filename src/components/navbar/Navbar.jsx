@@ -14,21 +14,13 @@ function Navbar() {
     return (
         <>
             <AppBar sx={{ boxShadow: "none", background: "#003B95" }}>
-                <Toolbar
-                    className="container"
-                    sx={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                    }}
-                >
+                <Toolbar className="container d-flex justify-content-between align-items-center" >
                     <Typography
                         variant="h6"
-                        sx={{color: "#fff", fontWeight: "bold",
-                            fontSize: "1.5rem",
-                            flexGrow: isMobile ? 1 : "unset",
-                        }}
-                    >
+                        sx={{
+                            color: "#fff", fontWeight: "bold",
+                            fontSize: "1.5rem", flexGrow: isMobile ? 1 : "unset",
+                        }}>
                         Booking.com
                     </Typography>
 
