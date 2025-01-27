@@ -1,21 +1,21 @@
-import {
-    AppBar,
-    Box,
-    Button,
-    CssBaseline,
-    Toolbar,
-    Typography,
-} from "@mui/material";
 import React from "react";
-import USAFlag from "../../assets/AmericaFlag.png";
+import { AppBar, Box, Button, Toolbar, Typography, IconButton, Drawer, useMediaQuery } from "@mui/material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import USAFlag from "../../assets/AmericaFlag.png";
 
 function Navbar() {
+    const [drawerOpen, setDrawerOpen] = React.useState(false);
+    const isMobile = useMediaQuery("(max-width:768px)");
+    const toggleDrawer = () => {
+        setDrawerOpen(!drawerOpen);
+    };
+
     return (
-        <Box sx={{ display: "flex" }}>
-            <CssBaseline />
-            <AppBar>
-                <Toolbar className="container"
+        <>
+            <AppBar sx={{ boxShadow: "none", background: "#003B95" }}>
+                <Toolbar
+                    className="container"
                     sx={{
                         display: "flex",
                         justifyContent: "space-between",
@@ -24,90 +24,86 @@ function Navbar() {
                 >
                     <Typography
                         variant="h6"
-                        sx={{
-                            color: "#fff",
-                            fontWeight: "bold",
+                        sx={{color: "#fff", fontWeight: "bold",
                             fontSize: "1.5rem",
+                            flexGrow: isMobile ? 1 : "unset",
                         }}
                     >
                         Booking.com
                     </Typography>
-                    <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-                        <Button
-                            variant="text"
-                            sx={{
-                                color: "#fff",
-                                fontSize: "1rem",
-                                textTransform: "uppercase",
-                            }}
-                        >
-                            PKR
-                        </Button>
 
-                        {/* Flag */}
-                        <Button
-                            sx={{
-                                padding: 0,
-                                minWidth: "auto",
-                            }}
-                        >
-                            <img className="rounded-5"
-                                src={USAFlag}
-                                alt="USA Flag"
-                                style={{
-                                    width: "25px",
-                                    height: "25px"
-                                }}
-                            />
-                        </Button>
-
-                        {/* Help Icon */}
-                        <Button
-                            sx={{
-                                color: "#fff",
-                                minWidth: "auto",
-                            }}
-                        >
-                            <HelpOutlineIcon />
-                        </Button>
-
-                        {/* Register Button */}
-                        <Button
-                            variant="outlined"
-                            className="text-primary bg-white fw-bold border-white"
-                            sx={{
-                                textTransform: "capitalize",
-                                color: "#003580",
-                                backgroundColor: "#fff",
-                                borderColor: "#fff",
-                                "&:hover": {
-                                    backgroundColor: "#d9d9d9",
-                                },
-                            }}
-                        >
-                            Register
-                        </Button>
-
-                        {/* Sign In Button */}
-                        <Button
-                            variant="outlined"
-                            className="text-primary bg-white fw-bold border-white"
-                            sx={{
-                                textTransform: "capitalize",
-                                color: "#003580",
-                                backgroundColor: "#fff",
-                                borderColor: "#fff",
-                                "&:hover": {
-                                    backgroundColor: "#d9d9d9",
-                                },
-                            }}
-                        >
-                            Sign in
-                        </Button>
-                    </Box>
+                    {!isMobile ? (
+                        <Box sx={{ display: "flex", alignItems: "center" }} className="gap-2">
+                            <Button variant="text" className="text-white">
+                                PKR
+                            </Button>
+                            <Button>
+                                <img
+                                    className="rounded-5"
+                                    src={USAFlag}
+                                    alt="USA Flag"
+                                    style={{ width: "25px", height: "25px" }}
+                                />
+                            </Button>
+                            <Button sx={{ color: "#fff", minWidth: "auto" }}>
+                                <HelpOutlineIcon />
+                            </Button>
+                            <Button
+                                variant="outlined"
+                                className="text-white"
+                                sx={{ textTransform: "capitalize" }}
+                            >
+                                List your property
+                            </Button>
+                            <Button
+                                variant="outlined"
+                                className="text-primary bg-white fw-bold border-white"
+                                sx={{ textTransform: "capitalize" }}
+                            >
+                                Register
+                            </Button>
+                            <Button
+                                variant="outlined"
+                                className="text-primary bg-white fw-bold border-white"
+                                sx={{ textTransform: "capitalize" }}
+                            >
+                                Sign in
+                            </Button>
+                        </Box>
+                    ) : (
+                        <IconButton onClick={toggleDrawer} sx={{ color: "#fff" }}>
+                            <MenuIcon />
+                        </IconButton>
+                    )}
                 </Toolbar>
             </AppBar>
-        </Box>
+            <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
+                <Box className='pt-2'
+                    sx={{
+                        width: 250,
+                        backgroundColor: "#003B95",
+                        height: "100%",
+                        flexDirection: "column",
+                    }}
+                >
+                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>PKR</Button>
+                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>
+                        <Box
+                            component="img"
+                            src={USAFlag}
+                            alt="USA Flag"
+                            sx={{ width: 25, height: 25 }}
+                        />
+                    </Button>
+                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>
+                        <HelpOutlineIcon sx={{ color: "#fff" }} />
+                    </Button>
+                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>List your property</Button>
+                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>Register</Button>
+                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>Sign in</Button>
+                </Box>
+            </Drawer>
+        </>
     );
 }
 
