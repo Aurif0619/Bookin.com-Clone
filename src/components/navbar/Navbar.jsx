@@ -1,5 +1,5 @@
-import React from "react";
-import { AppBar, Box, Button, Toolbar, Typography, IconButton, Drawer, useMediaQuery } from "@mui/material";
+import React from 'react';
+import { AppBar, Box, Button, Toolbar, Typography, IconButton, Drawer, useMediaQuery, Grid } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import USAFlag from "../../assets/AmericaFlag.png";
@@ -14,13 +14,15 @@ function Navbar() {
     return (
         <>
             <AppBar sx={{ boxShadow: "none", background: "#003B95" }}>
-                <Toolbar className="container d-flex justify-content-between align-items-center" >
+                <Toolbar className="container d-flex justify-content-between align-items-center">
                     <Typography
                         variant="h6"
                         sx={{
                             color: "#fff", fontWeight: "bold",
-                            fontSize: "1.5rem", flexGrow: isMobile ? 1 : "unset",
-                        }}>
+                            fontSize: "1.5rem",
+                            flexGrow: isMobile ? 1 : "unset",
+                        }}
+                    >
                         Booking.com
                     </Typography>
 
@@ -29,9 +31,7 @@ function Navbar() {
                             <Button variant="text" className="text-white">
                                 PKR
                             </Button>
-                            <Button>
-                                <img
-                                    className="rounded-5"
+                            <Button> <img className="rounded-5"
                                     src={USAFlag}
                                     alt="USA Flag"
                                     style={{ width: "25px", height: "25px" }}
@@ -40,49 +40,32 @@ function Navbar() {
                             <Button sx={{ color: "#fff", minWidth: "auto" }}>
                                 <HelpOutlineIcon />
                             </Button>
-                            <Button
-                                variant="outlined"
+                            <Button variant="outlined"
                                 className="text-white"
-                                sx={{ textTransform: "capitalize" }}
-                            >
-                                List your property
+                                sx={{ textTransform: "capitalize" }} > List your property
                             </Button>
-                            <Button
-                                variant="outlined"
-                                className="text-primary bg-white fw-bold border-white"
-                                sx={{ textTransform: "capitalize" }}
-                            >
-                                Register
+                            <Button variant="outlined"
+                                 className="text-primary bg-white fw-bold border-white"
+                                sx={{ textTransform: "capitalize" }}> Register
                             </Button>
-                            <Button
-                                variant="outlined"
-                                className="text-primary bg-white fw-bold border-white"
-                                sx={{ textTransform: "capitalize" }}
-                            >
-                                Sign in
+                            <Button variant="outlined" className="text-primary bg-white fw-bold border-white"
+                                sx={{ textTransform: "capitalize" }}>  Sign in
                             </Button>
                         </Box>
-                    ) : (
-                        <IconButton onClick={toggleDrawer} sx={{ color: "#fff" }}>
+                    ) : ( <IconButton onClick={toggleDrawer} sx={{ color: "#fff" }}>
                             <MenuIcon />
-                        </IconButton>
-                    )}
+                        </IconButton> )}
                 </Toolbar>
             </AppBar>
             <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
-                <Box className='pt-2'
-                    sx={{
-                        width: 250,
-                        backgroundColor: "#003B95",
-                        height: "100%",
-                        flexDirection: "column",
+                <Box className='pt-2 d-flex justify-content-between'
+                    sx={{ width: 250, backgroundColor: "#003B95",
+                        height: "100%", flexDirection: "column",
                     }}
                 >
                     <Button sx={{ color: "#fff", marginBottom: "10px" }}>PKR</Button>
                     <Button sx={{ color: "#fff", marginBottom: "10px" }}>
-                        <Box
-                            component="img"
-                            src={USAFlag}
+                        <Box component="img" src={USAFlag}
                             alt="USA Flag"
                             sx={{ width: 25, height: 25 }}
                         />
@@ -90,9 +73,10 @@ function Navbar() {
                     <Button sx={{ color: "#fff", marginBottom: "10px" }}>
                         <HelpOutlineIcon sx={{ color: "#fff" }} />
                     </Button>
-                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>List your property</Button>
-                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>Register</Button>
-                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>Sign in</Button>
+                    <Box className='mt-3'>
+                    <Button className='ms-3' variant='outlined' sx={{ color: "#fff", marginBottom: "10px" }}>Register</Button>
+                    <Button className='ms-3' variant='outlined' sx={{ color: "#fff", marginBottom: "10px" }}>Sign in</Button>
+                    </Box>
                 </Box>
             </Drawer>
         </>
