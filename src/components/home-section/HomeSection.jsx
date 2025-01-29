@@ -23,7 +23,14 @@ import LosAngelImg from '../../assets/losAngeIlmg.webp';
 import LosAngelImg2 from '../../assets/LosAngelImg-2.webp';
 import LosAngelImg3 from '../../assets/LosAngelImg-3.webp';
 import Hotel from '../../assets/hotel.jpeg';
-import Apartment from '../../assets/appartment.jpeg';
+import Studio from '../../assets/studio.jpg'
+import Apartment from '../../assets/apartment.jpeg';
+import Resorts from '../../assets/resort.jpeg';
+import Villas from '../../assets/villas.jpeg';
+import GoodWood from '../../assets/suitesImg.jpg';
+import Ramada from '../../assets/RamadaHotel.jpg';
+import ChairImg from '../../assets/chairImg.png'
+import { Image } from "@mui/icons-material";
 
 
 const HomeSection = () => {
@@ -41,62 +48,81 @@ const HomeSection = () => {
   ]
 
   const LahoreHotels = [
-    { id: '1', image: '../../assets/hotel.jpeg', title: 'Hotel', date: 'Jan 31-Feb 1, 2 adults', available: '229' },
-    { id: '2', image: '../../assets/appartment.jpeg', title: 'Apartment', date: 'Jan 31-Feb 1, 2 adults', available: '364' },
-    { id: '3', image: '../../assets/resort.jpeg', title: 'Resorts', date: 'Unavailable for your date' },
-    { id: '4', image: '../../assets/villas.jpeg', title: 'Villas', date: 'Unavailable for your date', available: '364' },
+    { id: '1', Image: Hotel, title: 'Hotel', date: 'Jan 31-Feb 1, 2 adults', available: '229' },
+    { id: '2', Image: Apartment, title: 'Apartment', date: 'Jan 31-Feb 1, 2 adults', available: '364' },
+    { id: '3', Image: Resorts, title: 'Resorts', date: 'Unavailable for your date' },
+    { id: '4', Image: Villas, title: 'Villas', date: 'Unavailable for your date', available: '364' },
   ];
 
-  const hotels = [
+  const cityData = [
+    { name: "Lahore", image: LahoreImg, distance: "0 km from Lahore" },
+    { name: "Karachi", image: KarachiImg, distance: "1,030 km from Lahore" },
+    { name: "Islamabad", image: IslamabadImg, distance: "380 km from Lahore" },
+    { name: "Dubai", image: DubaiImg, distance: "..."},
+    { name: "Madina", image: MedinaImg, distance: "..."},
+  ];
+
+
+  const MakkahHotels = [
     {
-      id: 1,
-      img: '../../assets/studio.jpg',
-      title: 'Magnova Studios',
-      location: 'Istanbul, Turkey',
-      rating: '8.9',
-      reviews: '756 reviews',
-      offer: 'Early 2025 Deal',
-      priceOld: 'PKR 124,425',
-      priceNew: 'PKR 53,503',
-      nights: '2 nights',
+      id: 1, Image: Studio, title: 'Magnova Studios', location: 'Istanbul, Turkey', rating: '8.9',
+      reviews: '756 reviews', offer: 'Early 2025 Deal', priceOld: 'PKR 124,425', priceNew: 'PKR 53,503', nights: '2 nights',
     },
     {
-      id: 2,
-      img: '/assets/goodwood.jpg',
-      title: 'GOODWOOD',
-      location: 'Dubai, United Arab Emirates',
-      rating: '9.1',
-      reviews: '192 reviews',
-      offer: 'Early 2025 Deal',
-      priceOld: 'PKR 198,154',
-      priceNew: 'PKR 126,224',
-      nights: '2 nights',
+      id: 2, Image: GoodWood, title: 'GOODWOOD', location: 'Dubai, United Arab Emirates', rating: '9.1',
+      reviews: '192 reviews', offer: 'Early 2025 Deal', priceOld: 'PKR 198,154', priceNew: 'PKR 126,224', nights: '2 nights',
     },
     {
-      id: 3,
-      img: '/assets/mhotel.jpg',
-      title: 'M Hotel Makkah by Millennium',
-      location: 'Mecca, Saudi Arabia',
-      rating: '7.9',
-      reviews: '13,542 reviews',
-      offer: 'Free Parking',
-      priceOld: 'PKR 35,314',
-      priceNew: 'PKR 28,251',
-      nights: '2 nights',
+      id: 3, Image: Hotel, title: 'M Hotel Makkah', location: 'Mecca, Saudi Arabia',
+      rating: '7.9', reviews: '13,542 reviews', offer: 'Free Parking', priceOld: 'PKR 35,314', priceNew: 'PKR 28,251', nights: '2 nights',
     },
     {
-      id: 4,
-      img: '/assets/ramada.jpg',
-      title: 'Ramada Hotel & Suites Sisli',
-      location: 'Istanbul, Turkey',
-      rating: '8.2',
-      reviews: '630 reviews',
-      offer: 'Limited-time Deal',
-      priceOld: 'PKR 60,427',
-      priceNew: 'PKR 36,256',
-      nights: '2 nights',
+      id: 4, Image: Ramada, title: ' Ramada Hotel & Suites', location: 'Istanbul, Turkey',
+      rating: '8.2', reviews: '630 reviews', offer: 'Limited-time Deal', priceOld: 'PKR 60,427',
+      priceNew: 'PKR 36,256', nights: '2 nights',
     },
   ];
+
+  const FooterBtns = [
+    { id: 1, name: "International cities" },
+    { id: 2, name: "Regions" },
+    { id: 3, name: "Countries" },
+    { id: 4, name: "Place to stay" },
+  ]
+
+  const IslamabadItems = [
+    { id: 1, name: "Islamabad hotels" },
+    { id: 2, name: "Rawalpindi hotels" },
+    { id: 3, name: "Peshawar hotels" },
+    { id: 4, name: "Hunza Valley hotels" },
+  ]
+
+  const LahoreItems = [
+    { id: 1, name: "Lahore hotels" },
+    { id: 2, name: "Multan hotels" },
+    { id: 3, name: "Skardu hotels" },
+    { id: 4, name: "Hyderabad hotels" },
+  ]
+  const KarachiItems = [
+    { id: 1, name: "Karachi hotels" },
+    { id: 2, name: "Faisalabad hotels" },
+    { id: 3, name: "Gujrānwāla hotels" },
+    { id: 4, name: "Malam Jabba hotels" },
+  ]
+  const MurreeItems = [
+    { id: 1, name: "Murree hotels" },
+    { id: 2, name: "Kalām hotels" },
+    { id: 3, name: "Swat hotels" },
+    { id: 4, name: "Muzaffarabad hotels" },
+  ]
+
+  const NathiaItems = [
+    { id: 1, name: "Nathia Gali hotels" },
+    { id: 2, name: "Naran hotels" },
+    { id: 3, name: "Abbottabad hotels" },
+    { id: 4, name: "Bhurban hotels" },
+  ]
+
 
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
@@ -375,8 +401,8 @@ const HomeSection = () => {
             </Grid>
           </Grid>
         </Box>
-        <Box sx={{ padding: 4 }}>
-          <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
+        <Box sx={{ padding: 4 }} >
+          <Box display="flex" justifyContent="space-between" className='d-none d-md-block' alignItems="center" mb={3}>
             <Typography variant="h5" component="h2">
               Get inspiration for your next trip
             </Typography>
@@ -387,7 +413,7 @@ const HomeSection = () => {
           </Box>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={6}>
-              <Card>
+              <Card className='d-none d-md-block'>
                 <Box sx={{ position: 'relative' }}>
                   <img src={LosAngelImg} alt="Los Angel" sx={{ width: '100%', height: '100%', borderRadius: '8px' }} />
                   <Box sx={{ position: 'absolute', bottom: 0, left: 0, width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
@@ -428,130 +454,314 @@ const HomeSection = () => {
             </Grid>
           </Grid>
 
-          <Box className='mt-4'>
-            <Typography variant="h5" className="fw-bold">
-              Quick and easy trip planner
-            </Typography>
-            <Typography variant="body-1">
-              Pick a vibe and explore the top destinations in Pakistan
-            </Typography>
-            <Box className='d-flex my-4'>
-              <Button variant="outlined" className="d-flex justify-content-center align-items-center outlined rounded-5 text-dark">
-                <Typography>
+          <Grid container spacing={2} alignItems="center">
+            {/* Buttons Section */}
+            <Grid item xs={12} md={8}>
+              <Box className='d-flex' flexWrap="wrap" gap={2}>
+                {/* City Button */}
+                <Button
+                  variant="outlined"
+                  className="outlined rounded-5 mt-4 text-dark"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                    px: 2,
+                    whiteSpace: "nowrap",
+                  }}
+                >
                   <LocationCityIcon />
-                </Typography>
-                <Typography sx={{ textTransform: "none" }} className="mx-1">  City </Typography>
-              </Button>
-
-              {QuickBtns.map((btn) => (
-                <Button variant="text" className="gap-2 text-dark ms-3 rounded-5"
-                  key={btn.id} sx={{ textTransform: "none" }}  >
-                  {btn.icon} {btn.name}
+                  <Typography sx={{ textTransform: "none" }}>City</Typography>
                 </Button>
-              ))}
-            </Box>
-          </Box>
-          <Box>
 
-            <img src={Karachi} className="w-25 rounded-4" alt="Img" />
-            <Typography className="fw-bold"> Karachi </Typography>
-            <Typography> 1,030 km from Lahore</Typography>
-          </Box>
+                {/* Quick Buttons */}
+                {QuickBtns.map((btn) => (
+                  <Button 
+                    key={btn.id}
+                    variant="text"
+                    className="text-dark rounded-5 "
+                    sx={{
+                      textTransform: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                      px: 2,
+                    }}
+                  >
+                    {btn.icon} {btn.name}
+                  </Button>
+                ))}
+              </Box>
+            </Grid>
+
+            {/* Heading Section (Explore Pakistan) */}
+            <Grid item xs={12} className="mt-3">
+              <Typography variant="h4" >
+                Explore Pakistan
+              </Typography>
+            </Grid>
+
+            <Grid container spacing={3} className="my-1">
+              {cityData.map((city, index) => (
+                <Grid item xs={12} sm={6} md={2.4} key={index}>
+                  <Box className="d-none d-md-block" textAlign={{ xs: "center", md: "start" }}>
+                    <img
+                      src={city.image}
+                      className="rounded-4"
+                      alt={city.name}
+                      style={{ width: "100%", maxWidth: "200px" }}
+                    />
+                    <Typography className="fw-bold" mt={1}>
+                      {city.name}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary">
+                      {city.distance}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
           {/* Browser Imgs */}
           <Box className='mt-4'>
             <Typography variant="h5" className="fw-bold">
               Browse by property type in Lahore
             </Typography>
-            <Box className='d-flex mt-2 justify-content-between'>
+            <Grid container spacing={1}>
               {LahoreHotels.map((hotels) => (
-                <Box key={hotels.id}>
-                  <img src={Hotel} alt={hotels} />
-                  <Typography className="fw-bold">{hotels.title}</Typography>
-                  <Typography variant="body2" color="textSecondary">{hotels.date}</Typography>
-                  {hotels.available && (
-                    <Typography variant="body2" color="textSecondary">Available: {hotels.available}</Typography>
-                  )}
-                </Box>
-              ))}
-            </Box>
-          </Box>
-
-          {/* Dealing Hotels */}
-          <Box sx={{ p: 4 }}>
-            <Typography variant="h5" fontWeight="bold" gutterBottom>
-              Deals for the weekend
-            </Typography>
-            <Grid container spacing={3}>
-              {hotels.map((hotel) => (
-                <Grid item xs={12} sm={6} md={4} lg={3} key={hotel.id}>
+                <Grid item xs={12} sm={6} md={4} lg={3} key={hotels.id}>
                   <Card
                     sx={{
                       borderRadius: 2,
-                      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-                      overflow: 'hidden',
+                      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                      overflow: "hidden",
+                      p: 2,
                     }}
                   >
-                    <CardMedia component="img"
-                      image={hotel.img}
-                      alt={hotel.title}
-                      sx={{ height: 200, objectFit: 'cover' }}
+                    <CardMedia
+                      component="img"
+                      image={hotels.Image}
+                      alt={hotels.title}
+                      sx={{ height: 200, objectFit: "cover", borderRadius: "10px" }}
                     />
-                    <CardContent>
-                      <Chip label={hotel.offer}
-                        color="success"
-                        size="small"
-                        sx={{ mb: 1 }}
-                      />
+                    <Box sx={{ p: 2 }}>
                       <Typography variant="h6" fontWeight="bold">
-                        {hotel.title}
+                        {hotels.title}
                       </Typography>
                       <Typography variant="body2" color="textSecondary">
-                        {hotel.location}
+                        {hotels.date}
                       </Typography>
-                      <Typography
+                      {hotels.available && (
+                        <Typography variant="body2" color="textSecondary">
+                          Available: {hotels.available}
+                        </Typography>
+                      )}
+                    </Box>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>;
+          </Box>
+
+          {/* Dealing Hotels */}
+          <Box>
+            <Typography variant="h5" fontWeight="bold" gutterBottom>
+              Deals for the weekend
+            </Typography>
+            <Grid container spacing={1}>
+              {MakkahHotels.map((hotel) => (
+                <Grid item xs={12} sm={6} md={4} lg={3} key={hotel.id}>
+                  <Card sx={{ borderRadius: 2, boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', overflow: 'hidden', }}>
+                    <CardMedia component="img" image={hotel.Image} alt={hotel.title} sx={{ height: 200, objectFit: 'cover' }} />
+                    <Chip label={hotel.offer} color="success" size="small" sx={{ my: 1, }} />
+                    <Typography variant="h6" fontWeight="bold" className="p-2"> {hotel.title} </Typography> <Typography className="p-2" variant="body2" color="textSecondary"> {hotel.location}
+                    </Typography>
+                    <Typography className="ps-1" sx={{
+                      mt: 1, fontSize: '0.9rem', fontWeight: 'bold', display: 'flex',
+                      alignItems: 'center', gap: 1
+                    }}  >
+                      <Chip label={hotel.rating} color="primary" size="small" sx={{ fontWeight: 'bold' }} />
+                      <Typography variant="body2">{hotel.reviews}</Typography>
+                    </Typography>
+                    <Typography className="ps-2" variant="body2" color="textSecondary" sx={{ mt: 1 }}>
+                      {hotel.nights} </Typography> <Box sx={{ mt: 2, display: 'flex', alignItems: 'baseline' }}>
+                      <Typography className="ps-3" variant="body2"
                         sx={{
-                          mt: 1,
-                          fontSize: '0.9rem',
-                          fontWeight: 'bold',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 1,
-                        }}
-                      >
-                        <Chip
-                          label={hotel.rating}
-                          color="primary"
-                          size="small"
-                          sx={{ fontWeight: 'bold' }}
-                        />
-                        <span>{hotel.reviews}</span>
+                          textDecoration: 'line-through',
+                          color: 'gray', mr: 1
+                        }}>
+                        {hotel.priceOld}
                       </Typography>
-                      <Typography variant="body2" color="textSecondary" sx={{ mt: 1 }}>
-                        {hotel.nights}
+                      <Typography variant="h6" fontWeight="bold">
+                        {hotel.priceNew}
                       </Typography>
-                      <Box sx={{ mt: 2, display: 'flex', alignItems: 'baseline' }}>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            textDecoration: 'line-through',
-                            color: 'gray',
-                            mr: 1,
-                          }}
-                        >
-                          {hotel.priceOld}
-                        </Typography>
-                        <Typography variant="h6" fontWeight="bold">
-                          {hotel.priceNew}
-                        </Typography>
-                      </Box>
-                    </CardContent>
+                    </Box>
                   </Card>
                 </Grid>
               ))}
             </Grid>
           </Box>
+          <Box sx={{ paddingBottom: "50px" }} className='mt-4 pt-2'>
+            <Typography className="text-black" variant="h5">
+              Travel more, spend less
+            </Typography>
+            <Card className="py-2 container mt-3">
+              <Box className="d-flex justify-content-between">
+                <Box>
+                  <Typography variant="h5">Sign in, save money</Typography>
+                  <Typography>
+                    Save 10% or more at participating properties – just look for the blue Genius label
+                  </Typography>
+                  <Button variant="contained"
+                    sx={{ textTransform: "none" }}
+                    className="mt-3" >
+                    Sign in
+                  </Button>
+                  <Button variant="outlined"
+                    sx={{ textTransform: "none" }}
+                    className="mt-3 ms-2"
+                  > Register
+                  </Button>
+                </Box>
+                <Box><img width={100} src={GiftImg} alt="Img" /></Box>
+              </Box>
+            </Card>
+          </Box>
+
+          {/* Chair img */}
+          <Card
+            className="ps-5"
+            sx={{
+              overflow: "hidden",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              background: "#F8F9FA",
+            }}
+          >
+            <Box
+              className="text-white"
+              sx={{
+                backgroundColor: "#007AFF",
+                p: 3,
+                borderRadius: "50%",
+                width: "40%",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+            >
+              <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
+                Find homes <br /> for your next trip
+              </Typography>
+              <Button variant="contained" sx={{ mt: 1 }}>
+                Discover homes
+              </Button>
+            </Box>
+            <Box sx={{ width: "50%", textAlign: "center" }}>
+              <img src={ChairImg} alt="Chair" style={{ width: "90%" }} />
+            </Box>
+          </Card>
+
+          {/* Footer */}
+          <Box className='mt-3'>
+            <Typography variant="h5" className="fw-bold py-2">
+              Popular with travelers from Pakistan
+            </Typography>
+            <Grid item xs={12} md={8}>
+              <Box className='d-flex my-2' flexWrap="wrap" gap={2}>
+                <Button
+                  variant="outlined"
+                  className="outlined rounded-5 text-dark"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                    px: 2,
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Domestic cities
+                </Button>
+
+                {FooterBtns.map((btns) => (
+                  <Button
+                    variant="text"
+                    className="text-dark rounded-5"
+                    sx={{
+                      textTransform: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                      px: 2,
+                    }}
+                  >
+                    {btns.name}
+                  </Button>
+                ))}
+              </Box>
+            </Grid>
+          </Box>
+
+          {/* Footer items */}
+          <Grid container spacing={3} className="my-4">
+            <Grid item xs={6} sm={6} md={2.4}>
+              <Box>
+                {IslamabadItems.map((item, index) => (
+                  <Typography key={index} className="py-1">
+                    {item.name}
+                  </Typography>
+                ))}
+              </Box>
+            </Grid>
+
+            <Grid item xs={6} sm={6} md={2.4}>
+              <Box>
+                {LahoreItems.map((item, index) => (
+                  <Typography key={index} className="py-1">
+                    {item.name}
+                  </Typography>
+                ))}
+              </Box>
+            </Grid>
+
+            <Grid item xs={6} sm={6} md={2.4}>
+              <Box>
+                {KarachiItems.map((item, index) => (
+                  <Typography key={index} className="py-1">
+                    {item.name}
+                  </Typography>
+                ))}
+              </Box>
+            </Grid>
+
+            <Grid item xs={6} sm={6} md={2.4}>
+              <Box>
+                {MurreeItems.map((item, index) => (
+                  <Typography key={index} className="py-1">
+                    {item.name}
+                  </Typography>
+                ))}
+              </Box>
+            </Grid>
+
+            <Grid item xs={6} sm={6} md={2.4}>
+              <Box className='d-none d-md-block'>
+                {NathiaItems.map((item, index) => (
+                  <Typography key={index} className="py-1">
+                    {item.name}
+                  </Typography>
+                ))}
+              </Box>
+            </Grid>
+          </Grid>
+
+          <Button variant="text"> </Button>
         </Box>
-      </Box>
+      </Box >
     </>
   );
 };
