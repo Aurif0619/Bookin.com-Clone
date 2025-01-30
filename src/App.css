@@ -13,6 +13,7 @@ body {
   font-family: 'Jost', serif;
   margin: 0;
   padding: 0;
+  text-overflow: hide;
   box-sizing: border-box;
 }
 
