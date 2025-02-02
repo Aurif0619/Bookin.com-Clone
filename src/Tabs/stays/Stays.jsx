@@ -8,6 +8,7 @@ import AddIcon from '@mui/icons-material/Add';
 import AttractionsIcon from "@mui/icons-material/Attractions";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import LunchDiningIcon from '@mui/icons-material/LunchDining';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
@@ -33,18 +34,14 @@ import ChairImg from '../../assets/chairImg.png';
 import USAflag from '../../assets/AmericaFlag.png'
 import Pakistan from '../../assets/Pakistan.png';
 import Makkah from '../../assets/Madina.png';
-import OpenTable from '../../assets/OpenTable.png';
 import Dubai from '../../assets/Dubaiflag.png';
-import Rancoz from '../../assets/Rancoz.webp';
-import Das from '../../assets/Das.webp';
-import Agritusiam from '../../assets/Agritusiam.webp';
-import Gyyttja from '../../assets/Gyytja.webp';
+import OpenTable from '../../assets/OpenTable.png';
 import { useNavigate } from "react-router";
 
-const HomeSection = () => {
+const Stays = () => {
   const Btns = [
-    { id: 1, name: "Flights", path: "/flights", icon: <FlightTakeoffIcon /> },
-    { id: 2, name: "Car rentals", path: "/car-rentals", icon: <DirectionsCarIcon className="d-none d-sm-block" /> },
+    { id: 1, name: "Flights", icon: <FlightTakeoffIcon /> },
+    { id: 2, name: "Car rentals", icon: <DirectionsCarIcon className="d-none d-sm-block" /> },
     { id: 3, name: "Attraction", icon: <AttractionsIcon /> },
     { id: 4, name: "Airport taxis", icon: <LocalTaxiIcon /> }
   ];
@@ -57,22 +54,10 @@ const HomeSection = () => {
   ]
 
   const LahoreHotels = [
-    {
-      id: '1', Image: Hotel, title: 'Hotel',
-      date: 'Jan 31-Feb 1, 2 adults', available: '229'
-    },
-    {
-      id: '2', Image: Apartment, title: 'Apartment',
-      date: 'Jan 31-Feb 1, 2 adults', available: '364'
-    },
-    {
-      id: '3', Image: Resorts, title: 'Resorts',
-      date: '...', available: 'Unavailable for your date'
-    },
-    {
-      id: '4', Image: Villas, title: 'Villas',
-      date: 'Unavailable for your date', available: '364'
-    },
+    { id: '1', Image: Hotel, title: 'Hotel', date: 'Jan 31-Feb 1, 2 adults', available: '229' },
+    { id: '2', Image: Apartment, title: 'Apartment', date: 'Jan 31-Feb 1, 2 adults', available: '364' },
+    { id: '3', Image: Resorts, title: 'Resorts', date: '...', available: 'Unavailable for your date' },
+    { id: '4', Image: Villas, title: 'Villas', date: 'Unavailable for your date', available: '364' },
   ];
 
   const cityData = [
@@ -86,50 +71,24 @@ const HomeSection = () => {
 
   const MakkahHotels = [
     {
-      id: 1, Image: Studio, title: 'Magnova Studios',
-      location: 'Istanbul, Turkey', rating: '8.9',
-      reviews: '756 reviews', offer: 'Early 2025 Deal', nights: '2 nights',
-      priceOld: 'PKR 75000', priceNew: 'PKR 53,503',
+      id: 1, Image: Studio, title: 'Magnova Studios', location: 'Istanbul, Turkey', rating: '8.9',
+      reviews: '756 reviews', offer: 'Early 2025 Deal', priceOld: 'PKR 124,425', priceNew: 'PKR 53,503', nights: '2 nights',
     },
     {
-      id: 2, Image: GoodWood, title: 'GOODWOOD',
-      location: 'Dubai, United Arab Emirates', rating: '9.1',
-      reviews: '192 reviews', offer: 'Early 2025 Deal',
-      priceOld: 'PKR 198,154', priceNew: 'PKR 126,224', nights: '2 nights',
+      id: 2, Image: GoodWood, title: 'GOODWOOD', location: 'Dubai, United Arab Emirates', rating: '9.1',
+      reviews: '192 reviews', offer: 'Early 2025 Deal', priceOld: 'PKR 198,154', priceNew: 'PKR 126,224', nights: '2 nights',
     },
     {
-      id: 3, Image: Hotel, title: 'M Hotel Makkah',
-      location: 'Mecca, Saudi Arabia',
-      rating: '7.9', reviews: '13,542 reviews',
-      offer: 'Free Parking', priceOld: 'PKR 35,314',
-      priceNew: 'PKR 28,251', nights: '2 nights',
+      id: 3, Image: Hotel, title: 'M Hotel Makkah', location: 'Mecca, Saudi Arabia',
+      rating: '7.9', reviews: '13,542 reviews', offer: 'Free Parking', priceOld: 'PKR 35,314', priceNew: 'PKR 28,251', nights: '2 nights',
     },
     {
-      id: 4, Image: Ramada, title: ' Ramada Hotel & Suites',
-      location: 'Istanbul, Turkey',
-      rating: '8.2', reviews: '630 reviews',
-      offer: 'Limited-time Deal', priceOld: 'PKR 60,427',
+      id: 4, Image: Ramada, title: ' Ramada Hotel & Suites', location: 'Istanbul, Turkey',
+      rating: '8.2', reviews: '630 reviews', offer: 'Limited-time Deal', priceOld: 'PKR 60,427',
       priceNew: 'PKR 36,256', nights: '2 nights',
     },
   ];
 
-  const Properties = [{
-    id: '1', Image: Rancoz, title: 'Magnova Studios', location: 'Poland, Kiszkowo',
-    rating: '9.7', reviews: '630 reviews', start: 'Starting from', priceNew: 'PKR 51,570',
-  },
-  {
-    id: '2', Image: Das, title: 'Das rote Haus hinterm Deich', location: 'Germany, Simonsberg',
-    rating: '9.2', reviews: '47 reviews', start: 'Starting from', priceNew: 'PKR 104,338',
-  },
-  {
-    id: '3', Image: Agritusiam, title: 'Agriturismo Cabrele', location: 'Italy, Santorso',
-    available: '291'
-  },
-  {
-    id: '4', Image: Gyyttja, title: 'Villas',
-    available: '364'
-  },
-  ]
   const FooterBtns = [
     { id: 1, name: "International cities" },
     { id: 2, name: "Regions" },
@@ -241,20 +200,19 @@ const HomeSection = () => {
         <Toolbar />
         <Box className="container"
           sx={{ flexWrap: "wrap", justifyContent: { xs: "center", md: "flex-start" }, }}>
-          <Button onClick={(() => navigate("/stays"))} className="border-white text-white rounded-5 gap-2 py-2"
+          <Button className="border-white text-white rounded-5 gap-2 py-2"
             variant="outlined"
             sx={{ textTransform: "none" }}>
-            <KingBedIcon className="fs-4 gap-5" /> Stays</Button>
+            <KingBedIcon className="fs-4" /> Stays
+          </Button>
           {Btns.map((btn) => (
-            <Button
+            <Button onClick={(()=>navigate)} className="text-white gap-2 ms-3"
               key={btn.id}
-              onClick={() => navigate(btn.path)}
-              className="text-white gap-2"
-              sx={{ textTransform: "none" }}
-            >
-              {btn.icon} {btn.name}
+              sx={{ textTransform: "none" }}> {btn.icon}
+              {btn.name}
             </Button>
           ))}
+
           <Box sx={{ background: "#003B95", padding: "20px 0" }} className='mt-5'>
             <Typography
               variant="h1" className="text-white fs-1 fw-bold"
@@ -554,7 +512,59 @@ const HomeSection = () => {
             </Grid>
           </Grid>
         </Box>
+        <Box>
+          <Box className="d-md-flex justify-content-between align-items-center" mb={3}>
+            <Typography variant="body1" className="fw-bold fs-4">
+              Get inspiration for your next trip
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'blue', cursor: 'pointer' }}>
+              More
+            </Typography>
+          </Box>
 
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={6} md={6}>
+              <Card className='d-none d-md-block'>
+                <Box sx={{ position: 'relative' }}>
+                  <img src={LosAngelImg} alt="Los Angel" sx={{ width: '100%', height: '100%', borderRadius: '8px' }} />
+                  <Box sx={{ position: 'absolute', bottom: 0, left: 0, width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                    <CardContent>
+                      <Typography variant="subtitle1" color="white" className="fs-5 fw-bold"> 5 of the best hotels in Los Angeles</Typography>
+                      <Typography variant="body2" color="white" className="fw-bold"> From Hollywood to Beverly Hills, discover 5 of the best hotels in Los Angeles for your stay. </Typography>
+                    </CardContent>
+                  </Box>
+                </Box>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={3}>
+              <Card>
+                <img src={LosAngelImg2} alt="Los Angel" style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+                <CardContent>
+                  <Typography variant="subtitle1" fontWeight="bold">
+                    The 6 best Orlando hotels for families
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    Discover the best Orlando hotels for families for your vacation.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={3}>
+              <Card>
+                <img src={LosAngelImg3} alt="Los Angel" style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+                <CardContent>
+                  <Typography variant="subtitle1" fontWeight="bold">
+                    5 best ski towns around the world
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    Discover a winter wonderland in these charming ski destinations.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+        </Box>
         <Grid spacing={2} alignItems="center">
           <Grid item xs={12} md={8}>
             <Box className='d-flex' flexWrap="wrap" gap={2}>
@@ -701,97 +711,6 @@ const HomeSection = () => {
             ))}
           </Grid>
         </Box>
-        <Box>
-          <Box className="d-md-flex justify-content-between align-items-center my-4">
-            <Typography variant="h5" fontWeight="bold">
-              Get inspiration for your next trip
-            </Typography>
-            <Typography variant="body2" sx={{ color: 'blue', cursor: 'pointer' }}>
-              More
-            </Typography>
-          </Box>
-
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={6} md={6}>
-              <Card className='d-none d-md-block'>
-                <Box sx={{ position: 'relative' }}>
-                  <img src={LosAngelImg} alt="Los Angel" sx={{ width: '100%', height: '100%', borderRadius: '8px' }} />
-                  <Box sx={{ position: 'absolute', bottom: 0, left: 0, width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-                    <CardContent>
-                      <Typography variant="subtitle1" color="white" className="fs-5 fw-bold"> 5 of the best hotels in Los Angeles</Typography>
-                      <Typography variant="body2" color="white" className="fw-bold"> From Hollywood to Beverly Hills, discover 5 of the best hotels in Los Angeles for your stay. </Typography>
-                    </CardContent>
-                  </Box>
-                </Box>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <Card>
-                <img src={LosAngelImg2} alt="Los Angel" style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
-                <CardContent>
-                  <Typography variant="subtitle1" fontWeight="bold">
-                    The 6 best Orlando hotels for families
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    Discover the best Orlando hotels for families for your vacation.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-
-            <Grid item xs={12} sm={6} md={3}>
-              <Card>
-                <img src={LosAngelImg3} alt="Los Angel" style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
-                <CardContent>
-                  <Typography variant="subtitle1" fontWeight="bold">
-                    5 best ski towns around the world
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    Discover a winter wonderland in these charming ski destinations.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Box>
-
-        <Box className='mt-5'>
-          <Typography variant="h4" fontWeight="bold" className="my-2 py-2">
-            Homes guests love
-          </Typography>
-          <Grid container spacing={1}>
-            {Properties.map((home) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={home.id}>
-                <Card sx={{ borderRadius: 2, boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', overflow: 'hidden', }}>
-                  <CardMedia component="img" image={home.Image} alt={home.title} sx={{ height: 200, objectFit: 'cover' }} />
-                  <Typography variant="h6" fontWeight="bold" className="p-2"> {home.title} </Typography>
-                  <Typography className="p-2" variant="body2" color="textSecondary"> {home.location}
-                  </Typography>
-                  <Typography className="ps-1" sx={{
-                    mt: 1, fontSize: '0.9rem', fontWeight: 'bold', display: 'flex',
-                    alignItems: 'center', gap: 1
-                  }}  >
-                    <Chip label={home.rating} color="primary" size="small" sx={{ fontWeight: 'bold' }} />
-                    <Typography variant="body1" fontWeight="bold" className="p-2">{home.reviews}</Typography>
-                  </Typography>
-                  <Box className="d-flex justify-content-between align-items-center mx-2" sx={{ mt: 2 }}>
-                    <Box></Box>
-                    <Box className='d-flex align-items-center'>
-                      <Typography variant="body2" color="textSecondary">
-                        {home.start}
-                      </Typography>
-                      <Typography variant="body2" className="fs-5 ms-2" fontWeight="bold">
-                        {home.priceNew}
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-
         <Box sx={{ paddingBottom: "50px" }} className='mt-4 pt-2'>
           <Typography className="text-black" variant="h5">
             Travel more, spend less
@@ -1070,4 +989,4 @@ const HomeSection = () => {
   );
 };
 
-export default HomeSection;
+export default Stays;
