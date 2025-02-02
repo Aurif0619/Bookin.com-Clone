@@ -123,11 +123,11 @@ const HomeSection = () => {
   },
   {
     id: '3', Image: Agritusiam, title: 'Agriturismo Cabrele', location: 'Italy, Santorso',
-    available: '291'
+    rating: '9.4', reviews: '291 reviews', start: 'Starting from', priceNew: 'PKR 87,817',
   },
   {
-    id: '4', Image: Gyyttja, title: 'Villas',
-    available: '364'
+    id: '4', Image: Gyyttja, title: 'Gyttja Västergårds', location: 'Finland, Nauvo',
+    rating: '9.2', reviews: '112 reviews', start: 'Starting from', priceNew: 'PKR 104,338',
   },
   ]
   const FooterBtns = [
@@ -363,7 +363,7 @@ const HomeSection = () => {
           </Box>
         </Card>
         <Box sx={{ paddingBottom: "50px" }} className='mt-4'>
-          <Typography className="text-black" variant="h5">
+          <Typography className="text-black my-4 fw-bolder" variant="h5">
             Travel more, spend less
           </Typography>
           <Card className="py-2 container mt-2">
@@ -762,19 +762,18 @@ const HomeSection = () => {
           <Grid container spacing={1}>
             {Properties.map((home) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={home.id}>
-                <Card sx={{ borderRadius: 2, boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', overflow: 'hidden', }}>
-                  <CardMedia component="img" image={home.Image} alt={home.title} sx={{ height: 200, objectFit: 'cover' }} />
-                  <Typography variant="h6" fontWeight="bold" className="p-2"> {home.title} </Typography>
-                  <Typography className="p-2" variant="body2" color="textSecondary"> {home.location}
+                <Card className='py-2' sx={{ borderRadius: 2, boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', overflow: 'hidden', }}>
+                  <CardMedia component="img" image={home.Image} alt={home} sx={{ height: 200, objectFit: 'cover' }} />
+                  <Typography variant="body2" className="fs-5 fw-bolder p-2"> {home.title} </Typography>
+                  <Typography variant="body2" className="ms-2" color="textSecondary">{home.location}
                   </Typography>
                   <Typography className="ps-1" sx={{
-                    mt: 1, fontSize: '0.9rem', fontWeight: 'bold', display: 'flex',
-                    alignItems: 'center', gap: 1
-                  }}  >
+                    fontSize: '0.9rem', fontWeight: 'bold', display: 'flex',
+                    alignItems: 'center', gap: 1 }}>
                     <Chip label={home.rating} color="primary" size="small" sx={{ fontWeight: 'bold' }} />
-                    <Typography variant="body1" fontWeight="bold" className="p-2">{home.reviews}</Typography>
+                    <Typography variant="body1" fontWeight="bold" className="p-2"> {home.reviews}</Typography>
                   </Typography>
-                  <Box className="d-flex justify-content-between align-items-center mx-2" sx={{ mt: 2 }}>
+                  <Box className="d-flex justify-content-between align-items-center mx-2 mt-4">
                     <Box></Box>
                     <Box className='d-flex align-items-center'>
                       <Typography variant="body2" color="textSecondary">
