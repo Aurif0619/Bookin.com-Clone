@@ -11,6 +11,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Flights from "./Tabs/flights/Flights";
 import Stays from "./Tabs/stays/Stays";
 import CarRentals from "./Tabs/car-rentals/CarRentals";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const theme = createTheme({
   typography: {

@@ -3,6 +3,7 @@ import { AppBar, Box, Button, Toolbar, Typography, IconButton, Drawer, useMediaQ
 import { Menu as MenuIcon } from "@mui/icons-material";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import USAflag from '../../assets/AmericaFlag.png'
+import { useNavigate } from "react-router";
 
 function Navbar() {
     const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -11,6 +12,7 @@ function Navbar() {
         setDrawerOpen(!drawerOpen);
     };
 
+    const navigate = useNavigate();
     return (
         <>
             <AppBar sx={{ boxShadow: "none", background: "#003B95" }}>
@@ -56,25 +58,46 @@ function Navbar() {
                 </Toolbar>
             </AppBar>
             <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
-                <Box className='pt-2 d-flex justify-content-between'
+                <Box
                     sx={{
-                        width: 250, backgroundColor: "#003B95",
-                        height: "100%", flexDirection: "column",
+                        width: 250,
+                        backgroundColor: "#003B95",
+                        height: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        padding: "16px",
                     }}
                 >
-                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>PKR</Button>
-                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>
-                        <Box component="img" src={USAflag}
-                            alt="USA Flag"
-                            sx={{ width: 25, height: 25 }}
-                        />
-                    </Button>
-                    <Button sx={{ color: "#fff", marginBottom: "10px" }}>
-                        <HelpOutlineIcon sx={{ color: "#fff" }} />
-                    </Button>
-                    <Box className='mt-3'>
-                        <Button className='ms-3' variant='outlined' sx={{ color: "#fff", marginBottom: "10px" }}>Register</Button>
-                        <Button className='ms-3' variant='outlined' sx={{ color: "#fff", marginBottom: "10px" }}>Sign in</Button>
+                    {/* Top Section */}
+                    <Box className="d-flex justify-content-center align-items-center gap-3">
+                        <Button sx={{ color: "#fff", fontWeight: "bold", fontSize: "14px" }}>PKR</Button>
+                        <Button sx={{ color: "#fff" }}>
+                            <img
+                                className="rounded-5"
+                                src={USAflag}
+                                alt="USA Flag"
+                                style={{ width: "25px", height: "25px" }}
+                            />
+                        </Button>
+                        <Button sx={{ color: "#fff" }}>
+                            <HelpOutlineIcon sx={{ color: "#fff" }} />
+                        </Button>
+                    </Box>
+
+                    <Box className="mt-3 d-flex justify-content-center gap-1">
+                        <Button variant="contained" sx={{textTransform: 'none', backgroundColor: "#FFC107", color: "#003B95", fontWeight: "bold" }}>
+                            Register
+                        </Button>
+                        <Button variant="contained" sx={{textTransform: 'none',  backgroundColor: "#FF5722", color: "#fff", fontWeight: "bold" }}>
+                            Signin
+                        </Button>
+                        <Button 
+                            onClick={() => navigate("/home-section")}
+                            variant="contained"
+                            sx={{textTransform: 'none', backgroundColor: "#4CAF50", color: "#fff", fontWeight: "bold" }}>
+                            Home
+                        </Button>
                     </Box>
                 </Box>
             </Drawer>

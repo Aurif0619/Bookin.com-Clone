@@ -363,7 +363,7 @@ const HomeSection = () => {
           </Box>
         </Card>
         <Box sx={{ paddingBottom: "50px" }} className='mt-4'>
-          <Typography className="text-black my-4 fw-bolder" variant="h5">
+          <Typography className="text-black my-4 fw-bolder" variant="body2">
             Travel more, spend less
           </Typography>
           <Card className="py-2 container mt-2">
@@ -769,7 +769,8 @@ const HomeSection = () => {
                   </Typography>
                   <Typography className="ps-1" sx={{
                     fontSize: '0.9rem', fontWeight: 'bold', display: 'flex',
-                    alignItems: 'center', gap: 1 }}>
+                    alignItems: 'center', gap: 1
+                  }}>
                     <Chip label={home.rating} color="primary" size="small" sx={{ fontWeight: 'bold' }} />
                     <Typography variant="body1" fontWeight="bold" className="p-2"> {home.reviews}</Typography>
                   </Typography>
@@ -792,7 +793,7 @@ const HomeSection = () => {
 
 
         <Box sx={{ paddingBottom: "50px" }} className='mt-4 pt-2'>
-          <Typography className="text-black" variant="h5">
+          <Typography variant="h6" fontWeight="bold" className="text-black">
             Travel more, spend less
           </Typography>
           <Card className="py-2 container mt-3">
