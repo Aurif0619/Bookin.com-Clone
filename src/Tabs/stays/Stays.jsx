@@ -71,20 +71,28 @@ const Stays = () => {
 
   const MakkahHotels = [
     {
-      id: 1, Image: Studio, title: 'Magnova Studios', location: 'Istanbul, Turkey', rating: '8.9',
-      reviews: '756 reviews', offer: 'Early 2025 Deal', priceOld: 'PKR 124,425', priceNew: 'PKR 53,503', nights: '2 nights',
+      id: 1, Image: Studio, title: 'Magnova Studios',
+      location: 'Istanbul, Turkey', rating: '8.9',
+      reviews: '756 reviews', offer: 'Early 2025 Deal',
+      priceOld: 'PKR 124,425', priceNew: 'PKR 53,503', nights: '2 nights',
     },
     {
-      id: 2, Image: GoodWood, title: 'GOODWOOD', location: 'Dubai, United Arab Emirates', rating: '9.1',
-      reviews: '192 reviews', offer: 'Early 2025 Deal', priceOld: 'PKR 198,154', priceNew: 'PKR 126,224', nights: '2 nights',
+      id: 2, Image: GoodWood, title: 'GOODWOOD',
+      location: 'Dubai, United Arab Emirates', rating: '9.1',
+      reviews: '192 reviews', offer: 'Early 2025 Deal',
+      priceOld: 'PKR 198,154', priceNew: 'PKR 126,224', nights: '2 nights',
     },
     {
-      id: 3, Image: Hotel, title: 'M Hotel Makkah', location: 'Mecca, Saudi Arabia',
-      rating: '7.9', reviews: '13,542 reviews', offer: 'Free Parking', priceOld: 'PKR 35,314', priceNew: 'PKR 28,251', nights: '2 nights',
+      id: 3, Image: Hotel, title: 'M Hotel Makkah',
+      location: 'Mecca, Saudi Arabia', rating: '7.9',
+      reviews: '13,542 reviews', offer: 'Free Parking',
+      priceOld: 'PKR 35,314', priceNew: 'PKR 28,251', nights: '2 nights',
     },
     {
-      id: 4, Image: Ramada, title: ' Ramada Hotel & Suites', location: 'Istanbul, Turkey',
-      rating: '8.2', reviews: '630 reviews', offer: 'Limited-time Deal', priceOld: 'PKR 60,427',
+      id: 4, Image: Ramada, title: ' Ramada Hotel & Suites',
+      location: 'Istanbul, Turkey',
+      rating: '8.2', reviews: '630 reviews',
+      offer: 'Limited-time Deal', priceOld: 'PKR 60,427',
       priceNew: 'PKR 36,256', nights: '2 nights',
     },
   ];
@@ -206,7 +214,7 @@ const Stays = () => {
             <KingBedIcon className="fs-4" /> Stays
           </Button>
           {Btns.map((btn) => (
-            <Button onClick={(()=>navigate)} className="text-white gap-2 ms-3"
+            <Button onClick={(() => navigate)} className="text-white gap-2 ms-3"
               key={btn.id}
               sx={{ textTransform: "none" }}> {btn.icon}
               {btn.name}
@@ -228,8 +236,7 @@ const Stays = () => {
         </Box>
       </Box>
       <Box className='container' >
-        <Box
-          marginTop={-4}
+        <Box marginTop={-4}
           className="rounded-3 p-1 d-flex gap-2 justify-content-between align-items-center"
           sx={{
             flexWrap: "wrap",
@@ -239,10 +246,8 @@ const Stays = () => {
         >
           <TextField
             placeholder="Where are you going?"
-            fullWidth
-            sx={{
-              flex: 1,
-              minWidth: "200px",
+            fullWidth sx={{
+              flex: 1, minWidth: "200px",
               backgroundColor: "white",
               borderRadius: "5px",
             }}
@@ -252,8 +257,7 @@ const Stays = () => {
           />
           <TextField
             placeholder="Check-in Date"
-            fullWidth
-            sx={{
+            fullWidth sx={{
               flex: 1,
               minWidth: "200px",
               backgroundColor: "white",
@@ -263,9 +267,7 @@ const Stays = () => {
               startAdornment: <CalendarMonthIcon sx={{ mr: 1 }} />,
             }}
           />
-          <TextField
-            select
-            fullWidth
+          <TextField select fullWidth
             sx={{
               flex: 1,
               minWidth: "200px",
@@ -281,16 +283,12 @@ const Stays = () => {
           </TextField>
           <Button
             className="text-white"
-            variant="contained"
-            sx={{
+            variant="contained" sx={{
               backgroundColor: "#003B95",
               minWidth: "150px",
               height: "56px",
               textTransform: "none",
-            }}
-          >
-            Search
-          </Button>
+            }}> Search </Button>
         </Box>
 
         <Box className="text-black mt-5 my-2">
@@ -307,8 +305,7 @@ const Stays = () => {
                 Start your year with an adventure, saving 15% or more with Early
                 2025 Deals.
               </Typography>
-              <Button
-                variant="contained"
+              <Button variant="contained"
                 sx={{ textTransform: "none" }}
                 className="mt-3"
               >
@@ -333,16 +330,13 @@ const Stays = () => {
                 </Typography>
                 <Button variant="contained"
                   sx={{ textTransform: "none" }}
-                  className="mt-3"
-                >
+                  className="mt-3"  >
                   Sign in
                 </Button>
                 <Button variant="outlined"
                   sx={{ textTransform: "none" }}
-                  className="mt-3 ms-2"
-                > Register
-                </Button>
-              </Box>
+                  className="mt-3 ms-2"> Register
+                </Button> </Box>
               <Box><img width={100} src={GiftImg} alt="Img" /></Box>
             </Box>
           </Card>
@@ -354,17 +348,13 @@ const Stays = () => {
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6} lg={6}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  textAlign: 'center',
-                }}
+              <Box sx={{
+                position: 'relative', borderRadius: 2,
+                overflow: 'hidden', textAlign: 'center',
+              }}
               >
                 <img className="rounded-4"
-                  src={LahoreImg}
-                  alt="Lahore-img"
+                  src={LahoreImg} alt="Lahore-img"
                   style={{
                     width: '100%',
                     height: 'auto',
@@ -372,12 +362,10 @@ const Stays = () => {
                   }}
                 />
                 <Typography
-                  variant="h6"
-                  component="div"
+                  variant="h6" component="div"
                   sx={{
                     position: 'absolute',
-                    top: 8,
-                    left: 8,
+                    top: 8, left: 8,
                     backgroundColor: 'rgba(0, 0, 0, 0.6)',
                     borderRadius: 1,
                     padding: '4px 8px',
@@ -390,20 +378,18 @@ const Stays = () => {
             </Grid>
 
             <Grid item xs={12} sm={6} lg={6}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  textAlign: 'center',
-                }}
+              <Box sx={{
+                position: 'relative',
+                borderRadius: 2,
+                overflow: 'hidden',
+                textAlign: 'center',
+              }}
               >
                 <img className="rounded-4"
                   src={IslamabadImg}
                   alt="Islamabad-img"
                   style={{
-                    width: '100%',
-                    height: 'auto',
+                    width: '100%', height: 'auto',
                     display: 'block',
                   }}
                 />
@@ -430,13 +416,12 @@ const Stays = () => {
         <Box className="d-flex my-3">
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  textAlign: 'center',
-                }}>
+              <Box sx={{
+                position: 'relative',
+                borderRadius: 2,
+                overflow: 'hidden',
+                textAlign: 'center',
+              }}>
                 <img src={KarachiImg} alt="Karachi" style={{ width: '100%', height: 'auto' }} />
                 <Typography
                   variant="h6"
@@ -469,42 +454,28 @@ const Stays = () => {
                   component="div"
                   sx={{
                     position: 'absolute',
-                    top: 8,
-                    left: 8,
-                    color: '#fff',
+                    top: 8, left: 8, color: '#fff',
                     backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '4px 8px',
-                  }}
-                >
+                    borderRadius: 1, padding: '4px 8px',
+                  }}>
                   Medina <img src={Makkah} alt="Medina" />
                 </Typography>
               </Box>
             </Grid>
 
             <Grid item xs={12} sm={6} md={4}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  textAlign: 'center',
-                }}
+              <Box sx={{
+                position: 'relative',
+                borderRadius: 2, overflow: 'hidden', textAlign: 'center',
+              }}
               >
-                <img
-                  src={DubaiImg} alt="Dubai" style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-                />
-                <Typography
-                  variant="h6"
-                  component="div"
+                <img src={DubaiImg} alt="Dubai" style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+                <Typography variant="h6" component="div"
                   sx={{
                     position: 'absolute',
-                    top: 8,
-                    left: 8,
-                    color: '#fff',
+                    top: 8, left: 8, color: '#fff',
                     backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '4px 8px',
+                    borderRadius: 1, padding: '4px 8px',
                   }}>
                   Dubai <img src={Dubai} alt="Dubai" />
                 </Typography>
@@ -593,8 +564,7 @@ const Stays = () => {
                     textTransform: "none",
                     display: "flex",
                     alignItems: "center",
-                    gap: 1,
-                    px: 2,
+                    gap: 1, px: 2,
                   }}
                 >
                   {btn.icon} {btn.name}
@@ -603,6 +573,7 @@ const Stays = () => {
             </Box>
           </Grid>
         </Grid>
+
         {/* Heading Section (Explore Pakistan) */}
         <Grid item xs={12} className="mt-3">
           <Typography variant="h4" className="mt-5 fw-bold my-3">
@@ -611,11 +582,8 @@ const Stays = () => {
         </Grid>
         <Grid container className="justify-content-between">
           {cityData.map((city, index) => (
-            <Grid item
-              xs={6} sm={4} md={3} lg={2}
-              key={index}
-              sx={{ display: index === 0 ? { xs: "none", sm: "block" } : "block" }}
-            >
+            <Grid item xs={6} sm={4} md={3} lg={2}
+              key={index} sx={{ display: index === 0 ? { xs: "none", sm: "block" } : "block" }}>
               <Box mb={2}>
                 <img
                   src={city.image}
@@ -639,16 +607,13 @@ const Stays = () => {
           <Grid container spacing={1}>
             {LahoreHotels.map((hotels) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={hotels.id}>
-                <Box
-                  sx={{
-                    borderRadius: 2,
-                    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-                    overflow: "hidden", p: 1,
-                  }}
+                <Box sx={{
+                  borderRadius: 2,
+                  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                  overflow: "hidden", p: 1,
+                }}
                 >
-                  <CardMedia
-                    component="img"
-                    image={hotels.Image}
+                  <CardMedia component="img" image={hotels.Image}
                     alt={hotels.title}
                     sx={{ height: 200, objectFit: "cover", borderRadius: "10px" }}
                   />
@@ -676,39 +641,38 @@ const Stays = () => {
           <Typography variant="h5" fontWeight="bold" className="my-2 py-2">
             Deals for the weekend
           </Typography>
-          <Grid container spacing={1}>
-            {MakkahHotels.map((hotel) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={hotel.id}>
-                <Card sx={{ borderRadius: 2, boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', overflow: 'hidden', }}>
-                  <CardMedia component="img" image={hotel.Image} alt={hotel.title} sx={{ height: 200, objectFit: 'cover' }} />
-                  <Chip className="ms-1" label={hotel.offer} color="success" size="small" sx={{ my: 1, }} />
-                  <Typography variant="h6" fontWeight="bold" className="p-2"> {hotel.title} </Typography>
-                  <Typography className="p-2" variant="body2" color="textSecondary"> {hotel.location}
+          <Grid container spacing={1}> {MakkahHotels.map((hotel) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={hotel.id}>
+              <Card sx={{ borderRadius: 2, boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', overflow: 'hidden', }}>
+                <CardMedia component="img" image={hotel.Image} alt={hotel.title} sx={{ height: 200, objectFit: 'cover' }} />
+                <Chip className="ms-1" label={hotel.offer} color="success" size="small" sx={{ my: 1, }} />
+                <Typography variant="h6" fontWeight="bold" className="p-2"> {hotel.title} </Typography>
+                <Typography className="p-2" variant="body2" color="textSecondary"> {hotel.location}
+                </Typography>
+                <Typography className="ps-1" sx={{
+                  mt: 1, fontSize: '0.9rem', fontWeight: 'bold', display: 'flex',
+                  alignItems: 'center', gap: 1
+                }}  >
+                  <Chip label={hotel.rating} color="primary" size="small" sx={{ fontWeight: 'bold' }} />
+                  <Typography variant="body2">{hotel.reviews}</Typography>
+                </Typography>
+                <Typography className="ps-2" variant="body2" color="textSecondary" sx={{ mt: 1 }}>
+                  {hotel.nights} </Typography>
+                <Box sx={{ mt: 2, display: 'flex', alignItems: 'baseline', my: 2 }}>
+                  <Typography className="ps-3" variant="body2"
+                    sx={{
+                      textDecoration: 'line-through',
+                      color: 'gray', mr: 1
+                    }}>
+                    {hotel.priceOld}
                   </Typography>
-                  <Typography className="ps-1" sx={{
-                    mt: 1, fontSize: '0.9rem', fontWeight: 'bold', display: 'flex',
-                    alignItems: 'center', gap: 1
-                  }}  >
-                    <Chip label={hotel.rating} color="primary" size="small" sx={{ fontWeight: 'bold' }} />
-                    <Typography variant="body2">{hotel.reviews}</Typography>
+                  <Typography variant="h6" fontWeight="bold">
+                    {hotel.priceNew}
                   </Typography>
-                  <Typography className="ps-2" variant="body2" color="textSecondary" sx={{ mt: 1 }}>
-                    {hotel.nights} </Typography>
-                  <Box sx={{ mt: 2, display: 'flex', alignItems: 'baseline', my: 2 }}>
-                    <Typography className="ps-3" variant="body2"
-                      sx={{
-                        textDecoration: 'line-through',
-                        color: 'gray', mr: 1
-                      }}>
-                      {hotel.priceOld}
-                    </Typography>
-                    <Typography variant="h6" fontWeight="bold">
-                      {hotel.priceNew}
-                    </Typography>
-                  </Box>
-                </Card>
-              </Grid>
-            ))}
+                </Box>
+              </Card>
+            </Grid>
+          ))}
           </Grid>
         </Box>
         <Box sx={{ paddingBottom: "50px" }} className='mt-4 pt-2'>
@@ -729,8 +693,7 @@ const Stays = () => {
                 </Button>
                 <Button variant="outlined"
                   sx={{ textTransform: "none" }}
-                  className="mt-3 ms-2"
-                > Register
+                  className="mt-3 ms-2" > Register
                 </Button>
               </Box>
               <Box><img width={100} src={GiftImg} alt="Img" /></Box>
@@ -743,40 +706,27 @@ const Stays = () => {
           <Card
             className="ps-5"
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              background: "#F8F9FA",
-              position: "relative",
-              overflow: "hidden",
-              padding: "20px",
-              height: "auto",
-            }}
-          >
+              display: "flex", alignItems: "center",
+              justifyContent: "space-between", background: "#F8F9FA",
+              position: "relative", overflow: "hidden",
+              padding: "20px", height: "auto",
+            }} >
             <Box
               sx={{
                 backgroundColor: "#007AFF",
                 clipPath: "circle(50% at 50% 50%)",
-                width: "60%",
-                height: "100%",
+                width: "60%", height: "100%",
                 position: "absolute",
-                left: "10%",
-                top: "0",
+                left: "10%", top: "0",
               }}
             />
             <Box
               className="text-white py-5 ms-5 ps-4 d-flex justify-content-center align-content-center"
               sx={{
                 position: "relative",
-                zIndex: 2,
-                top: 6,
-                left: 220,
-                display: "flex",
-                flexDirection: "column",
-                color: "#fff",
-              }}
-
-            >
+                zIndex: 2, top: 6, left: 220,
+                display: "flex", flexDirection: "column",
+              }} >
               <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
                 Find homes <br /> for your next trip
 
@@ -786,7 +736,6 @@ const Stays = () => {
               </Button>
             </Box>
 
-            {/* Image Box */}
             <Box sx={{ width: "50%" }} className="d-flex justify-content-end flex-end">
               <img src={ChairImg} alt="Chair" style={{ width: "50%" }} />
             </Box>
@@ -805,8 +754,7 @@ const Stays = () => {
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  px: 2,
-                  textTransform: 'none',
+                  px: 2, textTransform: 'none',
                   whiteSpace: "nowrap",
                 }}
               >
@@ -819,10 +767,8 @@ const Stays = () => {
                   className="text-dark rounded-5"
                   sx={{
                     textTransform: "none",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 1,
-                    px: 2,
+                    display: "flex", alignItems: "center",
+                    gap: 1, px: 2,
                   }}
                 >
                   {btns.name}
@@ -858,8 +804,7 @@ const Stays = () => {
             <Box>
               {KarachiItems.map((item, index) => (
                 <Typography key={index} className="py-1 ms">
-                  {item.name}
-                </Typography>
+                  {item.name} </Typography>
               ))}
             </Box>
           </Grid>
@@ -868,8 +813,7 @@ const Stays = () => {
             <Box>
               {MurreeItems.map((item, index) => (
                 <Typography key={index} className="py-1">
-                  {item.name}
-                </Typography>
+                  {item.name} </Typography>
               ))}
             </Box>
           </Grid>
@@ -878,8 +822,7 @@ const Stays = () => {
             <Box className='d-none d-md-block'>
               {NathiaItems.map((item, index) => (
                 <Typography key={index} className="py-1">
-                  {item.name}
-                </Typography>
+                  {item.name} </Typography>
               ))}
             </Box>
           </Grid>
@@ -936,8 +879,7 @@ const Stays = () => {
               <Typography variant="body1" className="fw-bold ms-3">Terms and settings</Typography>
               {Terms.map((item, index) => (
                 <Typography key={index} className="py-1 ms-4">
-                  {item.name}
-                </Typography>
+                  {item.name}</Typography>
               ))}
             </Box>
           </Grid>
@@ -947,8 +889,7 @@ const Stays = () => {
               <Typography variant="body1" className="fw-bold">Partners</Typography>
               {Partners.map((item, index) => (
                 <Typography key={index} className="py-1">
-                  {item.name}
-                </Typography>
+                  {item.name}  </Typography>
               ))}
             </Box>
           </Grid>
@@ -958,8 +899,7 @@ const Stays = () => {
               <Typography variant="body1" className="fw-bold">About</Typography>
               {About.map((item, index) => (
                 <Typography key={index} className="py-1">
-                  {item.name}
-                </Typography>
+                  {item.name}</Typography>
               ))}
             </Box>
           </Grid>
@@ -980,10 +920,8 @@ const Stays = () => {
           <Typography className="text-primary"> Booking.com </Typography>
           <Typography className="mx-3 text-info"> Priceline </Typography>
           <Typography> K A Y A K </Typography>
-
-          <img src={OpenTable} alt="" />
+          <img src={OpenTable} alt="TableImg" />
         </Box>
-
       </Box>
     </>
   );

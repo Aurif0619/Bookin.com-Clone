@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Box, Button, Toolbar, Typography, IconButton, Drawer, useMediaQuery, Grid } from "@mui/material";
+import { AppBar, Box, Button, Toolbar, Typography, IconButton, Drawer, useMediaQuery,} from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import USAflag from '../../assets/AmericaFlag.png'
@@ -51,8 +51,7 @@ function Navbar() {
                             <Button variant="outlined" className="text-primary bg-white fw-bold border-white"
                                 sx={{ textTransform: "capitalize" }}>  Sign in
                             </Button>
-                        </Box>
-                    ) : (<IconButton onClick={toggleDrawer} sx={{ color: "#fff" }}>
+                        </Box>) : (<IconButton onClick={toggleDrawer} sx={{ color: "#fff" }}>
                         <MenuIcon />
                     </IconButton>)}
                 </Toolbar>
@@ -62,21 +61,17 @@ function Navbar() {
                     sx={{
                         width: 250,
                         backgroundColor: "#003B95",
-                        height: "100%",
-                        display: "flex",
+                        height: "100%", display: "flex",
                         flexDirection: "column",
-                        alignItems: "center",
-                        padding: "16px",
-                    }}
-                >
+                        alignItems: "center", padding: "16px",
+                    }} >
                     {/* Top Section */}
                     <Box className="d-flex justify-content-center align-items-center gap-3">
                         <Button sx={{ color: "#fff", fontWeight: "bold", fontSize: "14px" }}>PKR</Button>
                         <Button sx={{ color: "#fff" }}>
                             <img
                                 className="rounded-5"
-                                src={USAflag}
-                                alt="USA Flag"
+                                src={USAflag} alt="USA Flag"
                                 style={{ width: "25px", height: "25px" }}
                             />
                         </Button>
@@ -86,16 +81,14 @@ function Navbar() {
                     </Box>
 
                     <Box className="mt-3 d-flex justify-content-center gap-1">
-                        <Button variant="contained" sx={{textTransform: 'none', backgroundColor: "#FFC107", color: "#003B95", fontWeight: "bold" }}>
+                        <Button variant="outlined" sx={{ textTransform: 'none', color: "#003B95", fontWeight: "bold" }}>
                             Register
                         </Button>
-                        <Button variant="contained" sx={{textTransform: 'none',  backgroundColor: "#FF5722", color: "#fff", fontWeight: "bold" }}>
+                        <Button variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
                             Signin
                         </Button>
-                        <Button 
-                            onClick={() => navigate("/home-section")}
-                            variant="contained"
-                            sx={{textTransform: 'none', backgroundColor: "#4CAF50", color: "#fff", fontWeight: "bold" }}>
+                        <Button onClick={() => navigate("/home-section")}
+                            variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
                             Home
                         </Button>
                     </Box>

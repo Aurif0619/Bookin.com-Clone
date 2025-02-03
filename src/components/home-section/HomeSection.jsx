@@ -237,24 +237,22 @@ const HomeSection = () => {
   return (
     <>
       <Box component="main" className="text-white"
-        sx={{ p: 3, background: "#003B95", height: "62vh", }}>
+        sx={{ p: 2, background: "#003B95", height: "62vh", }}>
         <Toolbar />
         <Box className="container"
           sx={{ flexWrap: "wrap", justifyContent: { xs: "center", md: "flex-start" }, }}>
-          <Button onClick={(() => navigate("/stays"))} className="border-white text-white rounded-5 gap-2 py-2"
+          <Button className="border-white text-white rounded-5 gap-2 py-2"
             variant="outlined"
             sx={{ textTransform: "none" }}>
-            <KingBedIcon className="fs-4 gap-5" /> Stays</Button>
+            <KingBedIcon className="fs-4" /> Stays
+          </Button>
           {Btns.map((btn) => (
-            <Button
+            <Button onClick={(() => navigate)} className="text-white gap-2 ms-3"
               key={btn.id}
-              onClick={() => navigate(btn.path)}
-              className="text-white gap-2"
-              sx={{ textTransform: "none" }}
-            >
-              {btn.icon} {btn.name}
-            </Button>
+              sx={{ textTransform: "none" }}> {btn.icon}
+              {btn.name}</Button>
           ))}
+
           <Box sx={{ background: "#003B95", padding: "20px 0" }} className='mt-5'>
             <Typography
               variant="h1" className="text-white fs-1 fw-bold"
@@ -267,14 +265,12 @@ const HomeSection = () => {
               Search deals on hotels, homes, and much more...
             </Typography>
           </Box>
-        </Box>
-      </Box>
+        </Box>   </Box>
       <Box className='container' >
         <Box
           marginTop={-4}
           className="rounded-3 p-1 d-flex gap-2 justify-content-between align-items-center"
-          sx={{
-            flexWrap: "wrap",
+          sx={{ flexWrap: "wrap",
             backgroundColor: "orange",
             border: "orange",
           }}
@@ -391,7 +387,7 @@ const HomeSection = () => {
         </Box>
 
         <Box>
-          <Typography variant="h5" className="fw-medium my-2">
+          <Typography variant="h4" className="mt-5 fw-bold my-3">
             Trending Destinations
           </Typography>
           <Grid container spacing={2}>
@@ -818,46 +814,31 @@ const HomeSection = () => {
             </Box>
           </Card>
         </Box>
-
-        {/* Chair img */}
         <Box className="d-none d-md-block" sx={{ position: "relative", overflow: "hidden" }}>
           <Card
             className="ps-5"
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              background: "#F8F9FA",
-              position: "relative",
-              overflow: "hidden",
-              padding: "20px",
-              height: "auto",
+              display: "flex", alignItems: "center",
+              justifyContent: "space-between", background: "#F8F9FA",
+              position: "relative", overflow: "hidden",
+              padding: "20px", height: "auto",
             }}
           >
             <Box
               sx={{
                 backgroundColor: "#007AFF",
                 clipPath: "circle(50% at 50% 50%)",
-                width: "60%",
-                height: "100%",
-                position: "absolute",
-                left: "10%",
-                top: "0",
+                width: "60%", height: "100%",
+                position: "absolute", left: "10%", top: "0",
               }}
             />
             <Box
               className="text-white py-5 ms-5 ps-4 d-flex justify-content-center align-content-center"
               sx={{
                 position: "relative",
-                zIndex: 2,
-                top: 6,
-                left: 220,
-                display: "flex",
-                flexDirection: "column",
-                color: "#fff",
-              }}
-
-            >
+                zIndex: 2, top: 6, left: 220,
+                display: "flex", flexDirection: "column",
+              }}>
               <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
                 Find homes <br /> for your next trip
 
@@ -867,7 +848,6 @@ const HomeSection = () => {
               </Button>
             </Box>
 
-            {/* Image Box */}
             <Box sx={{ width: "50%" }} className="d-flex justify-content-end flex-end">
               <img src={ChairImg} alt="Chair" style={{ width: "50%" }} />
             </Box>
@@ -889,8 +869,7 @@ const HomeSection = () => {
                   px: 2,
                   textTransform: 'none',
                   whiteSpace: "nowrap",
-                }}
-              >
+                }} >
                 Domestic cities
               </Button>
 
@@ -902,8 +881,7 @@ const HomeSection = () => {
                     textTransform: "none",
                     display: "flex",
                     alignItems: "center",
-                    gap: 1,
-                    px: 2,
+                    gap: 1, px: 2,
                   }}
                 >
                   {btns.name}
@@ -929,8 +907,7 @@ const HomeSection = () => {
             <Box>
               {LahoreItems.map((item, index) => (
                 <Typography key={index} className="py-1">
-                  {item.name}
-                </Typography>
+                  {item.name} </Typography>
               ))}
             </Box>
           </Grid>
@@ -939,9 +916,7 @@ const HomeSection = () => {
             <Box>
               {KarachiItems.map((item, index) => (
                 <Typography key={index} className="py-1 ms">
-                  {item.name}
-                </Typography>
-              ))}
+                  {item.name} </Typography>))}
             </Box>
           </Grid>
 
@@ -949,9 +924,7 @@ const HomeSection = () => {
             <Box>
               {MurreeItems.map((item, index) => (
                 <Typography key={index} className="py-1">
-                  {item.name}
-                </Typography>
-              ))}
+                  {item.name} </Typography>))}
             </Box>
           </Grid>
 
