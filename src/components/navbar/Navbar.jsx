@@ -1,9 +1,9 @@
 import React from 'react';
-import { AppBar, Box, Button, Toolbar, Typography, IconButton, Drawer, useMediaQuery,} from "@mui/material";
+import { AppBar, Box, Button, Toolbar, Typography, IconButton, Drawer, useMediaQuery, } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import USAflag from '../../assets/AmericaFlag.png'
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
     const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -13,6 +13,12 @@ function Navbar() {
     };
 
     const navigate = useNavigate();
+
+    const onSubmit = (data) => {
+        console.log("User Data:", data);
+        navigate("/dashboard");
+    };
+
     return (
         <>
             <AppBar sx={{ boxShadow: "none", background: "#003B95" }}>
@@ -48,12 +54,14 @@ function Navbar() {
                                 className="text-primary bg-white fw-bold border-white"
                                 sx={{ textTransform: "capitalize" }}> Register
                             </Button>
-                            <Button variant="outlined" className="text-primary bg-white fw-bold border-white"
-                                sx={{ textTransform: "capitalize" }}>  Sign in
+                            <Button onClick={(() => navigate("/sign-in"))} variant="outlined" className="text-primary bg-white fw-bold border-white"
+                                sx={{ textTransform: "capitalize" }}>
+                                Sign in
                             </Button>
+
                         </Box>) : (<IconButton onClick={toggleDrawer} sx={{ color: "#fff" }}>
-                        <MenuIcon />
-                    </IconButton>)}
+                            <MenuIcon />
+                        </IconButton>)}
                 </Toolbar>
             </AppBar>
             <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
@@ -65,7 +73,7 @@ function Navbar() {
                         flexDirection: "column",
                         alignItems: "center", padding: "16px",
                     }} >
-                    {/* Top Section */}
+                   
                     <Box className="d-flex justify-content-center align-items-center gap-3">
                         <Button sx={{ color: "#fff", fontWeight: "bold", fontSize: "14px" }}>PKR</Button>
                         <Button sx={{ color: "#fff" }}>
@@ -81,10 +89,10 @@ function Navbar() {
                     </Box>
 
                     <Box className="mt-3 d-flex justify-content-center gap-1">
-                        <Button variant="outlined" sx={{ textTransform: 'none', color: "#003B95", fontWeight: "bold" }}>
+                        <Button onClick={(()=>navigate ('/register'))} variant="outlined" sx={{ textTransform: 'none', color: "#003B95", fontWeight: "bold" }}>
                             Register
                         </Button>
-                        <Button variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
+                        <Button onClick={(()=>navigate ("/sign-in"))} variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
                             Signin
                         </Button>
                         <Button onClick={() => navigate("/home-section")}

@@ -26,7 +26,7 @@ const Register = () => {
             placeholder="Name" />
           {errors.name && <p className="text-red-500">{errors.name.message}</p>}
 
-          <input {...register('email', { required: 'Email is required' })}
+          <TextField {...register('email', { required: 'Email is required' })}
             className="w-full p-2 border rounded"
             placeholder="Email" />
           {errors.email && <p className="text-red-500">{errors.email.message}</p>}
@@ -34,7 +34,7 @@ const Register = () => {
           <TextField type="password" {...register('password', { required: 'Password is required' })}
             className="w-full p-2 border rounded"
             placeholder="Password" />
-          {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+          {errors.password && <Typography variant='body2' className="text-red-500">{errors.password.message}</Typography>}
           <Button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">Register</Button>
         </Form>
       </Box>
