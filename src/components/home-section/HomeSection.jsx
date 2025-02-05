@@ -607,7 +607,7 @@ const HomeSection = () => {
                   src={city.image}
                   className="rounded-3"
                   alt={city.name}
-                  style={{ width: "100%", maxWidth: "180px", height: "auto" }}
+                  style={{ width: "100%", maxWidth: "100%", height: "auto" }}
                 />
                 <Typography className="fw-bold mt-2">{city.name}</Typography>
                 <Typography variant="body2" color="textSecondary">

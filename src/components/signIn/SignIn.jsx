@@ -1,7 +1,7 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { Box, Button, TextField, Typography } from '@mui/material';
-import { Navigate, useNavigate } from "react-router-dom";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { Box, Button, TextField, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -14,38 +14,86 @@ const SignIn = () => {
 
     const onSubmit = (data) => {
         console.log("User Data:", data);
-        navigate("/dashboard");
+        navigate("/home-section");
     };
 
     return (
-        <Box className="flex-col items-center d-flex justify-center align-items-center min-h-screen p-4">
-            <Typography variant="h5" className="text-2xl font-semibold mb-4">
+        <Box sx={{
+            display: "flex", flexDirection: "column",
+            alignItems: "center", justifyContent: "center",
+            minHeight: "100vh", backgroundColor: "#f3f4f6",
+            padding: "20px",
+        }}
+        >
+            <Typography variant="h4"
+                sx={{ fontWeight: "bold", color: "#1e293b", marginBottom: "20px", }} >
                 Sign In
             </Typography>
-            <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-sm space-y-4">
-                <TextField
-                    {...register('email', { required: 'Email is required' })}
-                    className="w-full p-2 border rounded"
-                    placeholder="Email"
-                />
-                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
 
-                <TextField
-                    type="password"
-                    {...register('password', { required: 'Password is required' })}
-                    className="w-full p-2 border rounded"
-                    placeholder="Password"
+            {/* Form */}
+            <Box
+                component="form"
+                onSubmit={handleSubmit(onSubmit)}
+                sx={{
+                    width: "100%", maxWidth: "400px",
+                    backgroundColor: "white", padding: "24px",
+                    borderRadius: "8px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                }} >
+                <TextField fullWidth
+                    label="Email" variant="outlined"
+                    {...register("email", {
+                        required: "Email is required",
+                        pattern: {
+                            value: 6,
+                            message: "Invalid email address",
+                        },
+                    })}
+                    error={!!errors.email}
+                    helperText={errors.email?.message}
+                    sx={{ marginBottom: "16px" }}
                 />
-                {errors.password && <p className="text-red-500">{errors.password.message}</p>}
 
-                <Button type="submit" className="w-full text-black p-2 rounded">
+                {/* Password Field */}
+                <TextField
+                    fullWidth type="password"
+                    label="Password" variant="outlined"
+                    {...register("password", {
+                        required: "Password is required",
+                        minLength: {
+                            value: 6,
+                            message: "Password must be at least 6 characters",
+                        },
+                    })}
+                    error={!!errors.password} helperText={errors.password?.message}
+                    sx={{ marginBottom: "24px" }}
+                />
+                <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    sx={{
+                        backgroundColor: "#3b82f6", color: "white",
+                        padding: "10px", fontWeight: "bold",
+                        "&:hover": {
+                            backgroundColor: "#2563eb",
+                        },
+                    }}
+                >
                     Sign In
                 </Button>
-            </form>
+            </Box>
+
             <Button
                 onClick={() => navigate("/register")}
-                variant="outlined"
-                className="mt-4 text-primary bg-white fw-bold border-white">
+                variant="text"
+                sx={{
+                    marginTop: "16px",  color: "#3b82f6",
+                    fontWeight: "bold", "&:hover": {
+                        backgroundColor: "transparent",
+                        textDecoration: "underline",
+                    },
+                }}
+            >
                 Create Account
             </Button>
         </Box>

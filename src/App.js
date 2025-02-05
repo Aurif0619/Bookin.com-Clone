@@ -11,8 +11,8 @@ import SignIn from "./components/signIn/SignIn";
 import Flights from "./Tabs/flights/Flights";
 import Stays from "./Tabs/stays/Stays";
 import CarRentals from "./Tabs/car-rentals/CarRentals";
-import PageNotFound from "./components/page-not-found/PageNotFound"; // Import the PageNotFound component
-
+import PageNotFound from "./components/page-not-found/PageNotFound";
+import Dashboard from '../../'
 const theme = createTheme({
   typography: {
     fontFamily: "Jost, serif",
