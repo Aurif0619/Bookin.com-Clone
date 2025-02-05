@@ -4,7 +4,7 @@ import { Box, Button, TextField, Typography } from '@mui/material';
 import { Navigate, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-    const navigate = useNavigate(); // 👈 Correct way to use navigate
+    const navigate = useNavigate();
 
     const {
         register,
@@ -18,7 +18,7 @@ const SignIn = () => {
     };
 
     return (
-        <Box className="flex flex-col items-center justify-center min-h-screen p-4">
+        <Box className="flex-col items-center d-flex justify-center align-items-center min-h-screen p-4">
             <Typography variant="h5" className="text-2xl font-semibold mb-4">
                 Sign In
             </Typography>
@@ -38,7 +38,7 @@ const SignIn = () => {
                 />
                 {errors.password && <p className="text-red-500">{errors.password.message}</p>}
 
-                <Button type="submit" className="w-full bg-green-500 text-white p-2 rounded">
+                <Button type="submit" className="w-full text-black p-2 rounded">
                     Sign In
                 </Button>
             </form>

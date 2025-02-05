@@ -11,6 +11,7 @@ import SignIn from "./components/signIn/SignIn";
 import Flights from "./Tabs/flights/Flights";
 import Stays from "./Tabs/stays/Stays";
 import CarRentals from "./Tabs/car-rentals/CarRentals";
+import PageNotFound from "./components/page-not-found/PageNotFound"; // Import the PageNotFound component
 
 const theme = createTheme({
   typography: {
@@ -27,10 +28,11 @@ function App() {
           <Route path="/" element={<HomeSection />} />
           <Route path="/stays" element={<Stays />} />
           <Route path="/flights" element={<Flights />} />
-          <Route path="/car-rentals" element={<CarRentals/>}/>
+          <Route path="/car-rentals" element={<CarRentals />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/register" element={<Register />} />
           <Route path="/hotel-detail" element={<HotelDetail />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </ThemeProvider>
     </Router>

@@ -65,23 +65,19 @@ function Navbar() {
                 </Toolbar>
             </AppBar>
             <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
-                <Box
-                    sx={{
-                        width: 250,
-                        backgroundColor: "#003B95",
-                        height: "100%", display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center", padding: "16px",
-                    }} >
-                   
+                <Box sx={{
+                    width: 250,
+                    backgroundColor: "#003B95",
+                    height: "100%", display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center", padding: "16px"}}>
+
                     <Box className="d-flex justify-content-center align-items-center gap-3">
                         <Button sx={{ color: "#fff", fontWeight: "bold", fontSize: "14px" }}>PKR</Button>
                         <Button sx={{ color: "#fff" }}>
-                            <img
-                                className="rounded-5"
+                            <img className="rounded-5"
                                 src={USAflag} alt="USA Flag"
-                                style={{ width: "25px", height: "25px" }}
-                            />
+                                style={{ width: "25px", height: "25px" }}/>
                         </Button>
                         <Button sx={{ color: "#fff" }}>
                             <HelpOutlineIcon sx={{ color: "#fff" }} />
@@ -89,10 +85,10 @@ function Navbar() {
                     </Box>
 
                     <Box className="mt-3 d-flex justify-content-center gap-1">
-                        <Button onClick={(()=>navigate ('/register'))} variant="outlined" sx={{ textTransform: 'none', color: "#003B95", fontWeight: "bold" }}>
+                        <Button onClick={(() => navigate('/register'))} variant="outlined" sx={{ textTransform: 'none', color: "#003B95", fontWeight: "bold" }}>
                             Register
                         </Button>
-                        <Button onClick={(()=>navigate ("/sign-in"))} variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
+                        <Button onClick={(() => navigate("/sign-in"))} variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
                             Signin
                         </Button>
                         <Button onClick={() => navigate("/home-section")}
