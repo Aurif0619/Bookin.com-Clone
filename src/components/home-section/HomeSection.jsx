@@ -12,6 +12,7 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import LunchDiningIcon from '@mui/icons-material/LunchDining';
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import WordWide from '../../assets/worldWideImg.jpeg';
 import GiftImg from '../../assets/giftImg.png';
 import LahoreImg from '../../assets/LahoreBigImg.jpg';
@@ -247,10 +248,12 @@ const HomeSection = () => {
             <KingBedIcon className="fs-4" /> Stays
           </Button>
           {Btns.map((btn) => (
-            <Button onClick={(() => navigate)} className="text-white gap-2 ms-3"
+            <Button onClick={(() => navigate(btn.path))} className="text-white gap-2 ms-3"
               key={btn.id}
               sx={{ textTransform: "none" }}> {btn.icon}
-              {btn.name}</Button>
+              {btn.name}
+
+            </Button>
           ))}
 
           <Box sx={{ background: "#003B95", padding: "20px 0" }} className='mt-5'>
@@ -265,12 +268,14 @@ const HomeSection = () => {
               Search deals on hotels, homes, and much more...
             </Typography>
           </Box>
-        </Box>   </Box>
+        </Box>
+      </Box>
       <Box className='container' >
         <Box
           marginTop={-4}
           className="rounded-3 p-1 d-flex gap-2 justify-content-between align-items-center"
-          sx={{ flexWrap: "wrap",
+          sx={{
+            flexWrap: "wrap",
             backgroundColor: "orange",
             border: "orange",
           }}
@@ -288,7 +293,7 @@ const HomeSection = () => {
               startAdornment: <KingBedIcon sx={{ mr: 1 }} />,
             }}
           />
-          <TextField
+          <TextField className='text-black'
             placeholder="Check-in Date"
             fullWidth
             sx={{
@@ -310,8 +315,12 @@ const HomeSection = () => {
               backgroundColor: "white",
               borderRadius: "5px",
             }}
+            InputProps={{
+              startAdornment: <PersonOutlineIcon sx={{ mr: 1 }} />,
+            }}
             value={children}
           >
+
             <MenuItem value={0}>2 adults . 0 children . 1 room</MenuItem>
             <MenuItem value={1}>1 child</MenuItem>
             <MenuItem value={2}>2 children</MenuItem>
@@ -642,11 +651,11 @@ const HomeSection = () => {
                     <Typography variant="h6" fontWeight="bold">
                       {hotels.title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary">
+                    <Typography variant="body2" color="black">
                       {hotels.date}
                     </Typography>
                     {hotels.available && (
-                      <Typography variant="body2" color="textSecondary">
+                      <Typography variant="body2" color="black">
                         Available: {hotels.available}
                       </Typography>
                     )}
@@ -1037,7 +1046,6 @@ const HomeSection = () => {
 
           <img src={OpenTable} alt="" />
         </Box>
-
       </Box>
     </>
   );
