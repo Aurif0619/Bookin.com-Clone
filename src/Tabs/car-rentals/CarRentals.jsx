@@ -1,9 +1,8 @@
-import { Box, Button, Toolbar, Typography, TextField, MenuItem, Card, Grid, CardContent, CardMedia, Chip, ListItem, List } from "@mui/material";
+import { Box, Button, Toolbar, Accordion, AccordionSummary, AccordionDetails, Typography, TextField, MenuItem, Card, Grid, CardContent, CardMedia, Chip, ListItem, List, Checkbox } from "@mui/material";
 import React, { useState } from "react";
 import KingBedIcon from "@mui/icons-material/KingBed";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
-import AddIcon from '@mui/icons-material/Add';
 import AttractionsIcon from "@mui/icons-material/Attractions";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -16,8 +15,19 @@ import ContactSupport from '../../assets/contact.png';
 import Cancellation from '../../assets/cancellation.png';
 import Reviews from '../../assets/reviews.png';
 import { useNavigate } from "react-router";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ElSegundo from '../../assets/El Segundo.jpg';
+import SanDiego from '../../assets/San Dayo.jpg';
+import Calgary from '../../assets/Calgaary.jpg';
+import Coolangatta from '../../assets/coolangata.jpg';
+import Jamaica from '../../assets/jamia.jpg';
+import Milan from '../../assets/Milan.jpg';
+import Pheonix from '../../assets/phoenix.jpg';
+import Madrid from '../../assets/Madrid.jpg';
+import Rome from '../../assets/Rome.jpg';
+import { CheckBox } from "@mui/icons-material";
 
-const HomeSection = () => {
+const CarRental = () => {
   const Btns = [
     { id: 1, name: "Flights", path: "/flights", icon: <FlightTakeoffIcon /> },
     { id: 2, name: "Car rentals", path: "/car-rentals", icon: <DirectionsCarIcon className="d-none d-sm-block" /> },
@@ -33,43 +43,6 @@ const HomeSection = () => {
     { id: 4, name: "Place to stay" },
   ]
 
-  const IslamabadItems = [
-    { id: 1, name: "Islamabad hotels" },
-    { id: 2, name: "Rawalpindi hotels" },
-    { id: 3, name: "Peshawar hotels" },
-    { id: 4, name: "Hunza Valley hotels" },
-    { id: 5, name: "Bahria Town hotels" }
-  ]
-
-  const LahoreItems = [
-    { id: 1, name: "Lahore hotels" },
-    { id: 2, name: "Multan hotels" },
-    { id: 3, name: "Skardu hotels" },
-    { id: 4, name: "Hyderabad hotels" },
-    { id: 5, name: "Ayubia hotels" },
-  ]
-  const KarachiItems = [
-    { id: 1, name: "Karachi hotels" },
-    { id: 2, name: "Faisalabad hotels" },
-    { id: 3, name: "Gujrānwāla hotels" },
-    { id: 4, name: "Malam Jabba hotels" },
-    { id: 5, name: "Bahawalpur hotels" }
-  ]
-  const MurreeItems = [
-    { id: 1, name: "Murree hotels" },
-    { id: 2, name: "Kalām hotels" },
-    { id: 3, name: "Swat hotels" },
-    { id: 4, name: "Muzaffarabad hotels" },
-    { id: 5, name: " Sialkot hotels" },
-  ]
-
-  const NathiaItems = [
-    { id: 1, name: "Nathia Gali hotels" },
-    { id: 2, name: "Naran hotels" },
-    { id: 3, name: "Abbottabad hotels" },
-    { id: 4, name: "Bhurban hotels" },
-    { id: 5, name: "Mingora hotels" },
-  ]
 
   const categories = [
     "Countries", "Regions", "Cities", "Districts", "Airports", "Hotels",
@@ -109,7 +82,7 @@ const HomeSection = () => {
   ]
 
   const Partners = [
-    { name: "Extranet login" },
+    { name: "Extent login" },
     { name: "Partner help" },
     { name: "List your property" },
     { name: "Become an affiliate" },
@@ -139,6 +112,71 @@ const HomeSection = () => {
       description: "By real, verified customers",
     },
   ];
+  const questions = [
+    {
+      question: "Why should I book a car rental in Pakistan with Booking.com?",
+      answer: "Booking.com offers reliable and affordable car rental services with extensive customer support."
+    },
+    {
+      question: "What do I need to rent a car?",
+      answer: "You need a valid driver's license, an ID, and a credit card."
+    },
+    {
+      question: "Am I old enough to rent a car?",
+      answer: "The minimum age to rent a car is usually 21, but it varies by provider."
+    },
+    {
+      question: "Can I book a rental car for someone else?",
+      answer: "Yes, as long as you provide their valid ID and driver's license."
+    },
+    {
+      question: "Any tips for picking the right car?",
+      answer: "Choose a car that fits your trip's needs, considering size, fuel efficiency, and budget."
+    },
+    {
+      question: "Are all fees included in the rental price?",
+      answer: "The rental price typically includes basic fees, but check for extras like insurance or taxes."
+    },
+  ];
+
+  const destinations = [
+    {
+      city: "El Segundo", locations: 103,
+      price: "PKR 14,659.43", image: ElSegundo,
+    },
+    {
+      city: "San Diego", locations: 87,
+      price: "PKR 12,853.49", image: SanDiego,
+    },
+    {
+      city: "Calgary", locations: 42,
+      price: "PKR 13,516.40", image: Calgary,
+    },
+    {
+      city: "Coolangatta", locations: 24,
+      price: "PKR 14,444.16", image: Coolangatta,
+    },
+    {
+      city: "Phoenix", locations: 79,
+      price: "PKR 15,875.94", image: Pheonix,
+    },
+    {
+      city: "Jamaica", locations: 83,
+      price: "PKR 19,202.83", image: Jamaica,
+    },
+    {
+      city: "Madrid", locations: 102,
+      price: "PKR 13,145.76", image: Madrid,
+    },
+    {
+      city: "Milan", locations: 122,
+      price: "PKR 13,521.83", image: Milan,
+    },
+    {
+      city: "Rome", locations: 157, price:
+        "PKR 13,235.17", image: Rome
+    },
+  ];
 
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
@@ -152,7 +190,7 @@ const HomeSection = () => {
         <Toolbar />
         <Box className="container"
           sx={{ flexWrap: "wrap", justifyContent: { xs: "center", md: "flex-start" }, }}>
-          <Button className="border-white text-white rounded-5 gap-2 py-2"
+          <Button onClick={(() => navigate("/stays"))} className="border-white text-white rounded-5 gap-2 py-2"
             variant="outlined"
             sx={{ textTransform: "none" }}>
             <KingBedIcon className="fs-4" /> Stays
@@ -162,7 +200,6 @@ const HomeSection = () => {
               key={btn.id}
               sx={{ textTransform: "none" }}> {btn.icon}
               {btn.name}
-
             </Button>
           ))}
 
@@ -181,79 +218,45 @@ const HomeSection = () => {
         </Box>
       </Box>
 
-      <Box >
+      <Box>
         <Box
-          marginTop={-4}
+          marginTop={{ xs: 0, md: -4 }}
           className="rounded-3 p-1 d-flex gap-1 container justify-content-between align-items-center"
           sx={{
             flexWrap: "wrap",
             backgroundColor: "orange",
             border: "2px solid orange",
             borderRadius: "8px",
-          }} >
-          <TextField
-            placeholder="Pick-up location"
-            sx={{
-              flex: 1,
-              width: "calc(20%)",
-              backgroundColor: "white",
-              borderRadius: "8px",
-            }}
-            InputProps={{
-              startAdornment: <KingBedIcon sx={{ mr: 1 }} />,
-            }}
-          />
-          <TextField
-            placeholder="Pick-up date"
-            sx={{
-              width: "calc(12%)",
-              backgroundColor: "white",
-              borderRadius: "8px",
-            }}
-            InputProps={{
-              startAdornment: <CalendarMonthIcon sx={{ mr: 1 }} />,
-            }}
-          />
-
-          <TextField
-            placeholder="Time"
-            sx={{
-              width: "calc(12%)",
-              backgroundColor: "white",
-              borderRadius: "8px",
-            }}
-            InputProps={{
-              startAdornment: <AccessTimeIcon sx={{ mr: 1 }} />,
-            }}
-          />
-
-          <TextField
-            placeholder="Drop-off date" sx={{
-              width: "calc(12%)", backgroundColor: "white",
-              borderRadius: "8px",
-            }}
-            InputProps={{
-              startAdornment: <CalendarMonthIcon sx={{ mr: 1 }} />,
-            }}
-          />
-          <TextField
-            placeholder="Time"
-            sx={{
-              width: "calc(12%)",
-              backgroundColor: "white",
-              borderRadius: "8px",
-            }}
-            InputProps={{
-              startAdornment: <AccessTimeIcon sx={{ mr: 1 }} />,
-            }}
-          />
-
+            padding: "10px",
+            rowGap: "2px",
+          }}
+        >
+          {[
+            { placeholder: "Pick-up location", icon: <KingBedIcon sx={{ mr: 1 }} />, width: { xs: "100%", md: "20%" } },
+            { placeholder: "Pick-up date", icon: <CalendarMonthIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },
+            { placeholder: "Time", icon: <AccessTimeIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },
+            { placeholder: "Drop-off date", icon: <CalendarMonthIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },
+            { placeholder: "Time", icon: <AccessTimeIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },
+          ].map((field, index) => (
+            <TextField
+              key={index}
+              placeholder={field.placeholder}
+              sx={{
+                width: field.width,
+                backgroundColor: "white",
+                borderRadius: "8px",
+              }}
+              InputProps={{
+                startAdornment: field.icon,
+              }}
+            />
+          ))}
           <TextField
             select
             value={children}
             onChange={(e) => setChildren(e.target.value)}
             sx={{
-              width: "calc(12%)",
+              width: { xs: "100%", md: "12%" },
               backgroundColor: "white",
               borderRadius: "8px",
             }}
@@ -267,12 +270,13 @@ const HomeSection = () => {
             <MenuItem value={3}>3 children</MenuItem>
           </TextField>
 
+          {/* Search Button */}
           <Button
             className="text-white"
             variant="contained"
             sx={{
               backgroundColor: "#003B95",
-              width: "100px",
+              width: { xs: "100%", md: "100px" },
               height: "56px",
               textTransform: "none",
               borderRadius: "8px",
@@ -304,9 +308,14 @@ const HomeSection = () => {
                 > Register
                 </Button>
               </Box>
-              <Box><img width={100} src={GiftImg} alt="Img" /></Box>
+              <Box>
+                <img width={100} src={GiftImg} alt="Img" /></Box>
             </Box>
           </Card>
+          <Box className='my-3 d-non d-md-block'>
+            <Checkbox/>Drop car off at different location
+            <Checkbox />Driver aged 30 – 65?
+          </Box>
         </Box>
         <Box className="bg-body-tertiary py-4">
           <Box className="container">
@@ -314,13 +323,11 @@ const HomeSection = () => {
               {CustomerSupport.map((item, index) => (
                 <Box
                   key={index}
-                  className="d-flex align-items-center p-3"
+                  className="d-flex align-items-center p-3 py-5"
                   sx={{
-                    backgroundColor: "#ffffff",
-                    borderRadius: "8px",
+                    backgroundColor: "#ffffff", borderRadius: "8px",
                     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-                    minWidth: "280px", // Ensure proper width on smaller screens
-                    flex: "1 1 30%",  // Allow wrapping with even spacing
+                    minWidth: "280px", flex: "1 1 30%",
                   }}
                 >
                   <Box sx={{ marginRight: "16px" }}>
@@ -332,7 +339,7 @@ const HomeSection = () => {
                         width: "50px",
                         height: "50px",
                         objectFit: "contain",
-                        borderRadius: "50%", // Circle for the image
+                        borderRadius: "50%",
                       }}
                     />
                   </Box>
@@ -350,56 +357,93 @@ const HomeSection = () => {
           </Box>
         </Box>
 
+        <Box className="bg-body-tertiary py-4">
+          <Box className="container">
+            <Typography variant="h5" fontWeight="bold" className="mb-4" sx={{ color: "#00008B" }}>
+              Frequently asked questions
+            </Typography>
+            <Box className="row g-3">
+              {questions.map((item, index) => (
+                <Box className="col-md-6" key={index}>
+                  <Accordion>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls={`panel${index}-content`}
+                      id={`panel${index}-header`}>
+                      <Typography fontWeight="bold">{item.question}</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>{item.answer}</Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </Box>
+
+        <Box sx={{ width: "90%", margin: "auto", padding: "20px 0" }}>
+          <Typography variant="h4" fontWeight="bold">
+            Popular car rental destinations
+          </Typography>
+          <Typography color="gray">
+            Explore more options to rent a car for cheap
+          </Typography>
+          <Box sx={{ display: "flex", gap: 2, marginTop: 2 }}>
+            <Button variant="contained">Cities worldwide</Button>
+            <Button variant="outlined">Airports worldwide</Button>
+          </Box>
+
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "1fr",
+                sm: "1fr 1fr",
+                md: "1fr 1fr 1fr",
+              },
+              gap: 2,
+              marginTop: 3,
+            }}
+          >
+            {destinations.map((item, index) => (
+              <Box
+                key={index}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                  backgroundColor: "#fff",
+                  padding: "10px",
+                  borderRadius: "8px",
+                  boxShadow: "0px 2px 10px rgba(0,0,0,0.1)",
+                }}
+              >
+                <img
+                  src={item.image} alt={item.city}
+                  style={{ width: "50px", height: "50px", borderRadius: "4px" }}
+                />
+                <Box>
+                  <Typography fontWeight="bold">{item.city}</Typography>
+                  <Typography fontSize="14px">
+                    {item.locations} car rental locations
+                  </Typography>
+                  <Typography fontSize="14px">
+                    Average price of <b>{item.price}</b> per day
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+
+          <Typography
+            sx={{ marginTop: 3, color: "blue", cursor: "pointer", display: "inline-block" }}
+          >
+            + Show more
+          </Typography>
+        </Box>
+
         <Box className="d-flex justify-content-center">
           <Grid>
-            <Grid container spacing={3} className="my-4">
-              <Grid item xs={6} sm={6} md={2.4}>
-                <Box>
-                  {IslamabadItems.map((item, index) => (
-                    <Typography key={index} className="py-1 ms-3">
-                      {item.name}
-                    </Typography>
-                  ))}
-                </Box>
-              </Grid>
-
-              <Grid item xs={6} sm={6} md={2.4}>
-                <Box>
-                  {LahoreItems.map((item, index) => (
-                    <Typography key={index} className="py-1">
-                      {item.name} </Typography>
-                  ))}
-                </Box>
-              </Grid>
-
-              <Grid item xs={6} sm={6} md={2.4}>
-                <Box>
-                  {KarachiItems.map((item, index) => (
-                    <Typography key={index} className="py-1 ms">
-                      {item.name} </Typography>))}
-                </Box>
-              </Grid>
-
-              <Grid item xs={6} sm={6} md={2.4}>
-                <Box>
-                  {MurreeItems.map((item, index) => (
-                    <Typography key={index} className="py-1">
-                      {item.name} </Typography>))}
-                </Box>
-              </Grid>
-
-              <Grid item xs={6} sm={6} md={2.4}>
-                <Box className='d-none d-md-block'>
-                  {NathiaItems.map((item, index) => (
-                    <Typography key={index} className="py-1">
-                      {item.name}
-                    </Typography>
-                  ))}
-                </Box>
-              </Grid>
-              <Button variant="text" sx={{ textTransform: 'none' }}> <AddIcon /> Show More </Button>
-            </Grid>
-            <Box className='d-flex'>
+            <Box className='d-flex my-2 pt-5'>
               <Grid sx={12} sm={6} md={3} lg={8}>
                 <Box className='d-none d-md-block'>
                   <Typography className="container me-4 text-dark"
@@ -418,10 +462,10 @@ const HomeSection = () => {
           </Grid>
         </Box>
       </Box>
-      <Box sx={{ background: '#F5F5F5' }} container>
+      <Box sx={{ background: '#F5F5F5' }}>
         <Grid container spacing={3} className="my-4">
           <Grid item xs={6} sm={6} md={2.4}>
-            <Box className='ms-3 ps-4'>
+            <Box className='ms-3 ps-4 d-none d-md-block'>
               <Typography className="fw-bold ms-5 ps-4" variant="body1">Support</Typography>
               {Support.map((item, index) => (
                 <Typography key={index} className="py-1 ms-5 ps-4">
@@ -432,7 +476,7 @@ const HomeSection = () => {
           </Grid>
 
           <Grid item xs={6} sm={6} md={2.4}>
-            <Box className='ms-4'>
+            <Box className='ms-5 d-none d-md-block '>
               <Typography variant="body1" className="fw-bold" >Discover</Typography>
               {Discover.map((item, index) => (
                 <Typography key={index} className="py-1">
@@ -477,8 +521,9 @@ const HomeSection = () => {
         </Grid>
 
         <Box className='py-3 ms-5 ps-5'>
-          <Button> <img className="rounded-5" src={USAflag}
-            alt="USA Flag" style={{ width: "25px", height: "25px" }} />
+          <Button>
+            <img className="rounded-5" src={USAflag}
+              alt="USA Flag" style={{ width: "25px", height: "25px" }} />
           </Button>
           <Button variant="text" className="text-black"> PKR </Button>
         </Box>
@@ -499,4 +544,4 @@ const HomeSection = () => {
   );
 };
 
-export default HomeSection;
+export default CarRental;

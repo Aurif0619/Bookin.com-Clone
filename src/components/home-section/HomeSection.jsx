@@ -41,6 +41,7 @@ import Das from '../../assets/Das.webp';
 import Agritusiam from '../../assets/Agritusiam.webp';
 import Gyyttja from '../../assets/Gyytja.webp';
 import { useNavigate } from "react-router";
+import { Image } from "@mui/icons-material";
 
 const HomeSection = () => {
   const Btns = [
@@ -186,47 +187,34 @@ const HomeSection = () => {
 
 
   const Support = [
-    { name: "Coronavirus (COVID-19) FAQs" },
-    { name: "Manage your trips" },
-    { name: "Contact Customer Service" },
-    { name: "Hunza Valley hotels" },
+    { name: "Coronavirus (COVID-19) FAQs" }, { name: "Manage your trips" },
+    { name: "Contact Customer Service" }, { name: "Hunza Valley hotels" },
     { name: "Safety Resource Center" }
   ]
 
   const Discover = [
-    { name: "Genius loyalty program" },
-    { name: "Seasonal and holiday deals" },
-    { name: "Travel articles" },
-    { name: "Booking.com for Business" },
-    { name: "Traveller Review Awards" },
-    { name: "Car rental" },
-    { name: "Flight finder" },
-    { name: "Restaurant reservations" },
+    { name: "Genius loyalty program" }, { name: "Seasonal and holiday deals" },
+    { name: "Travel articles" }, { name: "Booking.com for Business" },
+    { name: "Traveller Review Awards" }, { name: "Car rental" },
+    { name: "Flight finder" }, { name: "Restaurant reservations" },
     { name: "Booking.com for Travel Agents" }
   ]
 
   const Terms = [
-    { name: "Privacy & cookies" },
-    { name: "Terms & conditions" },
-    { name: "Partner dispute" },
-    { name: "Modern Slavery Statement" },
+    { name: "Privacy & cookies" }, { name: "Terms & conditions" },
+    { name: "Partner dispute" }, { name: "Modern Slavery Statement" },
     { name: "Human Rights Statement" }
   ]
 
   const Partners = [
-    { name: "Extranet login" },
-    { name: "Partner help" },
-    { name: "List your property" },
-    { name: "Become an affiliate" },
+    { name: "Extranet login" }, { name: "Partner help" },
+    { name: "List your property" }, { name: "Become an affiliate" },
   ]
 
   const About = [
-    { name: "About Booking.com" },
-    { name: "How We Work" },
-    { name: "Sustainability" },
-    { name: "Press center" },
-    { name: "Careers" },
-    { name: "Investor relations" },
+    { name: "About Booking.com" }, { name: "How We Work" },
+    { name: "Sustainability" }, { name: "Press center" },
+    { name: "Careers" }, { name: "Investor relations" },
     { name: "Corporate contact" },
   ]
 
@@ -307,8 +295,7 @@ const HomeSection = () => {
             }}
           />
           <TextField
-            select
-            fullWidth
+            select fullWidth
             sx={{
               flex: 1,
               minWidth: "200px",
@@ -404,20 +391,18 @@ const HomeSection = () => {
               <Box
                 sx={{
                   position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
+                  borderRadius: 2, overflow: 'hidden',
                   textAlign: 'center',
-                }}
-              >
-                <img className="rounded-4"
-                  src={LahoreImg}
-                  alt="Lahore-img"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                  }}
-                />
+                }} >
+                <Button onClick={(() => navigate("/hotel-detail"))}>
+                  <img className="rounded-4"
+                    src={LahoreImg}
+                    alt="Lahore-img"
+                    style={{ width: '100%',
+                      height: 'auto',  display: 'block',
+                    }}
+                  />
+                </Button>
                 <Typography
                   variant="h6"
                   component="div"
@@ -708,7 +693,7 @@ const HomeSection = () => {
         </Box>
         <Box>
           <Box className="d-md-flex justify-content-between align-items-center my-4">
-            <Typography variant="h5" fontWeight="bold">
+            <Typography variant="h5" fontWeight="bold" className="fs-3">
               Get inspiration for your next trip
             </Typography>
             <Typography variant="body2" sx={{ color: 'blue', cursor: 'pointer' }}>

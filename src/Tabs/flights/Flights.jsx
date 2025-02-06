@@ -45,7 +45,8 @@ import { useNavigate } from "react-router";
 const Flights = () => {
   const Btns = [
     { id: 1, name: "Flights", path: "/flights", icon: <FlightTakeoffIcon /> },
-    { id: 2, name: "Car rentals", path: "/car-rentals", icon: <DirectionsCarIcon className="d-none d-sm-block" /> },
+    { id: 2, name: "Car rentals", path: "/car-rentals", icon: 
+    <DirectionsCarIcon className="d-none d-sm-block" /> },
     { id: 3, name: "Attraction", icon: <AttractionsIcon /> },
     { id: 4, name: "Airport taxis", icon: <LocalTaxiIcon /> }
   ];
@@ -252,16 +253,17 @@ const Flights = () => {
         <Toolbar />
         <Box className="container"
           sx={{ flexWrap: "wrap", justifyContent: { xs: "center", md: "flex-start" }, }}>
-          <Button className="border-white text-white rounded-5 gap-2 py-2"
+          <Button onClick={(()=>navigate(("/stays")))} className="border-white text-white rounded-5 gap-2 py-2"
             variant="outlined"
             sx={{ textTransform: "none" }}>
             <KingBedIcon className="fs-4" /> Stays
           </Button>
           {Btns.map((btn) => (
-            <Button onClick={(() => navigate)} className="text-white gap-2 ms-3"
+            <Button onClick={(() => navigate((btn.path)))} className="text-white gap-2 ms-3"
               key={btn.id}
               sx={{ textTransform: "none" }}> {btn.icon}
-              {btn.name}</Button>
+              {btn.name}
+              </Button>
           ))}
 
           <Box sx={{ background: "#003B95", padding: "20px 0" }} className='mt-5'>
@@ -343,6 +345,7 @@ const Flights = () => {
             Search
           </Button>
         </Box>
+        
         <Box>
           <Typography variant="h5" className="mt-5 pt-2 fw-bolder">
             Still interested in these properties?

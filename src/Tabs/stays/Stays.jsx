@@ -40,8 +40,8 @@ import { useNavigate } from "react-router";
 
 const Stays = () => {
   const Btns = [
-    { id: 1, name: "Flights", icon: <FlightTakeoffIcon /> },
-    { id: 2, name: "Car rentals", icon: <DirectionsCarIcon className="d-none d-sm-block" /> },
+    { id: 1, name: "Flights", path: '/flights', icon: <FlightTakeoffIcon /> },
+    { id: 2, name: "Car rentals", path: "/car-rentals", icon: <DirectionsCarIcon className="d-none d-sm-block" /> },
     { id: 3, name: "Attraction", icon: <AttractionsIcon /> },
     { id: 4, name: "Airport taxis", icon: <LocalTaxiIcon /> }
   ];
@@ -214,7 +214,7 @@ const Stays = () => {
             <KingBedIcon className="fs-4" /> Stays
           </Button>
           {Btns.map((btn) => (
-            <Button onClick={(() => navigate)} className="text-white gap-2 ms-3"
+            <Button onClick={(() => navigate(btn.path))} className="text-white gap-2 ms-3"
               key={btn.id}
               sx={{ textTransform: "none" }}> {btn.icon}
               {btn.name}

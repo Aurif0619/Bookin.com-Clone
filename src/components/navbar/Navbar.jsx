@@ -85,7 +85,7 @@ function Navbar() {
                     </Box>
 
                     <Box className="mt-3 d-flex justify-content-center gap-1">
-                        <Button onClick={(() => navigate('/register'))} variant="outlined" sx={{ textTransform: 'none', color: "#003B95", fontWeight: "bold" }}>
+                        <Button onClick={(() => navigate('/register'))} variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
                             Register
                         </Button>
                         <Button onClick={(() => navigate("/sign-in"))} variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
