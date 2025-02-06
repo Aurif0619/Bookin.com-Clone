@@ -1,4 +1,4 @@
-import { Box, Button, Toolbar, Typography, TextField, MenuItem, Card, Grid, CardContent, CardMedia, Chip, ListItem, List } from "@mui/material";
+import { Box, Button, Toolbar, Typography, TextField, MenuItem, Card, Grid, CardContent, CardMedia, Chip } from "@mui/material";
 import React, { useState } from "react";
 import KingBedIcon from "@mui/icons-material/KingBed";
 import LocationCityIcon from '@mui/icons-material/LocationCity';
@@ -41,7 +41,6 @@ import Das from '../../assets/Das.webp';
 import Agritusiam from '../../assets/Agritusiam.webp';
 import Gyyttja from '../../assets/Gyytja.webp';
 import { useNavigate } from "react-router";
-import { Image } from "@mui/icons-material";
 
 const HomeSection = () => {
   const Btns = [
@@ -177,16 +176,7 @@ const HomeSection = () => {
     { id: 5, name: "Mingora hotels" },
   ]
 
-  const categories = [
-    "Countries", "Regions", "Cities", "Districts", "Airports", "Hotels",
-    "Places of interest", "Vacation Homes", "Apartments", "Resorts",
-    "Villas", "Hostels", "B&Bs", "Guest Houses", "Unique places to stay",
-    "All destinations", "All flight destinations", "All car rental locations",
-    "All vacation destinations", "Guides", "Discover", "Reviews", "Discover monthly stays"
-  ];
-
-
-  const Support = [
+    const Support = [
     { name: "Coronavirus (COVID-19) FAQs" }, { name: "Manage your trips" },
     { name: "Contact Customer Service" }, { name: "Hunza Valley hotels" },
     { name: "Safety Resource Center" }
@@ -218,11 +208,10 @@ const HomeSection = () => {
     { name: "Corporate contact" },
   ]
 
-  const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
-  const [rooms, setRooms] = useState(1);
+  const [children] = useState(0);
 
   const navigate = useNavigate();
+
   return (
     <>
       <Box component="main" className="text-white"
@@ -398,8 +387,9 @@ const HomeSection = () => {
                   <img className="rounded-4"
                     src={LahoreImg}
                     alt="Lahore-img"
-                    style={{ width: '100%',
-                      height: 'auto',  display: 'block',
+                    style={{
+                      width: '100%',
+                      height: 'auto', display: 'block',
                     }}
                   />
                 </Button>

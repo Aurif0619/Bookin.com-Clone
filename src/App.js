@@ -31,6 +31,7 @@ function App() {
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/register" element={<Register />} />
           <Route path="/hotel-detail" element={<HotelDetail />} />
+          <Route path="/hotel-availability" element={<HotelDetail />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </ThemeProvider>

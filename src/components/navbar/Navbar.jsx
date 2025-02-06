@@ -14,11 +14,6 @@ function Navbar() {
 
     const navigate = useNavigate();
 
-    const onSubmit = (data) => {
-        console.log("User Data:", data);
-        navigate("/dashboard");
-    };
-
     return (
         <>
             <AppBar sx={{ boxShadow: "none", background: "#003B95" }}>
@@ -70,14 +65,15 @@ function Navbar() {
                     backgroundColor: "#003B95",
                     height: "100%", display: "flex",
                     flexDirection: "column",
-                    alignItems: "center", padding: "16px"}}>
+                    alignItems: "center", padding: "16px"
+                }}>
 
                     <Box className="d-flex justify-content-center align-items-center gap-3">
                         <Button sx={{ color: "#fff", fontWeight: "bold", fontSize: "14px" }}>PKR</Button>
                         <Button sx={{ color: "#fff" }}>
                             <img className="rounded-5"
                                 src={USAflag} alt="USA Flag"
-                                style={{ width: "25px", height: "25px" }}/>
+                                style={{ width: "25px", height: "25px" }} />
                         </Button>
                         <Button sx={{ color: "#fff" }}>
                             <HelpOutlineIcon sx={{ color: "#fff" }} />

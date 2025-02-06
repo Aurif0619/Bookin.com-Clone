@@ -1,4 +1,4 @@
-import { Box, Button, Toolbar, Typography, TextField, MenuItem, Card, Grid, CardContent, CardMedia, Chip, ListItem, List } from "@mui/material";
+import { Box, Button, Toolbar, Typography, TextField, MenuItem, Card, Grid, CardContent, CardMedia, Chip } from "@mui/material";
 import React, { useState } from "react";
 import KingBedIcon from "@mui/icons-material/KingBed";
 import LocationCityIcon from '@mui/icons-material/LocationCity';
@@ -177,15 +177,6 @@ const Flights = () => {
     { id: 5, name: "Mingora hotels" },
   ]
 
-  const categories = [
-    "Countries", "Regions", "Cities", "Districts", "Airports", "Hotels",
-    "Places of interest", "Vacation Homes", "Apartments", "Resorts",
-    "Villas", "Hostels", "B&Bs", "Guest Houses", "Unique places to stay",
-    "All destinations", "All flight destinations", "All car rental locations",
-    "All vacation destinations", "Guides", "Discover", "Reviews", "Discover monthly stays"
-  ];
-
-
   const Support = [
     { name: "Coronavirus (COVID-19) FAQs" },
     { name: "Manage your trips" },
@@ -240,9 +231,7 @@ const Flights = () => {
       rating: '9.7', reviews: '630 reviews', start: 'Starting from', priceNew: 'PKR 51,570', }
   ]
 
-  const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
-  const [rooms, setRooms] = useState(1);
+  const [children] = useState(0);
 
   const navigate = useNavigate();
   return (

@@ -1,4 +1,4 @@
-import { Box, Button, Toolbar, Accordion, AccordionSummary, AccordionDetails, Typography, TextField, MenuItem, Card, Grid, CardContent, CardMedia, Chip, ListItem, List, Checkbox } from "@mui/material";
+import { Box, Button, Toolbar, Accordion, AccordionSummary, AccordionDetails, CardMedia, Typography, TextField, MenuItem, Card, Grid, Checkbox } from "@mui/material";
 import React, { useState } from "react";
 import KingBedIcon from "@mui/icons-material/KingBed";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
@@ -25,7 +25,6 @@ import Milan from '../../assets/Milan.jpg';
 import Pheonix from '../../assets/phoenix.jpg';
 import Madrid from '../../assets/Madrid.jpg';
 import Rome from '../../assets/Rome.jpg';
-import { CheckBox } from "@mui/icons-material";
 
 const CarRental = () => {
   const Btns = [
@@ -34,24 +33,6 @@ const CarRental = () => {
     { id: 3, name: "Attraction", icon: <AttractionsIcon /> },
     { id: 4, name: "Airport taxis", icon: <LocalTaxiIcon /> }
   ];
-
-
-  const FooterBtns = [
-    { id: 1, name: "International cities" },
-    { id: 2, name: "Regions" },
-    { id: 3, name: "Countries" },
-    { id: 4, name: "Place to stay" },
-  ]
-
-
-  const categories = [
-    "Countries", "Regions", "Cities", "Districts", "Airports", "Hotels",
-    "Places of interest", "Vacation Homes", "Apartments", "Resorts",
-    "Villas", "Hostels", "B&Bs", "Guest Houses", "Unique places to stay",
-    "All destinations", "All flight destinations", "All car rental locations",
-    "All vacation destinations", "Guides", "Discover", "Reviews", "Discover monthly stays"
-  ];
-
 
   const Support = [
     { name: "Coronavirus (COVID-19) FAQs" },
@@ -178,11 +159,9 @@ const CarRental = () => {
     },
   ];
 
-  const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
-  const [rooms, setRooms] = useState(1);
-
   const navigate = useNavigate();
+
   return (
     <>
       <Box component="main" className="text-white"
@@ -313,7 +292,7 @@ const CarRental = () => {
             </Box>
           </Card>
           <Box className='my-3 d-non d-md-block'>
-            <Checkbox/>Drop car off at different location
+            <Checkbox />Drop car off at different location
             <Checkbox />Driver aged 30 – 65?
           </Box>
         </Box>

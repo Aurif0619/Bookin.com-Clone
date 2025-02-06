@@ -1,4 +1,4 @@
-import { Box, CardContent, Button, Checkbox, Slider, Card, MenuItem, TextField, Toolbar, Typography, Chip } from '@mui/material';
+import { Box, CardContent, Button, Checkbox, Card, MenuItem, TextField, Toolbar, Typography, Chip, Divider } from '@mui/material';
 import React, { useState } from 'react'
 import KingBedIcon from "@mui/icons-material/KingBed";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
@@ -12,7 +12,8 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Gulberg from '../../assets/Gulber.webp';
 import Premium from '../../assets/premium.webp';
 import Rose from '../../assets/Rose.webp';
-import GoldCrest from '../../assets/Gold crest.webp';
+import GoldCrest from '../../assets/Gold crest.webp'
+import GiftImg from '../../assets/giftImg.png';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const HotelDetail = () => {
@@ -53,51 +54,150 @@ const HotelDetail = () => {
     },
     {
       id: 2,
-      name: 'Hotel Pearl Continental Karachi',
+      name: 'Premium Signature Luxurious',
       rating: 9.2,
       location: 'Karachi • 2.3 km from downtown',
       deal: 'Special Discount',
       roomType: 'Executive Room • 1 king bed',
-      breakfast: false,
+      breakfast: true,
       cancellation: 'No prepayment needed',
-      oldPrice: 'PKR 35,000',
-      newPrice: 'PKR 28,000',
+      oldPrice: 'PKR 105,000',
+      newPrice: 'PKR 63,000',
       taxes: '+ PKR 4,000 taxes and fees',
       image: Premium
     },
     {
       id: 3,
-      name: 'Serena Hotel Islamabad',
+      name: ' Rose Palace Hotel, Gulberg',
       rating: 8.8,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
       roomType: 'Luxury Suite • 2 queen beds',
       breakfast: true,
       cancellation: 'Free cancellation',
-      oldPrice: 'PKR 50,000',
-      newPrice: 'PKR 42,000',
-      taxes: '+ PKR 6,000 taxes and fees',
+      oldPrice: 'PKR 37,350',
+      newPrice: 'PKR 22,410',
+      taxes: '+ PKR 3,586 taxes and fees',
       image: Rose
     },
     {
       id: 4,
-      name: 'Avari Hotel Lahore',
-      rating: 7.9,
+      name: 'Hotel Grand PakeezaOpens in new window',
+      rating: 8.3,
       location: 'Mall Road, Lahore • 10.2 km from downtown',
       deal: 'Limited Time Offer',
       roomType: 'Deluxe Room • 1 double bed',
       breakfast: true,
       cancellation: 'Free cancellation',
       oldPrice: 'PKR 18,500',
-      newPrice: 'PKR 15,500',
-      taxes: '+ PKR 2,500 taxes and fees',
+      newPrice: 'PKR 10,347',
+      taxes: '+ PKR 1,656 taxes and fees',
       image: GoldCrest,
     },
   ];
-  
-  const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
-  const [rooms, setRooms] = useState(1);
+
+  const filters = [
+    {
+      category: "Facilities",
+      options: [
+        { label: "Parking", count: 585 },
+        { label: "Restaurant", count: 127 },
+        { label: "Pet friendly", count: 171 },
+        { label: "Room service", count: 261 },
+        { label: "24-hour front desk", count: 244 },
+        { label: "Show all 14", count: "" },
+      ],
+    },
+    {
+      category: "Property Type",
+      options: [
+        { label: "Entire homes & apartments", count: 346 },
+        { label: "Apartments", count: 312 },
+        { label: "Hotels", count: 208 },
+        { label: "Guesthouses", count: 40 },
+        { label: "Homestays", count: 17 },
+        { label: "Show all 14", count: "" },
+      ],
+    },
+    {
+      category: "Property Rating",
+      options: [
+        { label: "1 star", count: 1 },
+        { label: "2 stars", count: 23 },
+        { label: "3 stars", count: 160 },
+        { label: "4 stars", count: 58 },
+        { label: "5 stars", count: 11 },
+      ],
+    },
+    {
+      category: "Bed Preference",
+      options: [
+        { label: "Twin beds", count: 134 },
+        { label: "Double bed", count: 592 },
+      ],
+    },
+    {
+      category: "Room Facilities",
+      options: [
+        { label: "Sea view", count: 3 },
+        { label: "Private bathroom", count: 438 },
+        { label: "Air conditioning", count: 571 },
+        { label: "Balcony", count: 331 },
+        { label: "Kitchen/Kitchenette", count: 371 },
+        { label: "Show all 25", count: "" },
+      ],
+    },
+    {
+      category: "Review Score",
+      options: [
+        { label: "Wonderful: 9+", count: 83 },
+        { label: "Very Good: 8+", count: 150 },
+        { label: "Good: 7+", count: 222 },
+        { label: "Pleasant: 6+", count: 255 },
+      ],
+    },
+    {
+      category: "Neighborhood",
+      options: [
+        { label: "Johar Town", count: 76 },
+        { label: "Gulberg", count: 28 },
+        { label: "Wapda Town", count: 2 },
+        { label: "Mall Road", count: 2 },
+        { label: "M.M. Allam Road", count: 2 },
+        { label: "Model Town", count: 1 },
+        { label: "Township", count: 1 },
+      ],
+    },
+    {
+      category: "Reservation Policy",
+      options: [
+        { label: "Free cancellation", count: 150 },
+        { label: "Book without credit card", count: 490 },
+        { label: "No prepayment", count: 528 },
+      ],
+    },
+    {
+      category: "Distance from Center of Lahore",
+      options: [
+        { label: "Less than 1 km", count: 15 },
+        { label: "Less than 3 km", count: 38 },
+        { label: "Less than 5 km", count: 73 },
+      ],
+    },
+    {
+      category: "Fun Things To Do",
+      options: [
+        { label: "Fitness center", count: 42 },
+        { label: "Fitness", count: 36 },
+        { label: "Hot tub/Jacuzzi", count: 35 },
+        { label: "Walking tours", count: 34 },
+        { label: "Playground", count: "" },
+      ],
+    },
+  ];
+
+
+  const [children] = useState(0);
 
   const navigate = useNavigate();
   return (
@@ -124,7 +224,8 @@ const HotelDetail = () => {
       </Box>
       <Box
         marginTop={-4}
-        className="rounded-3 p-1 d-flex gap-2 container justify-content-between align-items-center"
+        className="rounded-3 p-1 d-flex gap-2 container
+         justify-content-between align-items-center"
         sx={{
           flexWrap: "wrap",
           backgroundColor: "orange",
@@ -168,9 +269,7 @@ const HotelDetail = () => {
           InputProps={{
             startAdornment: <PersonOutlineIcon sx={{ mr: 1 }} />,
           }}
-          value={children}
-        >
-
+          value={children} >
           <MenuItem value={0}>2 adults . 0 children . 1 room</MenuItem>
           <MenuItem value={1}>1 child</MenuItem>
           <MenuItem value={2}>2 children</MenuItem>
@@ -198,56 +297,74 @@ const HotelDetail = () => {
         </Box>
         <Box
           sx={{
-            display: 'flex',
+            display: 'flex', gap: '10px',
             flexDirection: { xs: 'column', sm: 'column', md: 'row' },
-            gap: '20px',
-          }}
-        >
-          <Box sx={{
-            width: { xs: '100%', md: '25%' },
-            border: '1px solid #ddd',
-            padding: '10px',
-            borderRadius: '10px',
-            backgroundColor: '#f9f9f9',
-          }}
+          }} >
+          <Box
+            sx={{
+              width: { xs: "100%", md: "25%" },
+              border: "1px solid #ddd",
+              padding: "15px",
+              borderRadius: "10px",
+              backgroundColor: "#f9f9f9",
+            }}
           >
-            <Typography variant="h6" className="fw-bold" sx={{ marginBottom: '15px' }}>
-              Filter by:
-            </Typography>
-
-            <Typography variant="subtitle1" sx={{ marginBottom: '10px' }}>
-              Your budget (per night):
-            </Typography>
-            <Slider defaultValue={[0, 30000]} max={30000} valueLabelDisplay="auto" sx={{ color: '#0071c2' }} />
-
-            <Box sx={{ marginTop: '20px' }}>
-              <Typography variant="subtitle1" sx={{ marginBottom: '10px' }}>
-                Popular filters:
+            {filters.map((filter, index) => (
+              <Box key={index} sx={{ marginBottom: "20px" }}>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ fontWeight: "bold" }}
+                >
+                  {filter.category}:
+                </Typography>
+                {filter.options.map((option, idx) => (
+                  <Box
+                    key={idx}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Box display="flex" alignItems="center">
+                      <Checkbox size="small" />
+                      <Typography variant="body2">{option.label}</Typography>
+                    </Box>
+                    <Typography
+                      variant="body2"
+                      sx={{ color: "#0071c2", fontWeight: "bold" }}
+                    >
+                      {option.count}
+                    </Typography>
+                  </Box>
+                ))}
+                {index < filters.length - 1 && <Divider />}
+              </Box>
+            ))}
+          </Box>
+          <Box sx={{ flex: 1 }}>
+            <Box className='d-flex justify-content-between'>
+              <Typography variant="h5" className="text-black fw-bold" sx={{ marginBottom: '20px' }}>
+                Lahore: 611 properties found
               </Typography>
               <Box>
-                <Checkbox /> Free cancellation
-              </Box>
-              <Box>
-                <Checkbox /> No prepayment needed
+                <Button className='bg-body-tertiary rounded-5'>
+                  <Button className='rounded-5 bg-white text-dark'>list</Button>
+                  Grid
+                </Button>
               </Box>
             </Box>
-          </Box>
-
-          <Box sx={{ flex: 1 }}>
-            <Typography variant="h5" className="text-black fw-bold" sx={{ marginBottom: '20px' }}>
-              Lahore: 611 properties found
-            </Typography>
-
             {hotelData.map((hotel) => (
-              <Card
+              <Card className='mt-2'
                 key={hotel.id}
                 sx={{
-                  display: 'flex',  flexDirection: { xs: 'column', sm: 'row' },
+                  display: 'flex', flexDirection: { xs: 'column', sm: 'row' },
                   borderRadius: '10px',
                   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
                   overflow: 'hidden',
                   border: '1px solid #ddd',
                   marginBottom: '20px',
+                  color: "#0071c2"
                 }}
               >
                 <Box
@@ -377,6 +494,28 @@ const HotelDetail = () => {
                 </CardContent>
               </Card>
             ))}
+               <Card className="py-2 container mt-2" sx={{backgroundColor: '#0071c2'}}>
+            <Box className="d-flex justify-content-between">
+              <Box>
+                <Typography variant="h5" className='text-white'>Sign in, save money</Typography>
+                <Typography className='text-white'>
+                  Save 10% or more at participating properties – just look for the blue Genius label
+                </Typography>
+                <Button variant="contained"
+                  sx={{ textTransform: "none" }}
+                  className="mt-3"
+                >
+                  Sign in
+                </Button>
+                <Button variant="outlined"
+                  sx={{ textTransform: "none" }}
+                  className="mt-3 ms-2"
+                > Register
+                </Button>
+              </Box>
+              <Box><img width={100} src={GiftImg} alt="Img" /></Box>
+            </Box>
+          </Card>
           </Box>
         </Box>
       </Box>
