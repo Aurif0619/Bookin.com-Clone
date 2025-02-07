@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Box, Button, Toolbar, Typography, IconButton, Drawer, useMediaQuery, } from "@mui/material";
+import { AppBar, Box, Button, Toolbar, IconButton, Drawer, useMediaQuery, } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import USAflag from '../../assets/AmericaFlag.png'
@@ -18,34 +18,35 @@ function Navbar() {
         <>
             <AppBar sx={{ boxShadow: "none", background: "#003B95" }}>
                 <Toolbar className="container d-flex justify-content-between align-items-center">
-                    <Typography
+                    <Button onClick={(()=>navigate("/"))}
                         variant="h6"
                         sx={{
+                            textTransform: 'none',
                             color: "#fff", fontWeight: "bold",
                             fontSize: "1.5rem",
                             flexGrow: isMobile ? 1 : "unset",
                         }}> Booking.com
-                    </Typography>
+                    </Button>
 
                     {!isMobile ? (
                         <Box sx={{ display: "flex", alignItems: "center" }} className="gap-2">
-                            <Button variant="text" className="text-white">
+                            <Button onClick={(()=>navigate("/hotel-detail"))} variant="text" className="text-white">
                                 PKR
                             </Button>
-                            <Button> <img className="rounded-5"
+                            <Button onClick={(()=>navigate("/"))}> <img className="rounded-5"
                                 src={USAflag}
                                 alt="USA flag"
                                 style={{ width: "25px", height: "25px" }}
                             />
                             </Button>
-                            <Button sx={{ color: "#fff", minWidth: "auto" }}>
+                            <Button onClick={(()=>navigate("/car-rentals"))} sx={{ color: "#fff", minWidth: "auto" }}>
                                 <HelpOutlineIcon />
                             </Button>
-                            <Button variant="outlined"
+                            <Button onClick={(() => navigate("/hotel-detail"))} variant="outlined"
                                 className="text-white"
                                 sx={{ textTransform: "capitalize" }} > List your property
                             </Button>
-                            <Button variant="outlined"
+                            <Button onClick={(() => navigate("/register"))} variant="outlined"
                                 className="text-primary bg-white fw-bold border-white"
                                 sx={{ textTransform: "capitalize" }}> Register
                             </Button>
@@ -70,7 +71,7 @@ function Navbar() {
 
                     <Box className="d-flex justify-content-center align-items-center gap-3">
                         <Button sx={{ color: "#fff", fontWeight: "bold", fontSize: "14px" }}>PKR</Button>
-                        <Button sx={{ color: "#fff" }}>
+                        <Button onClick={(()=>navigate("/"))} sx={{ color: "#fff" }}>
                             <img className="rounded-5"
                                 src={USAflag} alt="USA Flag"
                                 style={{ width: "25px", height: "25px" }} />
@@ -81,7 +82,7 @@ function Navbar() {
                     </Box>
 
                     <Box className="mt-3 d-flex justify-content-center gap-1">
-                        <Button onClick={(() => navigate('/register'))} variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
+                        <Button onClick={() => navigate("/register")} variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
                             Register
                         </Button>
                         <Button onClick={(() => navigate("/sign-in"))} variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
