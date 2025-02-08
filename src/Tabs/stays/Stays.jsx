@@ -35,6 +35,10 @@ import Pakistan from '../../assets/Pakistan.png';
 import Makkah from '../../assets/Madina.png';
 import Dubai from '../../assets/Dubaiflag.png';
 import OpenTable from '../../assets/OpenTable.png';
+import KAYAKImg from '../../assets/KAYAK.png';
+import Agoda from '../../assets/agoda.png';
+import Booking from '../../assets/Booking.png';
+import Priceline from '../../assets/Priceline.png';
 import { useNavigate } from "react-router";
 
 const Stays = () => {
@@ -903,10 +907,11 @@ const Stays = () => {
           Copyright © 1996–2025 Booking.com™. All rights reserved.
         </Typography>
         <Box className='container d-flex justify-content-center align-items-center pb-5'>
-          <Typography className="text-primary"> Booking.com </Typography>
-          <Typography className="mx-3 text-info"> Priceline </Typography>
-          <Typography> K A Y A K </Typography>
-          <img src={OpenTable} alt="TableImg" />
+          <Typography className="text-primary"><img src={Booking} alt="img" /></Typography>
+          <Typography className="mx-3 text-info"><img src={Priceline} alt="img" /></Typography>
+          <Typography><img src={KAYAKImg} alt="img" /></Typography>
+          <Typography><img src={Agoda} alt="img" /></Typography>
+          <img src={OpenTable} alt="img" />
         </Box>
       </Box>
     </>

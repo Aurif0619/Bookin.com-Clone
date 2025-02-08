@@ -18,28 +18,28 @@ function Navbar() {
         <>
             <AppBar sx={{ boxShadow: "none", background: "#003B95" }}>
                 <Toolbar className="container d-flex justify-content-between align-items-center">
-                    <Button onClick={(()=>navigate("/"))}
+                    <Button onClick={(() => navigate("/"))}
                         variant="h6"
                         sx={{
                             textTransform: 'none',
                             color: "#fff", fontWeight: "bold",
                             fontSize: "1.5rem",
-                            flexGrow: isMobile ? 1 : "unset",
+                            flexGrow: isMobile ? 1 : "unset"
                         }}> Booking.com
                     </Button>
 
                     {!isMobile ? (
                         <Box sx={{ display: "flex", alignItems: "center" }} className="gap-2">
-                            <Button onClick={(()=>navigate("/hotel-detail"))} variant="text" className="text-white">
+                            <Button onClick={(() => navigate("/hotel-detail"))} variant="text" className="text-white">
                                 PKR
                             </Button>
-                            <Button onClick={(()=>navigate("/"))}> <img className="rounded-5"
+                            <Button onClick={(() => navigate("/"))}> <img className="rounded-5"
                                 src={USAflag}
                                 alt="USA flag"
                                 style={{ width: "25px", height: "25px" }}
                             />
                             </Button>
-                            <Button onClick={(()=>navigate("/car-rentals"))} sx={{ color: "#fff", minWidth: "auto" }}>
+                            <Button onClick={(() => navigate("/car-rentals"))} sx={{ color: "#fff", minWidth: "auto" }}>
                                 <HelpOutlineIcon />
                             </Button>
                             <Button onClick={(() => navigate("/hotel-detail"))} variant="outlined"
@@ -70,13 +70,13 @@ function Navbar() {
                 }}>
 
                     <Box className="d-flex justify-content-center align-items-center gap-3">
-                        <Button sx={{ color: "#fff", fontWeight: "bold", fontSize: "14px" }}>PKR</Button>
-                        <Button onClick={(()=>navigate("/"))} sx={{ color: "#fff" }}>
+                        <Button onClick={(() => navigate("/hotel-detail"))} sx={{ color: "#fff", fontWeight: "bold", fontSize: "14px" }}>PKR</Button>
+                        <Button onClick={(() => navigate("/"))} sx={{ color: "#fff" }}>
                             <img className="rounded-5"
                                 src={USAflag} alt="USA Flag"
                                 style={{ width: "25px", height: "25px" }} />
                         </Button>
-                        <Button sx={{ color: "#fff" }}>
+                        <Button onClick={(() => navigate("/car-rentals"))} sx={{ color: "#fff" }}>
                             <HelpOutlineIcon sx={{ color: "#fff" }} />
                         </Button>
                     </Box>

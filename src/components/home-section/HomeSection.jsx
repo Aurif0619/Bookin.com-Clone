@@ -40,12 +40,19 @@ import Rancoz from '../../assets/Rancoz.webp';
 import Das from '../../assets/Das.webp';
 import Agritusiam from '../../assets/Agritusiam.webp';
 import Gyyttja from '../../assets/Gyytja.webp';
+import KAYAKImg from '../../assets/KAYAK.png';
+import Agoda from '../../assets/agoda.png';
+import Booking from '../../assets/Booking.png';
+import Priceline from '../../assets/Priceline.png';
 import { useNavigate } from "react-router";
 
 const HomeSection = () => {
   const Btns = [
     { id: 1, name: "Flights", path: "/flights", icon: <FlightTakeoffIcon /> },
-    { id: 2, name: "Car rentals", path: "/car-rentals", icon: <DirectionsCarIcon className="d-none d-sm-block" /> },
+    {
+      id: 2, name: "Car rentals", path: "/car-rentals",
+      icon: <DirectionsCarIcon className="d-none d-sm-block" />
+    },
     { id: 3, name: "Attraction", icon: <AttractionsIcon /> },
     { id: 4, name: "Airport taxis", icon: <LocalTaxiIcon /> }
   ];
@@ -115,20 +122,24 @@ const HomeSection = () => {
   ];
 
   const Properties = [{
-    id: '1', Image: Rancoz, title: 'Magnova Studios', location: 'Poland, Kiszkowo',
-    rating: '9.7', reviews: '630 reviews', start: 'Starting from', priceNew: 'PKR 51,570',
+    id: '1', Image: Rancoz, title: 'Magnova Studios',
+    location: 'Poland, Kiszkowo', rating: '9.7',
+    reviews: '630 reviews', start: 'Starting from', priceNew: 'PKR 51,570',
   },
   {
-    id: '2', Image: Das, title: 'Das rote Haus hinterm Deich', location: 'Germany, Simonsberg',
-    rating: '9.2', reviews: '47 reviews', start: 'Starting from', priceNew: 'PKR 104,338',
+    id: '2', Image: Das, title: 'Das rote Haus hinterm Deich',
+    location: 'Germany, Simonsberg', rating: '9.2', reviews: '47 reviews',
+    start: 'Starting from', priceNew: 'PKR 104,338',
   },
   {
-    id: '3', Image: Agritusiam, title: 'Agriturismo Cabrele', location: 'Italy, Santorso',
-    rating: '9.4', reviews: '291 reviews', start: 'Starting from', priceNew: 'PKR 87,817',
+    id: '3', Image: Agritusiam, title: 'Agriturismo Cabrele',
+    location: 'Italy, Santorso', rating: '9.4', reviews: '291 reviews',
+    start: 'Starting from', priceNew: 'PKR 87,817',
   },
   {
-    id: '4', Image: Gyyttja, title: 'Gyttja Västergårds', location: 'Finland, Nauvo',
-    rating: '9.2', reviews: '112 reviews', start: 'Starting from', priceNew: 'PKR 104,338',
+    id: '4', Image: Gyyttja, title: 'Gyttja Västergårds',
+    location: 'Finland, Nauvo', rating: '9.2', reviews: '112 reviews',
+    start: 'Starting from', priceNew: 'PKR 104,338',
   },
   ]
   const FooterBtns = [
@@ -176,7 +187,7 @@ const HomeSection = () => {
     { id: 5, name: "Mingora hotels" },
   ]
 
-    const Support = [
+  const Support = [
     { name: "Coronavirus (COVID-19) FAQs" }, { name: "Manage your trips" },
     { name: "Contact Customer Service" }, { name: "Hunza Valley hotels" },
     { name: "Safety Resource Center" }
@@ -229,7 +240,6 @@ const HomeSection = () => {
               key={btn.id}
               sx={{ textTransform: "none" }}> {btn.icon}
               {btn.name}
-
             </Button>
           ))}
 
@@ -252,90 +262,59 @@ const HomeSection = () => {
           marginTop={-4}
           className="rounded-3 p-1 d-flex gap-2 justify-content-between align-items-center"
           sx={{
-            flexWrap: "wrap",
-            backgroundColor: "orange",
-            border: "orange",
-          }}
-        >
+            flexWrap: "wrap", backgroundColor: "orange", border: "orange",
+          }}>
           <TextField
             placeholder="Where are you going?"
-            fullWidth
-            sx={{
-              flex: 1,
-              minWidth: "200px",
-              backgroundColor: "white",
-              borderRadius: "5px",
+            fullWidth sx={{
+              flex: 1, minWidth: "200px",
+              backgroundColor: "white", borderRadius: "5px",
             }}
             InputProps={{
               startAdornment: <KingBedIcon sx={{ mr: 1 }} />,
-            }}
-          />
-          <TextField className='text-black'
-            placeholder="Check-in Date"
+            }} />
+          <TextField
+            type="date"
+            className='text-black'
             fullWidth
             sx={{
-              flex: 1,
-              minWidth: "200px",
-              backgroundColor: "white",
-              borderRadius: "5px",
+              flex: 1, minWidth: "200px",
+              backgroundColor: "white", borderRadius: "5px",
             }}
             InputProps={{
               startAdornment: <CalendarMonthIcon sx={{ mr: 1 }} />,
-            }}
-          />
-          <TextField
-            select fullWidth
+            }} />
+          <TextField select fullWidth
             sx={{
-              flex: 1,
-              minWidth: "200px",
-              backgroundColor: "white",
-              borderRadius: "5px",
+              flex: 1, minWidth: "200px",
+              backgroundColor: "white", borderRadius: "5px",
             }}
             InputProps={{
               startAdornment: <PersonOutlineIcon sx={{ mr: 1 }} />,
             }}
-            value={children}
-          >
+            value={children} >
 
             <MenuItem value={0}>2 adults . 0 children . 1 room</MenuItem>
             <MenuItem value={1}>1 child</MenuItem>
             <MenuItem value={2}>2 children</MenuItem>
             <MenuItem value={3}>3 children</MenuItem>
           </TextField>
-          <Button
-            className="text-white"
-            variant="contained"
-            sx={{
-              backgroundColor: "#003B95",
-              minWidth: "150px",
-              height: "56px",
-              textTransform: "none",
-            }}
-          >
-            Search
-          </Button>
+          <Button className="text-white" variant="contained" sx={{
+            backgroundColor: "#003B95", minWidth: "150px", height: "56px",
+            textTransform: "none"
+          }}> Search </Button>
         </Box>
 
         <Box className="text-black mt-5 my-2">
-          <Typography className="fw-bold" variant="h5">
-            Offers
-          </Typography>
+          <Typography className="fw-bold" variant="h5"> Offers </Typography>
           <Typography className="my-2">Promotions, deals, and special offers for you</Typography>
         </Box>
         <Card className="py-1 ps-3 mt-2">
           <Box className="d-flex justify-content-between">
-            <Box>
-              <Typography variant="h5">Save on stays worldwide</Typography>
-              <Typography>
-                Start your year with an adventure, saving 15% or more with Early
-                2025 Deals.
-              </Typography>
-              <Button
-                variant="contained"
-                sx={{ textTransform: "none" }}
-                className="mt-3"
-              >
-                Save 15% or more
+            <Box><Typography variant="h5">Save on stays worldwide</Typography>
+              <Typography> Start your year with an adventure, saving 15% or more with Early 2025 Deals.</Typography>
+              <Button variant="contained"
+                sx={{ textTransform: "none" }} className="mt-3">  Save 15% or more
               </Button>
             </Box>
             <Box className='d-flex justify-content-center align-items-center me-2'>
@@ -349,24 +328,21 @@ const HomeSection = () => {
           </Typography>
           <Card className="py-2 container mt-2">
             <Box className="d-flex justify-content-between">
-              <Box>
-                <Typography variant="h5">Sign in, save money</Typography>
+              <Box><Typography variant="h5">Sign in, save money</Typography>
                 <Typography>
                   Save 10% or more at participating properties – just look for the blue Genius label
                 </Typography>
                 <Button variant="contained"
                   sx={{ textTransform: "none" }}
-                  className="mt-3"
-                >
-                  Sign in
+                  className="mt-3"> Sign in
                 </Button>
                 <Button variant="outlined"
                   sx={{ textTransform: "none" }}
-                  className="mt-3 ms-2"
-                > Register
+                  className="mt-3 ms-2"> Register
                 </Button>
+              </Box><Box>
+                <img width={100} src={GiftImg} alt="Img" />
               </Box>
-              <Box><img width={100} src={GiftImg} alt="Img" /></Box>
             </Box>
           </Card>
         </Box>
@@ -383,30 +359,34 @@ const HomeSection = () => {
                   borderRadius: 2, overflow: 'hidden',
                   textAlign: 'center',
                 }} >
-                <Button onClick={(() => navigate("/hotel-detail"))}>
-                  <img className="rounded-4"
+                <Button onClick={() => navigate("/hotel-detail")} sx={{ padding: 0 }}>
+                  <img
+                    className="rounded-4"
                     src={LahoreImg}
-                    alt="Lahore-img"
-                    style={{
-                      width: '100%',
-                      height: 'auto', display: 'block',
-                    }}
-                  />
+                    alt="Lahore" style={{
+                      width: '100%', height: 'auto',
+                      display: 'block'
+                    }} />
                 </Button>
                 <Typography
-                  variant="h6"
-                  component="div"
+                  variant="h5" component="div"
                   sx={{
                     position: 'absolute',
-                    top: 8,
-                    left: 8,
+                    top: 15, left: 15,
                     backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '4px 8px',
-                    color: '#fff',
+                    borderRadius: 1, padding: '6px 10px', color: '#fff',
+                    display: 'flex', alignItems: 'center',
+                    fontSize: { xs: '1rem', md: '1.25rem' },
                   }}
                 >
-                  Lahore <img src={Pakistan} alt="Pakistan" />
+                  Lahore
+                  <img
+                    src={Pakistan}
+                    alt="Pakistan"
+                    style={{
+                      marginLeft: 8, width: '20px',
+                      height: '20px'
+                    }} />
                 </Typography>
               </Box>
             </Grid>
@@ -420,115 +400,103 @@ const HomeSection = () => {
                   textAlign: 'center',
                 }}
               >
-                <img className="rounded-4"
-                  src={IslamabadImg}
-                  alt="Islamabad-img"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                  }}
-                />
+                <Button onClick={() => navigate("/hotel-detail")} sx={{ padding: 0 }}>
+                  <img
+                    className="rounded-4"
+                    src={IslamabadImg}
+                    alt="Islamabad"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block',
+                    }}
+                  />
+                </Button>
                 <Typography
-                  variant="h6"
+                  variant="h5"
                   component="div"
                   sx={{
                     position: 'absolute',
-                    top: 8,
-                    left: 8,
+                    top: 15,
+                    left: 15,
                     backgroundColor: 'rgba(0, 0, 0, 0.6)',
                     borderRadius: 1,
-                    padding: '4px 8px',
+                    padding: '6px 10px',
                     color: '#fff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    fontSize: { xs: '1rem', md: '1.25rem' },
                   }}
                 >
-                  Islamabad <img src={Pakistan} alt="Pakistan" />
+                  Islamabad
+                  <img
+                    src={Pakistan}
+                    alt="Pakistan"
+                    style={{
+                      marginLeft: 8,
+                      width: '20px',
+                      height: '20px',
+                    }}
+                  />
                 </Typography>
               </Box>
             </Grid>
           </Grid>
+
         </Box>
 
         <Box className="d-flex my-3">
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  textAlign: 'center',
-                }}>
-                <img src={KarachiImg} alt="Karachi" style={{ width: '100%', height: 'auto' }} />
-                <Typography
-                  variant="h6"
-                  component="div"
+              <Box sx={{
+                position: 'relative', borderRadius: 2,
+                overflow: 'hidden', textAlign: 'center',
+              }}> <img src={DubaiImg} alt="Dubai" style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+                <Typography variant="h6"
+                  component="div" sx={{
+                    position: 'absolute', top: 8,
+                    left: 8, color: '#fff',
+                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                    borderRadius: 1, padding: '4px 8px',
+                  }}>
+                  Dubai <img src={Dubai} alt="Dubai" />
+                </Typography>
+              </Box>
+            </Grid>
+            {/* Medina */}
+            <Grid item xs={12} sm={6} md={4}>
+              <Box sx={{
+                position: 'relative', borderRadius: 2,
+                overflow: 'hidden', textAlign: 'center',
+              }}>
+                <img src={MedinaImg} alt="Medina"
+                  style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+                />
+                <Typography variant="h6" component="div"
                   sx={{
                     position: 'absolute',
                     top: 8, left: 8, color: '#fff',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)', borderRadius: 1, padding: '4px 8px',
-                  }} >
-                  Karachi <img src={Pakistan} alt="Pakistan" /></Typography> </Box>
-            </Grid>
-
-            {/* Medina */}
-            <Grid item xs={12} sm={6} md={4}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  textAlign: 'center',
-                }}
-              >
-                <img
-                  src={MedinaImg}
-                  alt="Medina"
-                  style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-                />
-                <Typography
-                  variant="h6"
-                  component="div"
-                  sx={{
-                    position: 'absolute',
-                    top: 8,
-                    left: 8,
-                    color: '#fff',
                     backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '4px 8px',
-                  }}
-                >
+                    borderRadius: 1, padding: '4px 8px',
+                  }}>
                   Medina <img src={Makkah} alt="Medina" />
                 </Typography>
               </Box>
             </Grid>
 
             <Grid item xs={12} sm={6} md={4}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  textAlign: 'center',
-                }}
-              >
-                <img
-                  src={DubaiImg} alt="Dubai" style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-                />
-                <Typography
-                  variant="h6"
-                  component="div"
+              <Box sx={{
+                position: 'relative', borderRadius: 2,
+                overflow: 'hidden', textAlign: 'center',
+              }}>
+                <img src={KarachiImg} alt="Karachi" style={{ width: '100%', height: 'auto' }} />
+                <Typography variant="h6" component="div"
                   sx={{
-                    position: 'absolute',
-                    top: 8,
-                    left: 8,
-                    color: '#fff',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '4px 8px',
+                    position: 'absolute', top: 8, left: 8, color: '#fff',
+                    backgroundColor: 'rgba(0, 0, 0, 0.6)', borderRadius: 1, padding: '4px 8px',
                   }}>
-                  Dubai <img src={Dubai} alt="Dubai" />
+                  Karachi
+                  <img src={Pakistan} className="mx-1 mb-1" alt="Pakistan" />
                 </Typography>
               </Box>
             </Grid>
@@ -538,62 +506,54 @@ const HomeSection = () => {
         <Grid spacing={2} alignItems="center">
           <Grid item xs={12} md={8}>
             <Box className='d-flex' flexWrap="wrap" gap={2}>
-              <Button
-                variant="outlined"
+              <Button variant="outlined"
                 className="outlined rounded-5 mt-4 text-dark"
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 1,
-                  px: 2,
-                  whiteSpace: "nowrap",
-                }}
-              >
+                  gap: 1, px: 2, whiteSpace: "nowrap",
+                }}>
                 <LocationCityIcon />
                 <Typography sx={{ textTransform: "none" }}>City</Typography>
               </Button>
 
               {/* Quick Buttons */}
               {QuickBtns.map((btn) => (
-                <Button
-                  key={btn.id}
-                  variant="text"
-                  className="text-dark rounded-5 pt-4"
+                <Button key={btn.id}
+                  variant="text" className="text-dark rounded-5 pt-4"
                   sx={{
-                    textTransform: "none",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 1,
-                    px: 2,
-                  }}
-                >
-                  {btn.icon} {btn.name}
+                    textTransform: "none", display: "flex",
+                    alignItems: "center", gap: 1, px: 2
+                  }}>{btn.icon} {btn.name}
                 </Button>
               ))}
             </Box>
           </Grid>
         </Grid>
-        {/* Heading Section (Explore Pakistan) */}
+
         <Grid item xs={12} className="mt-3">
           <Typography variant="h4" className="mt-5 fw-bold my-3">
             Explore Pakistan
           </Typography>
         </Grid>
-        <Grid container className="justify-content-between">
+        <Grid container spacing={2} justifyContent="center">
           {cityData.map((city, index) => (
-            <Grid item
-              xs={6} sm={4} md={3} lg={2}
+            <Grid
+              item xs={6} sm={6} md={4} lg={2.4} xl={2}
               key={index}
               sx={{ display: index === 0 ? { xs: "none", sm: "block" } : "block" }}
             >
               <Box mb={2}>
-                <img
-                  src={city.image}
-                  className="rounded-3"
-                  alt={city.name}
-                  style={{ width: "100%", maxWidth: "100%", height: "auto" }}
-                />
-                <Typography className="fw-bold mt-2">{city.name}</Typography>
+                <img src={city.image}
+                  className="rounded-3" alt={city.name}
+                  style={{
+                    width: "100%", height: "auto", objectFit: "cover",
+                    borderRadius: "10px",
+                  }} />
+                <Typography
+                  className="fw-bold mt-2" sx={{ fontSize: { xs: "0.875rem", md: "1rem" } }} >
+                  {city.name}
+                </Typography>
                 <Typography variant="body2" color="textSecondary">
                   {city.distance}
                 </Typography>
@@ -602,39 +562,30 @@ const HomeSection = () => {
           ))}
         </Grid>
 
+
         <Box className='mt-4'>
-          <Typography variant="h5" className="fw-bold my-2 mt-2">
-            Browse by property type in Lahore
+          <Typography variant="h5" className="fw-bold my-2 mt-2"> Browse by property type in Lahore
           </Typography>
           <Grid container spacing={1}>
             {LahoreHotels.map((hotels) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={hotels.id}>
-                <Box
-                  sx={{
-                    borderRadius: 2,
-                    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-                    overflow: "hidden", p: 1,
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    image={hotels.Image}
+                <Box sx={{
+                  borderRadius: 2, boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                  overflow: "hidden", p: 1,
+                }}>
+                  <CardMedia component="img" image={hotels.Image}
                     alt={hotels.title}
-                    sx={{ height: 200, objectFit: "cover", borderRadius: "10px" }}
-                  />
+                    sx={{ height: 200, objectFit: "cover", borderRadius: "10px" }} />
                   <Box sx={{ p: 2 }}>
                     <Typography variant="h6" fontWeight="bold">
-                      {hotels.title}
-                    </Typography>
+                      {hotels.title} </Typography>
                     <Typography variant="body2" color="black">
-                      {hotels.date}
-                    </Typography>
+                      {hotels.date} </Typography>
                     {hotels.available && (
                       <Typography variant="body2" color="black">
                         Available: {hotels.available}
                       </Typography>
-                    )}
-                  </Box>
+                    )}</Box>
                 </Box>
               </Grid>
             ))}
@@ -644,8 +595,7 @@ const HomeSection = () => {
         {/* Dealing Hotels */}
         <Box className='mt-5'>
           <Typography variant="h5" fontWeight="bold" className="my-2 py-2">
-            Deals for the weekend
-          </Typography>
+            Deals for the weekend </Typography>
           <Grid container spacing={1}>
             {MakkahHotels.map((hotel) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={hotel.id}>
@@ -658,7 +608,7 @@ const HomeSection = () => {
                   <Typography className="ps-1" sx={{
                     mt: 1, fontSize: '0.9rem', fontWeight: 'bold', display: 'flex',
                     alignItems: 'center', gap: 1
-                  }}  >
+                  }}>
                     <Chip label={hotel.rating} color="primary" size="small" sx={{ fontWeight: 'bold' }} />
                     <Typography variant="body2">{hotel.reviews}</Typography>
                   </Typography>
@@ -670,11 +620,9 @@ const HomeSection = () => {
                         textDecoration: 'line-through',
                         color: 'gray', mr: 1
                       }}>
-                      {hotel.priceOld}
-                    </Typography>
+                      {hotel.priceOld} </Typography>
                     <Typography variant="h6" fontWeight="bold">
-                      {hotel.priceNew}
-                    </Typography>
+                      {hotel.priceNew}</Typography>
                   </Box>
                 </Card>
               </Grid>
@@ -685,21 +633,28 @@ const HomeSection = () => {
           <Box className="d-md-flex justify-content-between align-items-center my-4">
             <Typography variant="h5" fontWeight="bold" className="fs-3">
               Get inspiration for your next trip
-            </Typography>
-            <Typography variant="body2" sx={{ color: 'blue', cursor: 'pointer' }}>
-              More
-            </Typography>
+            </Typography> <Typography variant="body2" sx={{ color: 'blue', cursor: 'pointer' }}>
+              More </Typography>
           </Box>
 
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={6}>
               <Card className='d-none d-md-block'>
                 <Box sx={{ position: 'relative' }}>
-                  <img src={LosAngelImg} alt="Los Angel" sx={{ width: '100%', height: '100%', borderRadius: '8px' }} />
-                  <Box sx={{ position: 'absolute', bottom: 0, left: 0, width: '100%', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                  <img src={LosAngelImg} alt="Los Angel" sx={{
+                    width: '100%', height: '100%',
+                    borderRadius: '8px'
+                  }} />
+                  <Box sx={{
+                    position: 'absolute', bottom: 0, left: 0, width: '100%',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+                  }}>
                     <CardContent>
-                      <Typography variant="subtitle1" color="white" className="fs-5 fw-bold"> 5 of the best hotels in Los Angeles</Typography>
-                      <Typography variant="body2" color="white" className="fw-bold"> From Hollywood to Beverly Hills, discover 5 of the best hotels in Los Angeles for your stay. </Typography>
+                      <Typography variant="subtitle1" color="white" className="fs-5 fw-bold">
+                        5 of the best hotels in Los Angeles</Typography>
+                      <Typography variant="body2" color="white" className="fw-bold">
+                        From Hollywood to Beverly Hills, discover 5 of the best hotels
+                        in Los Angeles for your stay. </Typography>
                     </CardContent>
                   </Box>
                 </Box>
@@ -722,10 +677,9 @@ const HomeSection = () => {
             <Grid item xs={12} sm={6} md={3}>
               <Card>
                 <img src={LosAngelImg3} alt="Los Angel" style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
-                <CardContent>
-                  <Typography variant="subtitle1" fontWeight="bold">
-                    5 best ski towns around the world
-                  </Typography>
+                <CardContent> <Typography variant="subtitle1" fontWeight="bold">
+                  5 best ski towns around the world
+                </Typography>
                   <Typography variant="body2" color="textSecondary">
                     Discover a winter wonderland in these charming ski destinations.
                   </Typography>
@@ -790,23 +744,21 @@ const HomeSection = () => {
                 </Button>
                 <Button variant="outlined"
                   sx={{ textTransform: "none" }}
-                  className="mt-3 ms-2"
-                > Register
-                </Button>
+                  className="mt-3 ms-2"> Register</Button>
               </Box>
-              <Box><img width={100} src={GiftImg} alt="Img" /></Box>
+              <Box>
+                <img width={100} src={GiftImg} alt="Img" />
+                f</Box>
             </Box>
           </Card>
         </Box>
         <Box className="d-none d-md-block" sx={{ position: "relative", overflow: "hidden" }}>
-          <Card
-            className="ps-5"
-            sx={{
-              display: "flex", alignItems: "center",
-              justifyContent: "space-between", background: "#F8F9FA",
-              position: "relative", overflow: "hidden",
-              padding: "20px", height: "auto",
-            }}
+          <Card className="ps-5" sx={{
+            display: "flex", alignItems: "center",
+            justifyContent: "space-between", background: "#F8F9FA",
+            position: "relative", overflow: "hidden",
+            padding: "20px", height: "auto",
+          }}
           >
             <Box
               sx={{
@@ -817,7 +769,8 @@ const HomeSection = () => {
               }}
             />
             <Box
-              className="text-white py-5 ms-5 ps-4 d-flex justify-content-center align-content-center"
+              className="text-white py-5 ms-5 ps-4 d-flex 
+              justify-content-center align-content-center"
               sx={{
                 position: "relative",
                 zIndex: 2, top: 6, left: 220,
@@ -827,7 +780,8 @@ const HomeSection = () => {
                 Find homes <br /> for your next trip
 
               </Typography>
-              <Button variant="contained" className="text-primary mt-3" sx={{ mt: 1, background: "#fff", textTransform: "none" }}>
+              <Button variant="contained" className="text-primary mt-3"
+                sx={{ mt: 1, background: "#fff", textTransform: "none" }}>
                 Discover homes
               </Button>
             </Box>
@@ -848,26 +802,19 @@ const HomeSection = () => {
                 variant="outlined"
                 className="outlined rounded-5 text-dark"
                 sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  px: 2,
-                  textTransform: 'none',
+                  display: "flex", alignItems: "center",
+                  px: 2, textTransform: 'none',
                   whiteSpace: "nowrap",
-                }} >
-                Domestic cities
+                }}>Domestic cities
               </Button>
 
               {FooterBtns.map((btns) => (
                 <Button
-                  variant="text"
-                  className="text-dark rounded-5"
+                  variant="text" className="text-dark rounded-5"
                   sx={{
-                    textTransform: "none",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 1, px: 2,
-                  }}
-                >
+                    textTransform: "none", display: "flex",
+                    alignItems: "center", gap: 1, px: 2,
+                  }}>
                   {btns.name}
                 </Button>
               ))}
@@ -881,8 +828,7 @@ const HomeSection = () => {
             <Box>
               {IslamabadItems.map((item, index) => (
                 <Typography key={index} className="py-1 ms-3">
-                  {item.name}
-                </Typography>
+                  {item.name}</Typography>
               ))}
             </Box>
           </Grid>
@@ -895,12 +841,12 @@ const HomeSection = () => {
               ))}
             </Box>
           </Grid>
-
           <Grid item xs={6} sm={6} md={2.4}>
             <Box>
               {KarachiItems.map((item, index) => (
-                <Typography key={index} className="py-1 ms">
-                  {item.name} </Typography>))}
+                <Typography key={index} className="py-1 ms-3">
+                  {item.name}</Typography>
+              ))}
             </Box>
           </Grid>
 
@@ -908,7 +854,8 @@ const HomeSection = () => {
             <Box>
               {MurreeItems.map((item, index) => (
                 <Typography key={index} className="py-1">
-                  {item.name} </Typography>))}
+                  {item.name} </Typography>
+              ))}
             </Box>
           </Grid>
 
@@ -921,7 +868,7 @@ const HomeSection = () => {
               ))}
             </Box>
           </Grid>
-          <Button variant="text" sx={{ textTransform: 'none' }}> <AddIcon className="" /> Show More </Button>
+          <Button variant="text" sx={{ textTransform: 'none' }}> <AddIcon /> Show More </Button>
         </Grid>
 
         <Box className="d-flex justify-content-center">
@@ -931,9 +878,7 @@ const HomeSection = () => {
                 <Box className='d-none d-md-block'>
                   <Typography className="container me-4 text-dark"
                     sx={{
-                      px: 2,
-                      textTransform: 'none',
-                      whiteSpace: "nowrap",
+                      px: 2, textTransform: 'none', whiteSpace: "nowrap",
                     }} >
                     Countries . Regions . Cities . Districts Airports . Hotels . Places of interest .  Vacation Homes . Apartments . Resorts .
                     Villas . Hostels .  B&Bs . Guest Houses . Unique places to stay . <br /> All destinations . All flight destinations . All car rental locations . All vacation destinations . Guides . Discover .  Reviews .
@@ -948,7 +893,7 @@ const HomeSection = () => {
       <Box sx={{ background: '#F5F5F5' }} container>
         <Grid container spacing={3} className="my-4">
           <Grid item xs={6} sm={6} md={2.4}>
-            <Box className='ms-3 ps-4'>
+            <Box className='ms-3 ps-4 d-none d-md-block'>
               <Typography className="fw-bold ms-5 ps-4" variant="body1">Support</Typography>
               {Support.map((item, index) => (
                 <Typography key={index} className="py-1 ms-5 ps-4">
@@ -959,7 +904,7 @@ const HomeSection = () => {
           </Grid>
 
           <Grid item xs={6} sm={6} md={2.4}>
-            <Box className='ms-4'>
+            <Box className='ms-4 d-none d-md-block'>
               <Typography variant="body1" className="fw-bold" >Discover</Typography>
               {Discover.map((item, index) => (
                 <Typography key={index} className="py-1">
@@ -975,8 +920,7 @@ const HomeSection = () => {
               {Terms.map((item, index) => (
                 <Typography key={index} className="py-1 ms-4">
                   {item.name}
-                </Typography>
-              ))}
+                </Typography>))}
             </Box>
           </Grid>
 
@@ -986,8 +930,7 @@ const HomeSection = () => {
               {Partners.map((item, index) => (
                 <Typography key={index} className="py-1">
                   {item.name}
-                </Typography>
-              ))}
+                </Typography>))}
             </Box>
           </Grid>
 
@@ -996,9 +939,7 @@ const HomeSection = () => {
               <Typography variant="body1" className="fw-bold">About</Typography>
               {About.map((item, index) => (
                 <Typography key={index} className="py-1">
-                  {item.name}
-                </Typography>
-              ))}
+                  {item.name}</Typography>))}
             </Box>
           </Grid>
         </Grid>
@@ -1009,17 +950,16 @@ const HomeSection = () => {
           </Button>
           <Button variant="text" className="text-black"> PKR </Button>
         </Box>
-
         <Typography className="pb-5 d-flex text-center justify-content-center align-items-center">
           Booking.com is part of Booking Holdings Inc., the world leader in online travel and related services. <br />
           Copyright © 1996–2025 Booking.com™. All rights reserved.
         </Typography>
         <Box className='container d-flex justify-content-center align-items-center pb-5'>
-          <Typography className="text-primary"> Booking.com </Typography>
-          <Typography className="mx-3 text-info"> Priceline </Typography>
-          <Typography> K A Y A K </Typography>
-
-          <img src={OpenTable} alt="" />
+          <Typography className="text-primary"><img src={Booking} alt="img" /></Typography>
+          <Typography className="mx-3 text-info"><img src={Priceline} alt="img" /></Typography>
+          <Typography><img src={KAYAKImg} alt="img" /></Typography>
+          <Typography><img src={Agoda} alt="img" /></Typography>
+          <img src={OpenTable} alt="img" />
         </Box>
       </Box>
     </>

@@ -1,4 +1,4 @@
-import { Box, CardContent, Button, Checkbox, Card, MenuItem, TextField, Toolbar, Typography, Chip, Divider } from '@mui/material';
+import { Box, CardContent, Button, Checkbox, Card, MenuItem, TextField, Toolbar, Typography, Chip, Grid } from '@mui/material';
 import React, { useState } from 'react'
 import KingBedIcon from "@mui/icons-material/KingBed";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
@@ -9,12 +9,32 @@ import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import SwapVertIcon from '@mui/icons-material/SwapVert';
 import Gulberg from '../../assets/Gulber.webp';
 import Premium from '../../assets/premium.webp';
 import Rose from '../../assets/Rose.webp';
 import GoldCrest from '../../assets/Gold crest.webp'
 import GiftImg from '../../assets/giftImg.png';
-// import Pakeeza from '../../assets/pa'
+import Luxurious from '../../assets/Luxurious.webp';
+import Dove from '../../assets/Dove.webp';
+import Goldcrest from '../../assets/Luxury appartment.webp';
+import LahoreContinent from '../../assets/LahoreContinental.webp';
+import Western from '../../assets/Western.webp';
+import Mukhtar from '../../assets/Mukhtar.webp';
+import Defence from '../../assets/Defence.webp';
+import Premier from '../../assets/Premier Inn.webp';
+import Oasis from '../../assets/Oasis.webp';
+import HotelHS1 from '../../assets/HotelHS1.webp';
+import Luxus from '../../assets/Luxus.webp';
+import Shelton from '../../assets/Shelton.webp';
+import One from '../../assets/One.webp';
+import Faletti from '../../assets/Faletti.webp';
+import Booking from '../../assets/Booking.png';
+import Priceline from '../../assets/Priceline.png';
+import KAYAKImg from '../../assets/KAYAK.png';
+import Agoda from '../../assets/agoda.png';
+import OpenTable from '../../assets/OpenTable.png';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const HotelDetail = () => {
@@ -43,7 +63,7 @@ const HotelDetail = () => {
       id: 1,
       name: 'Gulberg Inn Hotel Lahore',
       image: Gulberg,
-      rating: 8.0,
+      rating: 8.1,
       location: 'Gulberg, Lahore • 7.4 km from downtown',
       deal: 'Early 2025 Deal',
       roomType: 'Deluxe Double Room • 1 queen bed',
@@ -83,7 +103,7 @@ const HotelDetail = () => {
     },
     {
       id: 4,
-      name: 'Hotel Grand PakeezaOpens in new window',
+      name: 'Hotel Grand Pakeeza',
       image: GoldCrest,
       rating: 8.3,
       location: 'Mall Road, Lahore • 10.2 km from downtown',
@@ -106,7 +126,6 @@ const HotelDetail = () => {
         { label: "Pet friendly", count: 171 },
         { label: "Room service", count: 261 },
         { label: "24-hour front desk", count: 244 },
-        { label: "Show all 14", count: "" },
       ],
     },
     {
@@ -117,7 +136,6 @@ const HotelDetail = () => {
         { label: "Hotels", count: 208 },
         { label: "Guesthouses", count: 40 },
         { label: "Homestays", count: 17 },
-        { label: "Show all 14", count: "" },
       ],
     },
     {
@@ -200,7 +218,7 @@ const HotelDetail = () => {
       category: "Landmarks",
       options: [
         { label: "Badshahi Mosque", count: 5 },
-        { label: "Lahore", count: 4},
+        { label: "Lahore", count: 4 },
       ],
     },
     {
@@ -214,57 +232,382 @@ const HotelDetail = () => {
       options: [
         { label: "Ramada", count: 1 },
         { label: "Best Western Premier", count: 36 },
-        { label: "Hot tub/Jacuzzi", count: 35 },
-        { label: "Walking tours", count: 34 },
-        { label: "Playground", count: "41" },
-        { label: "walking tours", count: "41" },
       ],
     },
+    {
+      category: "Property Accessibility",
+      options: [
+        { label: "Toilet with grab rails", count: 34 },
+        { label: "Raised toilet", count: 36 },
+        { label: "Lowered sink", count: 31 },
+        { label: "Bathroom emergency cord", count: 21 },
+        { label: "Visual aids (Braille)", count: 21 },
+        { label: "Visual aids (tactile signs)", count: 20 },
+        { label: "Auditory guidance", count: 28 }
+      ],
+    },
+    {
+      category: "Property Accessibility",
+      options: [
+        { label: "Toilet with grab rails", count: 34 },
+        { label: "Raised toilet", count: 36 },
+        { label: "Lowered sink", count: 31 },
+        { label: "Bathroom emergency cord", count: 21 },
+        { label: "Visual aids (Braille)", count: 21 },
+        { label: "Visual aids (tactile signs)", count: 20 },
+        { label: "Auditory guidance", count: 28 }
+      ],
+    },
+    {
+      category: "Room Accessibility",
+      options: [
+        { label: "T Entire unit located", count: 96 },
+        { label: "Upper floors accessible", count: 152 },
+        { label: "Entire unit wheelchair", count: 140 },
+        { label: "Toilet with grab rails", count: 34 },
+        { label: "Visual aids (Braille)", count: 21 },
+        { label: "Adapted bath", count: 32 },
+        { label: "Roll-in shower", count: 44 },
+        { label: "Walk-in shower", count: 80 },
+        { label: "Raised toilet", count: 48 },
+        { label: "Lower sink", count: 42 },
+        { label: "Emergency cord in bathroom", count: 33 },
+        { label: "Shower chair", count: 26 }
+      ],
+    },
+    {
+      category: "Popular Filters",
+      options: [
+        { label: "4 stars", count: 93 },
+        { label: "Resorts", count: 1 },
+        { label: "Hotels", count: 247 },
+        { label: "Vacation Homes", count: 31 },
+        { label: "Wonderful: 9+", count: 147 },
+        { label: "Free Wifi", count: 632 },
+        { label: "Sea view", count: 3 },
+        { label: "Villas", count: 14 },
+        { label: "Apartments", count: 425 },
+        { label: "Guesthouses", count: 48 },
+        { label: "Less than 1 km", count: 17 },
+        { label: "Hot tub", count: 47 },
+        { label: "Private pool", count: 59 },
+        { label: "Air conditioning", count: 765 },
+        { label: "Swimming pool", count: 78 },
+      ],
+    },
+    {
+      category: "Facilities",
+      options: [
+        { label: "Parking", "count": 585 },
+        { label: "Restaurant", "count": 127 },
+        { label: "Pet friendly", "count": 171 },
+        { label: "Room service", "count": 261 },
+        { label: "24-hour front desk", "count": 244 }
+      ]
+    },
+    {
+      category: "Room Features",
+      options: [
+        { label: "Air conditioning", "count": 432 },
+        { label: "Balcony", "count": 212 },
+        { label: "Mini fridge", "count": 189 },
+        { label: "Ocean view", "count": 97 },
+        { label: "Free Wi-Fi", "count": 620 }
+      ]
+    },
+    {
+      category: "Activities",
+      options: [
+        { label: "Swimming pool", "count": 380 },
+        { label: "Gym", "count": 245 },
+        { label: "Spa", "count": 156 },
+        { label: "Kids play area", "count": 112 },
+        { label: "Nightclub", "count": 87 }
+      ]
+    },
+    {
+      category: "Accessibility",
+      options: [
+        { label: "Wheelchair accessible", count: 154 },
+        { label: "Elevator", count: 321 },
+        { label: "Braille signage", count: 75 },
+        { label: "Accessible bathroom", count: 190 },
+        { label: "Hearing assistance", count: 63 }
+      ]
+    }, {
+      category: "Business Services",
+      options: [
+        { label: "Meeting rooms", count: 67 },
+        { label: "Conference hall", count: 45 },
+        { label: "Printing services", count: 88 },
+        { label: "High-speed internet", count: 320 },
+        { label: "Video conferencing", count: 52 }
+      ]
+    },
+    {
+      category: "Transportation",
+      options: [
+        { label: "Airport shuttle", count: 143 },
+        { label: "Car rental", count: 87 },
+        { label: "Bicycle rental", count: 67 },
+        { label: "Public transport access", count: 180 },
+        { label: "Valet parking", count: 125 }
+      ]
+    },
+    {
+      category: "Wellness & Health",
+      options: [
+        { label: "Yoga classes", count: 98 },
+        { label: "Meditation center", count: 55 },
+        { label: "Sauna", count: 78 },
+        { label: "Massage therapy", count: 120 },
+        { label: "Car rental", count: 120 },
+      ]
+    }
   ];
+  const FooterBtn = [
+    { name: 'Mobile version' },
+    { name: 'Your account' },
+    { name: 'Make changes online to your booking' },
+    { name: 'Customer Service Help' },
+    { name: 'Become an affiliate' },
+    { name: 'Booking.com for Business' }
+  ]
+
 
   const SecondHotelData = [
     {
       id: 1,
-      name: 'Hotel Grand PakeezaOpens in new window',
+      name: 'Luxurious One-Bedroom Gold Crest',
       rating: 8.0,
-      image: Gulberg,
+      image: Luxurious,
       location: 'Gulberg, Lahore • 7.4 km from downtown',
       deal: 'Early 2025 Deal',
       roomType: 'Deluxe Double Room • 1 queen bed',
       breakfast: true,
       cancellation: 'Free cancellation • No prepayment needed',
-      oldPrice: 'PKR 23,973',
+      oldPrice: 'PKR 25,000',
       newPrice: 'PKR 17,980',
       taxes: '+ PKR 2,877 taxes and fees',
     },
     {
       id: 2,
-      name: 'Park View Hotel GulbergOpens in new window',
+      name: 'Dove Inn Hotel ',
       rating: 9.2,
-      image: Premium,
+      image: Dove,
       location: 'Karachi • 2.3 km from downtown',
       deal: 'Special Discount',
       roomType: 'Executive Room • 1 king bed',
       breakfast: true,
       cancellation: 'No prepayment needed',
       oldPrice: 'PKR 105,000',
-      newPrice: 'PKR 63,000',
+      newPrice: 'PKR 77,000',
       taxes: '+ PKR 4,000 taxes and fees',
     },
     {
       id: 3,
-      name: 'Lahore Continental HotelOpens in new window',
-      image: Rose,
-      rating: 8.8,
+      name: 'Goldcrest Luxury Apartments',
+      image: Goldcrest,
+      rating: 8.3,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
       roomType: 'Luxury Suite • 2 queen beds',
       breakfast: true,
       cancellation: 'Free cancellation',
       oldPrice: 'PKR 37,350',
-      newPrice: 'PKR 22,410',
+      newPrice: 'PKR 32,410',
       taxes: '+ PKR 3,586 taxes and fees',
-    }]
+    },
+    {
+      id: 4,
+      name: 'Lahore Continental Hotel',
+      image: LahoreContinent,
+      rating: 8.1,
+      location: 'Islamabad • 5.0 km from downtown',
+      deal: 'Seasonal Offer',
+      roomType: 'Luxury Suite • 2 queen beds',
+      breakfast: true,
+      cancellation: 'Free cancellation',
+      oldPrice: 'PKR 40,350',
+      newPrice: 'PKR 32,410',
+      taxes: '+ PKR 3,586 taxes and fees',
+    },
+    {
+      id: 5,
+      name: 'Best Western Premier Hotel Gulberg',
+      image: Western,
+      rating: 8.8,
+      location: 'Islamabad • 5.0 km from downtown',
+      deal: 'Seasonal Offer',
+      roomType: 'Luxury Suite • 2 queen beds',
+      breakfast: true,
+      cancellation: 'Free cancellation',
+      oldPrice: 'PKR 40,350',
+      newPrice: 'PKR 32,410',
+      taxes: '+ PKR 3,586 taxes and fees',
+    },
+    {
+      id: 6,
+      name: 'Mukhtar Homes Bahria Town Lahore',
+      image: Mukhtar,
+      rating: 8.5,
+      location: 'Islamabad • 5.0 km from downtown',
+      deal: 'Seasonal Offer',
+      roomType: 'Luxury Suite • 2 queen beds',
+      breakfast: true,
+      cancellation: 'Free cancellation',
+      oldPrice: 'PKR 40,350',
+      newPrice: 'PKR 32,410',
+      taxes: '+ PKR 3,586 taxes and fees',
+    },
+    {
+      id: 7,
+      name: 'Defence Raya Golf & Country Club',
+      image: Defence,
+      rating: 7.2,
+      location: 'Islamabad • 5.0 km from downtown',
+      deal: 'Seasonal Offer',
+      roomType: 'Luxury Suite • 2 queen beds',
+      breakfast: true,
+      cancellation: 'Free cancellation',
+      oldPrice: 'PKR 43,000',
+      newPrice: 'PKR 38,000',
+      taxes: '+ PKR 3,586 taxes and fees',
+    },
+    {
+      id: 8,
+      name: 'Premier Inn Express Gulberg',
+      image: Premier,
+      rating: 7.8,
+      location: 'Islamabad • 5.0 km from downtown',
+      deal: 'Seasonal Offer',
+      roomType: 'Luxury Suite • 2 queen beds',
+      breakfast: true,
+      cancellation: 'Free cancellation',
+      oldPrice: 'PKR 43,000',
+      newPrice: 'PKR 38,000',
+      taxes: '+ PKR 3,586 taxes and fees',
+    },
+    {
+      id: 9,
+      name: 'The Oasis Hotel',
+      image: Oasis,
+      rating: 8.2,
+      location: 'Islamabad • 5.0 km from downtown',
+      deal: 'Seasonal Offer',
+      roomType: 'Luxury Suite • 2 queen beds',
+      breakfast: true,
+      cancellation: 'Free cancellation',
+      oldPrice: 'PKR 40,000',
+      newPrice: 'PKR 38,000',
+      taxes: '+ PKR 3,586 taxes and fees',
+    },
+    {
+      id: 11,
+      name: 'Luxus Grand Hotel',
+      image: Luxus,
+      rating: 8.2,
+      location: 'Islamabad • 5.0 km from downtown',
+      deal: 'Seasonal Offer',
+      roomType: 'Luxury Suite • 2 queen beds',
+      breakfast: true,
+      cancellation: 'Free cancellation',
+      oldPrice: 'PKR 45,000',
+      newPrice: 'PKR 37,100',
+      taxes: '+ PKR 3,586 taxes and fees',
+    },
+    {
+      id: 12,
+      name: 'Shelton Rezidor Hotel Gulberg Lahore',
+      image: Shelton,
+      rating: 8.2,
+      location: 'Islamabad • 5.0 km from downtown',
+      deal: 'Seasonal Offer',
+      roomType: 'Luxury Suite • 2 queen beds',
+      breakfast: true,
+      cancellation: 'Free cancellation',
+      oldPrice: 'PKR 54,000',
+      newPrice: 'PKR 50,100',
+      taxes: '+ PKR 3,586 taxes and fees',
+    },
+    {
+      id: 13,
+      name: 'Hotel One The Mall, Lahore',
+      image: One,
+      rating: 6.2,
+      location: 'Islamabad • 5.0 km from downtown',
+      deal: 'Seasonal Offer',
+      roomType: 'Luxury Suite • 2 queen beds',
+      breakfast: true,
+      cancellation: 'Free cancellation',
+      oldPrice: 'PKR 40,000',
+      newPrice: 'PKR 35,100',
+      taxes: '+ PKR 3,586 taxes and fees',
+    },
+    {
+      id: 14,
+      name: 'Hotel HS1 ',
+      image: HotelHS1,
+      rating: 5.2,
+      deal: 'Seasonal Offer',
+      roomType: 'Luxury Suite • 2 queen beds',
+      breakfast: true,
+      cancellation: 'Free cancellation',
+      oldPrice: 'PKR 40,000',
+      newPrice: 'PKR 35,100',
+      taxes: '+ PKR 3,586 taxes and fees',
+    },
+    {
+      id: 15,
+      name: 'Faletti Express- Shimla Hill',
+      image: Faletti,
+      rating: 5.6,
+      deal: 'Seasonal Offer',
+      roomType: 'Luxury Suite • 2 queen beds',
+      breakfast: true,
+      cancellation: 'Free cancellation',
+      oldPrice: 'PKR 46,000',
+      newPrice: 'PKR 35,100',
+      taxes: '+ PKR 3,586 taxes and fees',
+    }
+  ]
+
+  const countries = [
+    { name: "Countries" }, { name: "Regions" },
+    { name: "Cities" }, { name: "Districts" },
+    { name: "Airports" }, { name: "Hotels" },
+    { name: "Places of interest" }
+  ]
+
+  const Homes = [
+    { name: "Homes" }, { name: "Apartments" },
+    { name: "Resorts" }, { name: "Villas" },
+    { name: "Hotels" }, { name: "B&Bs" },
+    { name: "Guest Houses" }
+  ]
+
+  const Unique = [
+    { name: "Unique places to stay" }, { name: "Reviews" },
+    { name: "Discover monthly stays" }, { name: "Travel articles" },
+    { name: "Seasonal and holiday deals" }, { name: "Traveller Review Awards" }
+  ]
+
+  const Car = [
+    { name: "Car rental" }, { name: "Flight finder" },
+    { name: "Restaurant reservations" }, { name: "Booking.com for Travel Agents" },
+  ]
+
+  const Coronavirus = [
+    { name: "Coronavirus (COVID-19) FAQs" }, { name: "About Booking.com" },
+    { name: "Customer Service Help" }, { name: "Partner help" },
+    { name: "Careers" }, { name: "Sustainability" },
+    { name: "Press Center" }, { name: "Safety Resource Center" },
+    { name: "Investor relations" }, { name: "Terms & Conditions" },
+    { name: "Partner dispute" }, { name: "How We Work" },
+    { name: "Privacy & cookie statement" }, { name: "Modern Slavery Statement" },
+    { name: "Human Rights Statement" }, { name: "Corporate contact" },
+    { name: "Content guidelines and reporting" }
+  ]
 
   const [children] = useState(0);
 
@@ -296,14 +639,11 @@ const HotelDetail = () => {
         className="rounded-3 p-1 d-flex gap-2 container
          justify-content-between align-items-center"
         sx={{
-          flexWrap: "wrap",
-          backgroundColor: "orange",
+          flexWrap: "wrap", backgroundColor: "orange",
           border: "orange",
-        }}
-      >
+        }}>
         <TextField
-          placeholder="Where are you going?"
-          fullWidth
+          placeholder="Where are you going?" fullWidth
           sx={{
             flex: 1,
             minWidth: "200px",
@@ -316,10 +656,10 @@ const HotelDetail = () => {
         />
         <TextField className='text-black'
           placeholder="Check-in Date"
+          type='date'
           fullWidth
           sx={{
-            flex: 1,
-            minWidth: "200px",
+            flex: 1, minWidth: "200px",
             backgroundColor: "white",
             borderRadius: "5px",
           }}
@@ -330,10 +670,8 @@ const HotelDetail = () => {
         <TextField
           select fullWidth
           sx={{
-            flex: 1,
-            minWidth: "200px",
-            backgroundColor: "white",
-            borderRadius: "5px",
+            flex: 1, minWidth: "200px",
+            backgroundColor: "white", borderRadius: "5px",
           }}
           InputProps={{
             startAdornment: <PersonOutlineIcon sx={{ mr: 1 }} />,
@@ -349,16 +687,14 @@ const HotelDetail = () => {
           variant="contained"
           sx={{
             backgroundColor: "#003B95",
-            minWidth: "150px",
-            height: "56px",
+            minWidth: "150px", height: "56px",
             textTransform: "none",
-          }}
-        >
+          }}>
           Search
         </Button>
       </Box>
-
-      <Box className='container'>
+      
+      <Box className='container mb-3'>
         <Box className='my-2'>
           {CityBtn.map((btn) => <Button sx={{ textTransform: 'none' }} className='text-dark'
             varian="text">{btn.name}{btn.icon}</Button>
@@ -368,29 +704,25 @@ const HotelDetail = () => {
           sx={{
             display: 'flex', gap: '10px',
             flexDirection: { xs: 'column', sm: 'column', md: 'row' },
-          }} >
+          }}>
           <Box
             sx={{
-              width: { xs: "100%", md: "25%" },
+              width: { xs: "100%", md: "30%", },
               border: "1px solid #ddd",
-              padding: "15px",
-              borderRadius: "10px",
+              padding: "15px", borderRadius: "10px",
               backgroundColor: "#f9f9f9",
-            }}
-          >
+            }}>
             {filters.map((filter, index) => (
-              <Box key={index} sx={{ marginBottom: "20px" }}>
-                <Typography
+              <Box key={index}>
+                <Typography className='my-2'
                   variant="subtitle1"
                   sx={{ fontWeight: "bold" }} >
                   {filter.category}:
                 </Typography>
                 {filter.options.map((option, idx) => (
-                  <Box
-                    key={idx}
+                  <Box key={idx}
                     sx={{
-                      display: "flex",
-                      alignItems: "center",
+                      display: "flex", alignItems: "center",
                       justifyContent: "space-between",
                     }}>
                     <Box className='d-flex align-items-center'>
@@ -404,15 +736,18 @@ const HotelDetail = () => {
                     </Typography>
                   </Box>
                 ))}
-                {index < filters.length - 1 && <Divider />}
               </Box>
             ))}
           </Box>
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{
+          }}>
             <Box className='d-flex justify-content-between'>
-              <Typography variant="h5" className="text-black fw-bold" sx={{ marginBottom: '20px' }}>
-                Lahore: 611 properties found
-              </Typography>
+              <Box>
+                <Typography variant="h5" className="text-black fw-bold" sx={{ marginBottom: '20px' }}>
+                  Lahore: 611 properties found
+                </Typography>
+                <Button variant='outlined' className='text-dark fs-6' sx={{ textTransform: 'none' }}> <SwapVertIcon className='fs-5 me-1' /> Sort by: Our top picks <KeyboardArrowUpIcon /> </Button>
+              </Box>
               <Box>
                 <Button className='rounded-5 px-2 gap-2 ' sx={{ background: "#ddd" }}>
                   <Button className='rounded-5 bg-white text-dark px-4'>list</Button>
@@ -420,6 +755,7 @@ const HotelDetail = () => {
                 </Button>
               </Box>
             </Box>
+
             {hotelData.map((hotel) => (
               <Card className='mt-2'
                 key={hotel.id}
@@ -429,19 +765,16 @@ const HotelDetail = () => {
                   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
                   overflow: 'hidden', border: '1px solid #ddd',
                   marginBottom: '20px', color: "#0071c2"
-                }}
-              >
+                }}>
                 <Box
                   sx={{
                     width: { xs: '100%', sm: '30%' },
                     position: 'relative',
-                  }}
-                >
+                  }}>
                   <img src={hotel.image}
                     alt={hotel.name}
                     style={{
-                      width: '100%',
-                      height: '100%',
+                      width: '100%', height: '100%',
                       objectFit: 'cover',
                     }}
                   />
@@ -450,10 +783,8 @@ const HotelDetail = () => {
                       label="Breakfast included"
                       sx={{
                         position: 'absolute',
-                        top: '10px',
-                        left: '10px',
-                        backgroundColor: '#28a745',
-                        color: '#fff',
+                        top: '10px', left: '10px',
+                        backgroundColor: '#28a745', color: '#fff',
                         fontWeight: 'bold',
                       }}
                     />
@@ -461,39 +792,31 @@ const HotelDetail = () => {
                   <FavoriteBorderIcon
                     sx={{
                       position: 'absolute',
-                      top: '10px',
-                      right: '10px',
+                      top: '10px', right: '10px',
                       backgroundColor: '#fff',
-                      borderRadius: '50%',
-                      padding: '5px',
+                      borderRadius: '50%', padding: '5px',
                       boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.3)',
                       color: '#0071c2',
-                    }}
-                  />
+                    }} />
                 </Box>
 
                 <CardContent
                   sx={{
                     flex: 1,
-                    padding: '20px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '10px',
-                  }}
-                >
+                    padding: '20px', display: 'flex',
+                    flexDirection: 'column', gap: '10px',
+                  }}>
                   <Box display="flex" justifyContent="space-between" alignItems="center">
                     <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                      {hotel.name} ★★★★
+                      {hotel.name}
                     </Typography>
-                    <Typography
+                    <Typography className='px-2 py-1 rounded-1'
                       variant="body2"
                       sx={{
                         fontSize: '14px',
-                        fontWeight: 'bold',
-                        color: '#0071c2',
-                      }}
-                    >
-                      {hotel.rating}
+                        fontWeight: 'bold', color: '#fff',
+                        background: '#003B95'
+                      }}> {hotel.rating}
                     </Typography>
                   </Box>
 
@@ -515,43 +838,33 @@ const HotelDetail = () => {
                       {hotel.cancellation}
                     </Typography>
                   </Box>
-
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="space-between"
-                    mt="auto"
-                  >
+                  <Box display="flex" alignItems="center"
+                    justifyContent="space-between" mt="auto">
                     <Box>
                       <Typography
                         variant="body1"
                         sx={{
                           textDecoration: 'line-through',
-                          fontSize: '14px',
-                          color: '#888',
-                        }}
-                      >
+                          fontSize: '14px', color: '#888',
+                        }}>
                         {hotel.oldPrice}
                       </Typography>
                       <Typography
                         variant="h6"
-                        sx={{ fontWeight: 'bold', color: '#0071c2' }}
-                      >
+                        sx={{ fontWeight: 'bold', color: '#0071c2' }}>
                         {hotel.newPrice}
                       </Typography>
                       <Typography variant="body2" color="textSecondary">
                         {hotel.taxes}
                       </Typography>
                     </Box>
-                    <Button
+                    <Button onClick={(()=>navigate ("/hotel-availability"))}
                       variant="contained"
                       sx={{
                         backgroundColor: '#0071c2',
-                        color: '#fff',
-                        textTransform: 'none',
+                        color: '#fff', textTransform: 'none',
                         fontWeight: 'bold',
-                      }}
-                    >
+                      }}>
                       See availability
                     </Button>
                   </Box>
@@ -577,7 +890,8 @@ const HotelDetail = () => {
                   </Button>
                 </Box>
                 <Box>
-                  <img width={100} src={GiftImg} alt="Img" /></Box>
+                  <img width={100} src={GiftImg} alt="Img" />
+                </Box>
               </Box>
             </Card>
             {SecondHotelData.map((hotel) => (
@@ -589,22 +903,19 @@ const HotelDetail = () => {
                   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
                   overflow: 'hidden', border: '1px solid #ddd',
                   marginBottom: '20px', color: "#0071c2"
-                }}
-              >
+                }}>
                 <Box
                   sx={{
                     width: { xs: '100%', sm: '30%' },
                     position: 'relative',
-                  }}
-                >
+                  }}>
                   <img src={hotel.image}
                     alt={hotel.name}
                     style={{
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                    }}
-                  />
+                    }} />
                   {hotel.breakfast && (
                     <Chip
                       label="Breakfast included"
@@ -615,21 +926,17 @@ const HotelDetail = () => {
                         backgroundColor: '#28a745',
                         color: '#fff',
                         fontWeight: 'bold',
-                      }}
-                    />
+                      }} />
                   )}
                   <FavoriteBorderIcon
                     sx={{
                       position: 'absolute',
-                      top: '10px',
-                      right: '10px',
+                      top: '10px', right: '10px',
                       backgroundColor: '#fff',
-                      borderRadius: '50%',
-                      padding: '5px',
+                      borderRadius: '50%', padding: '5px',
                       boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.3)',
                       color: '#0071c2',
-                    }}
-                  />
+                    }} />
                 </Box>
 
                 <CardContent
@@ -639,20 +946,17 @@ const HotelDetail = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px',
-                  }}
-                >
+                  }}>
                   <Box display="flex" justifyContent="space-between" alignItems="center">
                     <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                       {hotel.name} ★★★★
                     </Typography>
-                    <Typography
+                    <Typography className='px-3 py-1'
                       variant="body2"
                       sx={{
-                        fontSize: '14px',
-                        fontWeight: 'bold',
-                        color: '#0071c2',
-                      }}
-                    >
+                        fontSize: '14px', fontWeight: 'bold',
+                        color: '#fff', background: '#003B95'
+                      }}>
                       {hotel.rating}
                     </Typography>
                   </Box>
@@ -675,27 +979,18 @@ const HotelDetail = () => {
                     </Typography>
                   </Box>
 
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="space-between"
-                    mt="auto"
-                  >
+                  <Box display="flex" alignItems="center"
+                    justifyContent="space-between" mt="auto" >
                     <Box>
-                      <Typography
-                        variant="body1"
+                      <Typography variant="body1"
                         sx={{
                           textDecoration: 'line-through',
-                          fontSize: '14px',
-                          color: '#888',
-                        }}
-                      >
+                          fontSize: '14px', color: '#888',
+                        }}>
                         {hotel.oldPrice}
                       </Typography>
-                      <Typography
-                        variant="h6"
-                        sx={{ fontWeight: 'bold', color: '#0071c2' }}
-                      >
+                      <Typography variant="h6"
+                        sx={{ fontWeight: 'bold', color: '#0071c2' }} >
                         {hotel.newPrice}
                       </Typography>
                       <Typography variant="body2" color="textSecondary">
@@ -706,20 +1001,94 @@ const HotelDetail = () => {
                       variant="contained"
                       sx={{
                         backgroundColor: '#0071c2',
-                        color: '#fff',
-                        textTransform: 'none',
+                        color: '#fff', textTransform: 'none',
                         fontWeight: 'bold',
-                      }}
-                    >
+                      }} >
                       See availability
                     </Button>
                   </Box>
                 </CardContent>
               </Card>
             ))}
+            <Box className='d-flex justify-content-center'>
+              <Button variant='outlined' className='w-50 fw-bold py-2' >Load more results</Button>
+            </Box>
           </Box>
         </Box>
       </Box>
+      {/* footer */}
+      <Box className='my-3' sx={{ background: '#003B95' }}>
+        <Box className='d-flex justify-content-center py-1' sx={{ borderBottom: '1px solid #fff' }}>
+          <Button variant='outlined' className='fw-bold py-2 text-white'>Load more results</Button>
+        </Box>
+        <Box className='container'>
+          {FooterBtn.map((btn) => <Button sx={{ textTransform: 'none' }} className='text-white'
+            varian="text">{btn.name}</Button>
+          )}
+        </Box>
+      </Box>
+
+      <Box sx={{ background: '#F5F5F5' }} container>
+        <Grid container spacing={3} className="my-4">
+          <Grid item xs={6} sm={6} md={2.4}>
+            <Box className='ms-3 ps-4 d-none d-md-block text-primary'>
+              {countries.map((item, index) => (
+                <Typography key={index} className="py-1 ms-5 ps-4">
+                  {item.name}
+                </Typography>
+              ))}
+            </Box>
+          </Grid>
+          <Grid item xs={6} sm={6} md={2.4}>
+            <Box className='ms-4 d-none d-md-block text-primary'>
+              {Homes.map((item, index) => (
+                <Typography key={index} className="py-1">
+                  {item.name}
+                </Typography>
+              ))}
+            </Box>
+          </Grid>
+
+          <Grid item xs={6} sm={6} md={2.4}>
+            <Box className='ms-3 text-primary'>
+              {Unique.map((item, index) => (
+                <Typography key={index} className="py-1 ms-4">
+                  {item.name}
+                </Typography>))}
+            </Box>
+          </Grid>
+
+          <Grid item xs={6} sm={6} md={2.4}>
+            <Box className='ms-5 text-primary'>
+              {Car.map((item, index) => (
+                <Typography key={index} className="py-1">
+                  {item.name}
+                </Typography>))}
+            </Box>
+          </Grid>
+
+          <Grid item xs={6} sm={6} md={2.4}>
+            <Box className='d-none d-md-block text-primary'>
+              {Coronavirus.map((item, index) => (
+                <Typography key={index} className="py-1">
+                  {item.name}</Typography>))}
+            </Box>
+          </Grid>
+        </Grid>
+        <Box className="d-flex flex-column align-items-center text-center">
+          <Typography className="container py-3">
+            Booking.com is part of Booking Holdings Inc., the world leader in online travel and related services.
+          </Typography>
+
+          <Box className="container d-flex flex-wrap justify-content-center align-items-center gap-3 pb-4">
+            <img src={Booking} alt="Booking" className="img-fluid" />
+            <img src={Priceline} alt="Priceline" className="img-fluid mx-3" />
+            <img src={KAYAKImg} alt="KAYAK" className="img-fluid" />
+            <img src={Agoda} alt="Agoda" className="img-fluid" />
+            <img src={OpenTable} alt="OpenTable" className="img-fluid" />
+          </Box>
+        </Box>
+      </Box >
     </>
   )
 }

@@ -12,6 +12,7 @@ import Flights from "./Tabs/flights/Flights";
 import Stays from "./Tabs/stays/Stays";
 import CarRentals from "./Tabs/car-rentals/CarRentals";
 import PageNotFound from "./components/page-not-found/PageNotFound";  
+import HotelAvailability from "./components/hotel-availability/HotelAvailability";
 const theme = createTheme({
   typography: {
     fontFamily: "Jost, serif",
@@ -31,7 +32,7 @@ function App() {
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/register" element={<Register />} />
           <Route path="/hotel-detail" element={<HotelDetail />} />
-          <Route path="/hotel-availability" element={<HotelDetail />} />
+          <Route path="/hotel-availability" element={<HotelAvailability />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </ThemeProvider>

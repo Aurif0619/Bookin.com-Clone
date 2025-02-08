@@ -25,6 +25,10 @@ import Milan from '../../assets/Milan.jpg';
 import Pheonix from '../../assets/phoenix.jpg';
 import Madrid from '../../assets/Madrid.jpg';
 import Rome from '../../assets/Rome.jpg';
+import KAYAKImg from '../../assets/KAYAK.png';
+import Agoda from '../../assets/agoda.png';
+import Booking from '../../assets/Booking.png';
+import Priceline from '../../assets/Priceline.png';
 
 const CarRental = () => {
   const Btns = [
@@ -208,15 +212,13 @@ const CarRental = () => {
             borderRadius: "8px",
             padding: "10px",
             rowGap: "2px",
-          }}
-        >
+          }}>
           {[
             { placeholder: "Pick-up location", icon: <KingBedIcon sx={{ mr: 1 }} />, width: { xs: "100%", md: "20%" } },
             { placeholder: "Pick-up date", icon: <CalendarMonthIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },
             { placeholder: "Time", icon: <AccessTimeIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },
             { placeholder: "Drop-off date", icon: <CalendarMonthIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },
-            { placeholder: "Time", icon: <AccessTimeIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },
-          ].map((field, index) => (
+            { placeholder: "Time", icon: <AccessTimeIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },].map((field, index) => (
             <TextField
               key={index}
               placeholder={field.placeholder}
@@ -248,7 +250,6 @@ const CarRental = () => {
             <MenuItem value={2}>2 children</MenuItem>
             <MenuItem value={3}>3 children</MenuItem>
           </TextField>
-
           {/* Search Button */}
           <Button
             className="text-white"
@@ -259,8 +260,7 @@ const CarRental = () => {
               height: "56px",
               textTransform: "none",
               borderRadius: "8px",
-            }}
-          >
+            }}>
             Search
           </Button>
         </Box>
@@ -512,13 +512,13 @@ const CarRental = () => {
           Copyright © 1996–2025 Booking.com™. All rights reserved.
         </Typography>
         <Box className='container d-flex justify-content-center align-items-center pb-5'>
-          <Typography className="text-primary"> Booking.com </Typography>
-          <Typography className="mx-3 text-info"> Priceline </Typography>
-          <Typography> K A Y A K </Typography>
-          <img src={OpenTable} alt="Img" />
+          <Typography className="text-primary"><img src={Booking} alt="img"/></Typography>
+          <Typography className="mx-3 text-info"><img src={Priceline} alt="img" /></Typography>
+          <Typography><img src={KAYAKImg} alt="img" /></Typography>
+          <Typography><img src={Agoda} alt="img" /></Typography>
+          <img src={OpenTable} alt="img" />
         </Box>
       </Box>
-
     </>
   );
 };
