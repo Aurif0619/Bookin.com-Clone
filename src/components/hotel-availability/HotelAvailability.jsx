@@ -21,9 +21,10 @@ import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import OpenTable from '../../assets/OpenTable.png';
 import USAflag from '../../assets/AmericaFlag.png'
 import GiftImg from '../../assets/giftImg.png';
+import RosePetal1 from '../../assets/RosePetal-1.jpg';
+import RosePetal2 from '../../assets/RosePetal-2.jpg';
 import PlateImg from '../../assets/PlateImg.jpg';
 import ShareIcon from '@mui/icons-material/Share';
-import PlaceIcon from '@mui/icons-material/Place';
 import WifiIcon from "@mui/icons-material/Wifi";
 import Gulberg from '../../assets/Gulber.webp';
 import HouseImg from '../../assets/house.jpg';
@@ -31,10 +32,36 @@ import KAYAKImg from '../../assets/KAYAK.png';
 import Agoda from '../../assets/agoda.png';
 import Booking from '../../assets/Booking.png';
 import Priceline from '../../assets/Priceline.png';
-import { useNavigate } from "react-router";
-
+import { useLocation, useNavigate } from "react-router";
 
 const HotelAvailability = () => {
+
+  const hotelData = [
+    {
+      id: 1,
+      name: "Gulberg Inn Hotel Lahore",
+      image: Gulberg,
+      location: "239, A/3 Gurumangat Road, Block A3 Gulberg III, Lahore, Pakistan",
+      rating: 7.9,
+      wifiRating: 9.2,
+      image: HouseImg,
+      image: PlateImg, 
+      description: "Guests who stayed here loved: “Net and Clean new Furnish hotel. Friendly and respectful staff like family, and especially reception Guy Sir Mr. Kashif—helpful bundles of thanks...”",
+    },
+    {
+      id: 2,
+      name: "Rose Petal Hotel",
+      image: RosePetal1,
+      location: "123 Main Street, City, Country",
+      rating: 8.5,
+      wifiRating: 9.0,
+      image: RosePetal1,
+      image: RosePetal2, 
+      image: "Another hotel description...",
+    },
+    // Add more hotels here
+  ];
+
 
   const Btns = [
     { id: 1, name: "Flight", path: "/flights", icon: <FlightTakeoffIcon /> },
@@ -91,6 +118,12 @@ const HotelAvailability = () => {
   const [children] = useState(0);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const hotel = location.state?.hotel;
+
+  if (!hotel) {
+    return <Typography>No hotel data found.</Typography>;
+  }
 
   return (
     <>
@@ -180,14 +213,14 @@ const HotelAvailability = () => {
             City Deals
           </Button>
           <Typography variant="body2">
-            Gulberg Inn Hotel Lahore (Hotel) (Pakistan) Deals
+            {hotel.name} (Hotel) (Pakistan) Deals
           </Typography>
         </Box>
 
         <Box className="container my-4">
           <Box className="d-flex align-items-center text-center justify-content-between mb-3">
             <Typography variant="h5" className="fw-bold text-primary">
-              Gulberg Inn Hotel Lahore
+              {hotel.name}
             </Typography>
             <Box>
               <FavoriteBorderIcon />
@@ -199,14 +232,14 @@ const HotelAvailability = () => {
           </Box>
 
           <Typography variant="body1" className="text-secondary">
-            <LocationOnIcon fontSize="small" /> 239, A/3 Gurumangat Road, Block A3 Gulberg III, Lahore, Pakistan
+            <LocationOnIcon fontSize="small" /> {hotel.location}
           </Typography>
 
           <Box className="container my-4">
             <Box className="row">
               <Box className="col-md-6">
                 <Card>
-                  <CardMedia component="img" height="300" image={Gulberg} alt="Hotel Room" />
+                  <CardMedia component="img" height="300" image={hotel.image} alt="Hotel Room" />
                 </Card>
               </Box>
 
@@ -214,136 +247,30 @@ const HotelAvailability = () => {
                 <Box className="d-flex justify-content-between w-100">
                   <Box className="d-flex gap-2">
                     <Box className="col-6">
-                      <CardMedia component="img" height="160" image={HouseImg} alt="Room Image" />
+                      <CardMedia component="img" height="160" image={hotel.image} alt="Room Image" />
                     </Box>
                     <Box className="col-6">
-                      <CardMedia component="img" height="160" image={PlateImg} alt="Room Image" />
+                      <CardMedia component="img" height="160" image={hotel.image} alt="Room Image" />
                     </Box>
                   </Box>
 
                   <Box>
                     <Typography variant="h6" className="fw-bold">
-                      Rating: 7.9
+                      Rating: {hotel.rating}
                     </Typography>
                     <Typography variant="body2" className="text-success d-flex justify-content-center mt-4">
-                      <WifiIcon fontSize="small" /> Free Wifi 9.2
+                      <WifiIcon fontSize="small" /> Free Wifi {hotel.wifiRating}
                     </Typography>
                   </Box>
                 </Box>
 
                 <Box className="col-12">
                   <Typography variant="body2" className="px-3 pb-2">
-                    Guests who stayed here loved: <br />
-                    “Net and Clean new Furnish hotel. Friendly and respectful staff like family,
-                    and especially reception Guy Sir Mr. Kashif—helpful bundles of thanks...” <br />
-                    <strong>Muhammad, United Arab Emirates</strong>
+                    {hotel.description}
                   </Typography>
                 </Box>
               </Card>
-              <Box className='d-flex gap-2 my-2'>
-                <Typography>
-                  <CardMedia component="img" sx={{ width: '180px' }} className='rounded-2 h-75' image={AvailabilityImg1} alt="Room Image" />
-                </Typography>
-                <Typography>
-                  <CardMedia component="img" sx={{ width: '180px' }} className='rounded-2 h-75' image={AvailabilityImg2} alt="Room Image" />
-                </Typography>
-                <Typography>
-                  <CardMedia component="img" sx={{ width: '180px' }} className='rounded-2 h-75' image={AvailabilityImg3} alt="Room Image" />
-                </Typography>
-                <Typography>
-                  <CardMedia component="img" sx={{ width: '180px' }} className='rounded-2 h-75' image={AvailabilityImg4} alt="Room Image" />
-                </Typography>
-                <Typography>
-                  <CardMedia component="img" sx={{ width: '180px' }} className='rounded-2 h-75' image={AvailabilityImg5} alt="Room Image" />
-                </Typography>
-                <Typography>
-                  <CardMedia component="img" sx={{ width: '180px' }} className='rounded-2 h-75' image={AvailabilityImg6} alt="Room Image" />
-                </Typography>
-              </Box>
-              <Box
-                className="d-flex flex-column flex-md-row gap-4 my-3"
-                sx={{ justifyContent: "space-between" }}>
-                <Box sx={{ flex: 1, minWidth: "300px" }}>
-                  <Typography>
-                    You might be eligible for a Genius discount at Gulberg Inn Hotel Lahore.
-                    Sign in to check if a Genius discount is available for your selected
-                    dates.
-                  </Typography>
-                  <Typography>
-                    Genius discounts at this property are subject to booking dates, stay
-                    dates, and other available deals.
-                  </Typography>
-                  <Typography className="my-2">
-                    Located in Lahore, 18 miles from Wagah Border, Gulberg Inn Hotel Lahore
-                    provides accommodations with a garden, free private parking, a shared
-                    lounge and a terrace. With a restaurant, the 3-star hotel has
-                    air-conditioned rooms with free WiFi, each with a private bathroom. The
-                    property has room service, a 24-hour front desk and currency exchange for
-                    guests.
-                  </Typography>
-                  <Typography className="my-2">
-                    All guest rooms at the hotel are equipped with a seating area and a
-                    flat-screen TV with satellite channels. Guest rooms feature a closet.
-                  </Typography>
-                  <Typography className="my-2">
-                    A continental, Asian or halal breakfast is available at the property.
-                  </Typography>
-                  <Typography className="my-2">
-                    Gaddafi Stadium is 2 miles from Gulberg Inn Hotel Lahore, while Nairang
-                    Galleries is 3.4 miles away. Allama Iqbal International Airport is 4.3
-                    miles from the property.
-                  </Typography>
-                  <Typography className="my-2">
-                    Distance in property description is calculated using © OpenStreetMap
-                  </Typography>
-                  <Typography className="fw-bold">Most popular facilities</Typography>
-                  <Box className="d-flex flex-wrap gap-2 my-3">
-                    {PopularBtns.map((btn) => (
-                      <Button sx={{ textTransform: 'none' }} key={btn.id} className="d-flex text-black align-items-center gap-1">
-                        {btn.icon} {btn.name}
-                      </Button>
-                    ))}
-                  </Box>
-                </Box>
-
-                <Box sx={{ flex: 1, minWidth: "300px" }}>
-                  <Card className="px-4 py-4" sx={{ background: "#EBF3FF" }}>
-                    <Typography className="fw-bold text-black">Property highlights</Typography>
-                    <Typography variant="body1">
-                      <PlaceIcon />
-                      Top Location: Highly rated by recent guests (8.4)
-                    </Typography>
-                    <Typography className="fw-bold text-black">Breakfast Info</Typography>
-                    <Typography className="body1">
-                      <FavoriteBorderIcon />
-                      Free private parking available at the hotel
-                    </Typography>
-                    <Button className="mt-3" variant="contained" color="primary">
-                      Reserve
-                    </Button>
-                  </Card>
-                </Box>
-              </Box>
             </Box>
-            <Card className="py-2 container mt-2" sx={{ backgroundColor: '#0071c2' }}>
-              <Box className="d-flex justify-content-between">
-                <Box><Typography variant="h5">Sign in, save money</Typography>
-                  <Typography>
-                    Save 10% or more at participating properties – just look for the blue Genius label
-                  </Typography>
-                  <Button variant="contained"
-                    sx={{ textTransform: "none" }}
-                    className="mt-3"> Sign in
-                  </Button>
-                  <Button variant="outlined"
-                    sx={{ textTransform: "none" }}
-                    className="mt-3 ms-2"> Register
-                  </Button>
-                </Box><Box>
-                  <img width={100} src={GiftImg} alt="Img" />
-                </Box>
-              </Box>
-            </Card>
           </Box>
         </Box>
       </Box>

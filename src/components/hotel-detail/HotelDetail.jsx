@@ -693,7 +693,7 @@ const HotelDetail = () => {
           Search
         </Button>
       </Box>
-      
+
       <Box className='container mb-3'>
         <Box className='my-2'>
           {CityBtn.map((btn) => <Button sx={{ textTransform: 'none' }} className='text-dark'
@@ -746,9 +746,9 @@ const HotelDetail = () => {
                 <Typography variant="h5" className="text-black fw-bold" sx={{ marginBottom: '20px' }}>
                   Lahore: 611 properties found
                 </Typography>
-                <Button variant='outlined' className='text-dark fs-6' sx={{ textTransform: 'none' }}> 
+                <Button variant='outlined' className='text-dark fs-6' sx={{ textTransform: 'none' }}>
                   <SwapVertIcon className='fs-5 me-1' /> Sort by: Our top picks <KeyboardArrowUpIcon />
-                   </Button>
+                </Button>
               </Box>
               <Box>
                 <Button className='rounded-5 px-2 gap-2 ' sx={{ background: "#ddd" }}>
@@ -860,12 +860,13 @@ const HotelDetail = () => {
                         {hotel.taxes}
                       </Typography>
                     </Box>
-                    <Button onClick={(()=>navigate ("/hotel-availability"))}
+                    <Button
+                      onClick={() => navigate("/hotel-availability", { state: { hotel } })}
                       variant="contained"
                       sx={{
-                        backgroundColor: '#0071c2',
-                        color: '#fff', textTransform: 'none',
-                        fontWeight: 'bold',
+                        backgroundColor: "#0071c2",
+                        color: "#fff", textTransform: "none",
+                        fontWeight: "bold",
                       }}>
                       See availability
                     </Button>
@@ -998,12 +999,15 @@ const HotelDetail = () => {
                       </Typography>
                     </Box>
                     <Button
+                      onClick={() => navigate("/hotel-availability", { state: { hotel } })}
                       variant="contained"
                       sx={{
-                        backgroundColor: '#0071c2',
-                        color: '#fff', textTransform: 'none',
-                        fontWeight: 'bold',
-                      }} >
+                        backgroundColor: "#0071c2",
+                        color: "#fff",
+                        textTransform: "none",
+                        fontWeight: "bold",
+                      }}
+                    >
                       See availability
                     </Button>
                   </Box>

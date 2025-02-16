@@ -367,27 +367,25 @@ const HomeSection = () => {
                       width: '100%', height: 'auto',
                       display: 'block'
                     }} />
+                  <Typography
+                    variant="h5" component="div"
+                    sx={{
+                      position: 'absolute',
+                      top: 15, left: 15,
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                      borderRadius: 1, padding: '6px 10px', color: '#fff',
+                      display: 'flex', alignItems: 'center',
+                      fontSize: { xs: '1rem', md: '1.25rem' },
+                    }}  >
+                    Lahore <img
+                      src={Pakistan}
+                      alt="Pakistan"
+                      style={{
+                        marginLeft: 8, width: '20px',
+                        height: '20px'
+                      }} />
+                  </Typography>
                 </Button>
-                <Typography
-                  variant="h5" component="div"
-                  sx={{
-                    position: 'absolute',
-                    top: 15, left: 15,
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1, padding: '6px 10px', color: '#fff',
-                    display: 'flex', alignItems: 'center',
-                    fontSize: { xs: '1rem', md: '1.25rem' },
-                  }}
-                >
-                  Lahore
-                  <img
-                    src={Pakistan}
-                    alt="Pakistan"
-                    style={{
-                      marginLeft: 8, width: '20px',
-                      height: '20px'
-                    }} />
-                </Typography>
               </Box>
             </Grid>
 
@@ -411,34 +409,34 @@ const HomeSection = () => {
                       display: 'block',
                     }}
                   />
+
+                  <Typography
+                    variant="h5"
+                    component="div"
+                    sx={{
+                      position: 'absolute',
+                      top: 15,
+                      left: 15,
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                      borderRadius: 1,
+                      padding: '6px 10px',
+                      color: '#fff',
+                      display: 'flex',
+                      alignItems: 'center',
+                      fontSize: { xs: '1rem', md: '1.25rem' },
+                    }}>
+                    Islamabad
+                    <img
+                      src={Pakistan}
+                      alt="Pakistan"
+                      style={{
+                        marginLeft: 8,
+                        width: '20px',
+                        height: '20px',
+                      }}
+                    />
+                  </Typography>
                 </Button>
-                <Typography
-                  variant="h5"
-                  component="div"
-                  sx={{
-                    position: 'absolute',
-                    top: 15,
-                    left: 15,
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '6px 10px',
-                    color: '#fff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    fontSize: { xs: '1rem', md: '1.25rem' },
-                  }}
-                >
-                  Islamabad
-                  <img
-                    src={Pakistan}
-                    alt="Pakistan"
-                    style={{
-                      marginLeft: 8,
-                      width: '20px',
-                      height: '20px',
-                    }}
-                  />
-                </Typography>
               </Box>
             </Grid>
           </Grid>
@@ -448,57 +446,67 @@ const HomeSection = () => {
         <Box className="d-flex my-3">
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
-              <Box sx={{ cursor: 'pointer',
+              <Box sx={{
+                cursor: 'pointer',
                 position: 'relative', borderRadius: 2,
                 overflow: 'hidden', textAlign: 'center',
-              }}> <img src={DubaiImg} alt="Dubai" style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
-                <Typography variant="h6"
-                  component="div" sx={{
-                    position: 'absolute', top: 8,
-                    left: 8, color: '#fff',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1, padding: '4px 8px',
-                  }}>
-                  Dubai <img src={Dubai} alt="Dubai" />
-                </Typography>
+              }}>
+                <Button onClick={() => navigate("/hotel-detail")} sx={{ padding: 0 }}>
+                  <img src={DubaiImg} alt="Dubai" style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+                  <Typography variant="h6"
+                    component="div" sx={{
+                      position: 'absolute', top: 8,
+                      left: 8, color: '#fff',
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                      borderRadius: 1, padding: '4px 8px',
+                    }}>
+                    Dubai <img src={Dubai} alt="Dubai" />
+                  </Typography>
+                </Button>
               </Box>
             </Grid>
 
             {/* Medina */}
             <Grid item xs={12} sm={6} md={4}>
-              <Box sx={{cursor: 'pointer',
+              <Box sx={{
+                cursor: 'pointer',
                 position: 'relative', borderRadius: 2,
                 overflow: 'hidden', textAlign: 'center',
               }}>
-                <img src={MedinaImg} alt="Medina"
-                  style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-                />
-                <Typography variant="h6" component="div"
-                  sx={{
-                    position: 'absolute',
-                    top: 8, left: 8, color: '#fff',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1, padding: '4px 8px',
-                  }}>
-                  Medina <img src={Makkah} alt="Medina" />
-                </Typography>
+                <Button onClick={() => navigate("/hotel-detail")} sx={{ padding: 0 }}>
+                  <img src={MedinaImg} alt="Medina"
+                    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+                  />
+                  <Typography variant="h6" component="div"
+                    sx={{
+                      position: 'absolute',
+                      top: 8, left: 8, color: '#fff',
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                      borderRadius: 1, padding: '4px 8px',
+                    }}>
+                    Medina <img src={Makkah} alt="Medina" />
+                  </Typography>
+                </Button>
               </Box>
             </Grid>
 
             <Grid item xs={12} sm={6} md={4}>
-              <Box sx={{cursor: 'pointer',
+              <Box sx={{
+                cursor: 'pointer',
                 position: 'relative', borderRadius: 2,
                 overflow: 'hidden', textAlign: 'center',
               }}>
-                <img src={KarachiImg} alt="Karachi" style={{ width: '100%', height: 'auto' }} />
-                <Typography variant="h6" component="div"
-                  sx={{
-                    position: 'absolute', top: 8, left: 8, color: '#fff',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)', borderRadius: 1, padding: '4px 8px',
-                  }}>
-                  Karachi
-                  <img src={Pakistan} className="mx-1 mb-1" alt="Pakistan" />
-                </Typography>
+                <Button onClick={() => navigate("/hotel-detail")} sx={{ padding: 0 }}>
+                  <img src={KarachiImg} alt="Karachi" style={{ width: '100%', height: 'auto' }} />
+                  <Typography variant="h6" component="div"
+                    sx={{
+                      position: 'absolute', top: 8, left: 8, color: '#fff',
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)', borderRadius: 1, padding: '4px 8px',
+                    }}>
+                    Karachi
+                    <img src={Pakistan} className="mx-1 mb-1" alt="Pakistan" />
+                  </Typography>
+                </Button>
               </Box>
             </Grid>
           </Grid>
@@ -562,7 +570,6 @@ const HomeSection = () => {
             </Grid>
           ))}
         </Grid>
-
 
         <Box className='mt-4'>
           <Typography variant="h5" className="fw-bold my-2 mt-2"> Browse by property type in Lahore </Typography>
