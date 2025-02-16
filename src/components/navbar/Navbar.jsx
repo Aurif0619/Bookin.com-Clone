@@ -88,7 +88,7 @@ function Navbar() {
                         <Button onClick={(() => navigate("/sign-in"))} variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
                             Signin
                         </Button>
-                        <Button onClick={() => navigate("/home-section")}
+                        <Button onClick={() => navigate("/")}
                             variant="outlined" sx={{ textTransform: 'none', color: "#fff", fontWeight: "bold" }}>
                             Home
                         </Button>

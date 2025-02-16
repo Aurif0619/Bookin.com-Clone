@@ -448,7 +448,7 @@ const HomeSection = () => {
         <Box className="d-flex my-3">
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
-              <Box sx={{
+              <Box sx={{ cursor: 'pointer',
                 position: 'relative', borderRadius: 2,
                 overflow: 'hidden', textAlign: 'center',
               }}> <img src={DubaiImg} alt="Dubai" style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
@@ -463,9 +463,10 @@ const HomeSection = () => {
                 </Typography>
               </Box>
             </Grid>
+
             {/* Medina */}
             <Grid item xs={12} sm={6} md={4}>
-              <Box sx={{
+              <Box sx={{cursor: 'pointer',
                 position: 'relative', borderRadius: 2,
                 overflow: 'hidden', textAlign: 'center',
               }}>
@@ -485,7 +486,7 @@ const HomeSection = () => {
             </Grid>
 
             <Grid item xs={12} sm={6} md={4}>
-              <Box sx={{
+              <Box sx={{cursor: 'pointer',
                 position: 'relative', borderRadius: 2,
                 overflow: 'hidden', textAlign: 'center',
               }}>
@@ -564,8 +565,7 @@ const HomeSection = () => {
 
 
         <Box className='mt-4'>
-          <Typography variant="h5" className="fw-bold my-2 mt-2"> Browse by property type in Lahore
-          </Typography>
+          <Typography variant="h5" className="fw-bold my-2 mt-2"> Browse by property type in Lahore </Typography>
           <Grid container spacing={1}>
             {LahoreHotels.map((hotels) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={hotels.id}>

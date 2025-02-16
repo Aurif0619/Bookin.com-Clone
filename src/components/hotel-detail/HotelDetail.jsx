@@ -746,7 +746,9 @@ const HotelDetail = () => {
                 <Typography variant="h5" className="text-black fw-bold" sx={{ marginBottom: '20px' }}>
                   Lahore: 611 properties found
                 </Typography>
-                <Button variant='outlined' className='text-dark fs-6' sx={{ textTransform: 'none' }}> <SwapVertIcon className='fs-5 me-1' /> Sort by: Our top picks <KeyboardArrowUpIcon /> </Button>
+                <Button variant='outlined' className='text-dark fs-6' sx={{ textTransform: 'none' }}> 
+                  <SwapVertIcon className='fs-5 me-1' /> Sort by: Our top picks <KeyboardArrowUpIcon />
+                   </Button>
               </Box>
               <Box>
                 <Button className='rounded-5 px-2 gap-2 ' sx={{ background: "#ddd" }}>
@@ -941,10 +943,8 @@ const HotelDetail = () => {
 
                 <CardContent
                   sx={{
-                    flex: 1,
-                    padding: '20px',
-                    display: 'flex',
-                    flexDirection: 'column',
+                    flex: 1, padding: '20px',
+                    display: 'flex', flexDirection: 'column',
                     gap: '10px',
                   }}>
                   <Box display="flex" justifyContent="space-between" alignItems="center">

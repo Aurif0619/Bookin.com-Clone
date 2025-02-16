@@ -9,7 +9,6 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import AvailabilityImg1 from '../../assets/AvailabilityImg1.jpg';
 import AvailabilityImg2 from '../../assets/AvailibilityImg2.jpg';
 import AvailabilityImg3 from '../../assets/AvailibilityImg3.jpg';
@@ -46,15 +45,6 @@ const HotelAvailability = () => {
     { id: 3, name: "Attraction", icon: <AttractionsIcon /> },
     { id: 4, name: "Airport taxis", icon: <LocalTaxiIcon /> }
   ];
-
-  const CityBtn = [{
-    name: 'Home', icon: <ChevronRightIcon />
-  },
-  { name: 'Pakistan', icon: <ChevronRightIcon /> },
-  { name: 'Punjab', icon: <ChevronRightIcon /> },
-  { name: 'Lahore', icon: <ChevronRightIcon /> },
-  { name: 'Gulberg', icon: <ChevronRightIcon /> }
-  ]
 
   const PopularBtns = [
     { id: 1, name: "Free Wifi", icon: <WifiIcon /> },
