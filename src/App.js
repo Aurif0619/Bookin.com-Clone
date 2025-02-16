@@ -12,8 +12,8 @@ import Flights from "./Tabs/flights/Flights";
 import Stays from "./Tabs/stays/Stays";
 import CarRentals from "./Tabs/car-rentals/CarRentals";
 import PageNotFound from "./components/page-not-found/PageNotFound";
-import HotelAvailability from "./components/hotel-availability/HotelAvailability";
-import ProtectedRoute from "./components/protect-route/ProtectRoute";
+import HotelAvailability from './components/hotel-availability/HotelAvailability'
+import ProtectRoute from "./components/protect-route/ProtectRoute";
 
 const theme = createTheme({
   typography: {
@@ -22,54 +22,41 @@ const theme = createTheme({
 });
 
 function App() {
+
   return (
     <Router>
       <ThemeProvider theme={theme}>
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomeSection />} />
           <Route path="/register" element={<Register />} />
           <Route path="/sign-in" element={<SignIn />} />
-          <Route
-            path="/stays"
-            element={
-              <ProtectedRoute>
-                <Stays />
-              </ProtectedRoute>
+
+          <Route path="/"
+            element={<ProtectRoute> <HomeSection /> </ProtectRoute>
             }
           />
-          <Route
-            path="/flights"
-            element={
-              <ProtectedRoute>
-                <Flights />
-              </ProtectedRoute>
+          <Route path="/stays"
+            element={<ProtectRoute><Stays /></ProtectRoute>
             }
           />
-          <Route
-            path="/car-rentals"
-            element={
-              <ProtectedRoute>
-                <CarRentals />
-              </ProtectedRoute>
+          <Route path="/stays" element={<Stays />} />
+
+          <Route path="/flights"
+            element={<ProtectRoute><Flights /></ProtectRoute>
             }
           />
-          <Route
-            path="/hotel-detail"
-            element={
-              <ProtectedRoute>
-                <HotelDetail />
-              </ProtectedRoute>
+          <Route path="/car-rentals"
+            element={<ProtectRoute><CarRentals /></ProtectRoute>
             }
           />
-          <Route
-            path="/hotel-availability"
-            element={
-              <ProtectedRoute>
-                <HotelAvailability />
-              </ProtectedRoute>
-            }/>
-            
+          <Route path="/hotel-detail"
+            element={<ProtectRoute><HotelDetail /></ProtectRoute>
+            }
+          />
+          <Route path="/hotel-availability"
+            element={<ProtectRoute><HotelAvailability /></ProtectRoute>
+            }
+          />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </ThemeProvider>

@@ -9,18 +9,11 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
-import AvailabilityImg1 from '../../assets/AvailabilityImg1.jpg';
-import AvailabilityImg2 from '../../assets/AvailibilityImg2.jpg';
-import AvailabilityImg3 from '../../assets/AvailibilityImg3.jpg';
-import AvailabilityImg4 from '../../assets/AvailibilityImg4.jpg';
-import AvailabilityImg5 from '../../assets/Availibility5.jpg';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import AvailabilityImg6 from '../../assets/Availability6.jpg';
 import FlatwareIcon from '@mui/icons-material/Flatware';
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import OpenTable from '../../assets/OpenTable.png';
 import USAflag from '../../assets/AmericaFlag.png'
-import GiftImg from '../../assets/giftImg.png';
 import RosePetal1 from '../../assets/RosePetal-1.jpg';
 import RosePetal2 from '../../assets/RosePetal-2.jpg';
 import PlateImg from '../../assets/PlateImg.jpg';
@@ -59,7 +52,8 @@ const HotelAvailability = () => {
       image: RosePetal2, 
       image: "Another hotel description...",
     },
-    // Add more hotels here
+    
+    
   ];
 
 
