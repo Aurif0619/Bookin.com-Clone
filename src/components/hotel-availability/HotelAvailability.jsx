@@ -29,34 +29,6 @@ import { useLocation, useNavigate } from "react-router";
 
 const HotelAvailability = () => {
 
-  const hotelData = [
-    {
-      id: 1,
-      name: "Gulberg Inn Hotel Lahore",
-      image: Gulberg,
-      location: "239, A/3 Gurumangat Road, Block A3 Gulberg III, Lahore, Pakistan",
-      rating: 7.9,
-      wifiRating: 9.2,
-      image: HouseImg,
-      image: PlateImg, 
-      description: "Guests who stayed here loved: “Net and Clean new Furnish hotel. Friendly and respectful staff like family, and especially reception Guy Sir Mr. Kashif—helpful bundles of thanks...”",
-    },
-    {
-      id: 2,
-      name: "Rose Petal Hotel",
-      image: RosePetal1,
-      location: "123 Main Street, City, Country",
-      rating: 8.5,
-      wifiRating: 9.0,
-      image: RosePetal1,
-      image: RosePetal2, 
-      image: "Another hotel description...",
-    },
-    
-    
-  ];
-
-
   const Btns = [
     { id: 1, name: "Flight", path: "/flights", icon: <FlightTakeoffIcon /> },
     {
@@ -65,16 +37,6 @@ const HotelAvailability = () => {
     },
     { id: 3, name: "Attraction", icon: <AttractionsIcon /> },
     { id: 4, name: "Airport taxis", icon: <LocalTaxiIcon /> }
-  ];
-
-  const PopularBtns = [
-    { id: 1, name: "Free Wifi", icon: <WifiIcon /> },
-    {
-      id: 2, name: "Free parking", icon: <FavoriteBorderIcon />
-    },
-    { id: 3, name: "Family rooms", icon: <FamilyRestroomIcon /> },
-    { id: 4, name: "Restaurant", icon: <FlatwareIcon /> },
-    { id: 5, name: "Room service", icon: <BabyChangingStationIcon /> }
   ];
 
 
@@ -108,8 +70,6 @@ const HotelAvailability = () => {
     { name: "Careers" }, { name: "Investor relations" },
     { name: "Corporate contact" },
   ]
-
-  const [children] = useState(0);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -152,8 +112,7 @@ const HotelAvailability = () => {
         <TextField
           placeholder="Where are you going?" fullWidth
           sx={{
-            flex: 1,
-            minWidth: "200px",
+            flex: 1, minWidth: "200px",
             backgroundColor: "white",
             borderRadius: "5px",
           }}
@@ -163,8 +122,7 @@ const HotelAvailability = () => {
         />
         <TextField className='text-black'
           placeholder="Check-in Date"
-          type='date'
-          fullWidth
+          type='date' fullWidth
           sx={{
             flex: 1, minWidth: "200px",
             backgroundColor: "white",
@@ -182,8 +140,7 @@ const HotelAvailability = () => {
           }}
           InputProps={{
             startAdornment: <PersonOutlineIcon sx={{ mr: 1 }} />,
-          }}
-          value={children} >
+          }}>
           <MenuItem value={0}>2 adults . 0 children . 1 room</MenuItem>
           <MenuItem value={1}>1 child</MenuItem>
           <MenuItem value={2}>2 children</MenuItem>
@@ -229,37 +186,49 @@ const HotelAvailability = () => {
             <LocationOnIcon fontSize="small" /> {hotel.location}
           </Typography>
 
-          <Box className="container my-4">
-            <Box className="row">
-              <Box className="col-md-6">
+          <Box sx={{ marginTop: 4, marginBottom: 4 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+              <Box sx={{ width: { xs: '100%', md: '50%' } }}>
                 <Card>
-                  <CardMedia component="img" height="300" image={hotel.image} alt="Hotel Room" />
+                  <CardMedia
+                    component="img"
+                    height="300"
+                    image={hotel.image}
+                    alt="Hotel Room"
+                  />
                 </Card>
               </Box>
 
-              <Card className="col-md-6 d-flex px-3 flex-wrap gap-2">
-                <Box className="d-flex justify-content-between w-100">
-                  <Box className="d-flex gap-2">
-                    <Box className="col-6">
-                      <CardMedia component="img" height="160" image={hotel.image} alt="Room Image" />
+              <Card sx={{ width: { xs: '100%', md: '50%' }, display: 'flex', padding: 2, flexWrap: 'wrap', gap: 2 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                  <Box sx={{ display: 'flex', gap: 2 }}>
+                    <Box sx={{ width: '50%' }}>
+                      <CardMedia
+                        component="img"
+                        height="160"  image={hotel.image}
+                        alt="Room Image"
+                      />
                     </Box>
-                    <Box className="col-6">
-                      <CardMedia component="img" height="160" image={hotel.image} alt="Room Image" />
+                    <Box sx={{ width: '50%' }}>
+                      <CardMedia  component="img"
+                        height="160" image={hotel.image}
+                        alt="Room Image"
+                      />
                     </Box>
                   </Box>
 
                   <Box>
-                    <Typography variant="h6" className="fw-bold">
+                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                       Rating: {hotel.rating}
                     </Typography>
-                    <Typography variant="body2" className="text-success d-flex justify-content-center mt-4">
+                    <Typography variant="body2" sx={{ color: 'success.main', display: 'flex', justifyContent: 'center', marginTop: 2 }}>
                       <WifiIcon fontSize="small" /> Free Wifi {hotel.wifiRating}
                     </Typography>
                   </Box>
                 </Box>
 
-                <Box className="col-12">
-                  <Typography variant="body2" className="px-3 pb-2">
+                <Box sx={{ width: '100%' }}>
+                  <Typography variant="body2" sx={{ paddingX: 3, paddingBottom: 2 }}>
                     {hotel.description}
                   </Typography>
                 </Box>
@@ -268,78 +237,88 @@ const HotelAvailability = () => {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ background: '#F5F5F5' }} container>
-        <Grid container spacing={3} className="my-4">
-          <Grid item xs={6} sm={6} md={2.4}>
-            <Box className='ms-3 ps-4 d-none d-md-block'>
-              <Typography className="fw-bold ms-5 ps-4" variant="body1">Support</Typography>
-              {Support.map((item, index) => (
-                <Typography key={index} className="py-1 ms-5 ps-4">
-                  {item.name}
-                </Typography>
-              ))}
-            </Box>
-          </Grid>
-
-          <Grid item xs={6} sm={6} md={2.4}>
-            <Box className='ms-4 d-none d-md-block'>
-              <Typography variant="body1" className="fw-bold" >Discover</Typography>
-              {Discover.map((item, index) => (
-                <Typography key={index} className="py-1">
-                  {item.name}
-                </Typography>
-              ))}
-            </Box>
-          </Grid>
-
-          <Grid item xs={6} sm={6} md={2.4}>
-            <Box className='ms-3'>
-              <Typography variant="body1" className="fw-bold ms-3">Terms and settings</Typography>
-              {Terms.map((item, index) => (
-                <Typography key={index} className="py-1 ms-4">
-                  {item.name}
-                </Typography>))}
-            </Box>
-          </Grid>
-
-          <Grid item xs={6} sm={6} md={2.4}>
-            <Box className='ms-5'>
-              <Typography variant="body1" className="fw-bold">Partners</Typography>
-              {Partners.map((item, index) => (
-                <Typography key={index} className="py-1">
-                  {item.name}
-                </Typography>))}
-            </Box>
-          </Grid>
-
-          <Grid item xs={6} sm={6} md={2.4}>
-            <Box className='d-none d-md-block'>
-              <Typography variant="body1" className="fw-bold">About</Typography>
-              {About.map((item, index) => (
-                <Typography key={index} className="py-1">
-                  {item.name}</Typography>))}
-            </Box>
-          </Grid>
+        <Box sx={{ background: '#F5F5F5' }}>
+      <Grid container spacing={3} sx={{ marginTop: 4, marginBottom: 4 }}>
+        <Grid item xs={6} sm={6} md={2.4}>
+          <Box sx={{ marginLeft: 3, paddingLeft: 4, display: { xs: 'none', md: 'block' } }}>
+            <Typography variant="body1" sx={{ fontWeight: 'bold', marginLeft: 5, paddingLeft: 4 }}>Support</Typography>
+            {Support.map((item, index) => (
+              <Typography key={index} sx={{ paddingY: 1, marginLeft: 5, paddingLeft: 4 }}>
+                {item.name}
+              </Typography>
+            ))}
+          </Box>
         </Grid>
 
-        <Box className='py-3 ms-5 ps-5'>
-          <Button> <img className="rounded-5" src={USAflag}
-            alt="USA Flag" style={{ width: "25px", height: "25px" }} />
-          </Button>
-          <Button variant="text" className="text-black"> PKR </Button>
-        </Box>
-        <Typography className="pb-5 d-flex text-center justify-content-center align-items-center">
-          Booking.com is part of Booking Holdings Inc., the world leader in online travel and related services. <br />
-          Copyright © 1996–2025 Booking.com™. All rights reserved.
-        </Typography>
-        <Box className='container d-flex justify-content-center align-items-center pb-5'>
-          <Typography className="text-primary"><img src={Booking} alt="img" /></Typography>
-          <Typography className="mx-3 text-info"><img src={Priceline} alt="img" /></Typography>
-          <Typography><img src={KAYAKImg} alt="img" /></Typography>
-          <Typography><img src={Agoda} alt="img" /></Typography>
-          <img src={OpenTable} alt="img" />
-        </Box>
+        <Grid item xs={6} sm={6} md={2.4}>
+          <Box sx={{ marginLeft: 4, display: { xs: 'none', md: 'block' } }}>
+            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>Discover</Typography>
+            {Discover.map((item, index) => (
+              <Typography key={index} sx={{ paddingY: 1 }}>
+                {item.name}
+              </Typography>
+            ))}
+          </Box>
+        </Grid>
+
+        <Grid item xs={6} sm={6} md={2.4}>
+          <Box sx={{ marginLeft: 3 }}>
+            <Typography variant="body1" sx={{ fontWeight: 'bold', marginLeft: 3 }}>Terms and settings</Typography>
+            {Terms.map((item, index) => (
+              <Typography key={index} sx={{ paddingY: 1, marginLeft: 4 }}>
+                {item.name}
+              </Typography>
+            ))}
+          </Box>
+        </Grid>
+
+        <Grid item xs={6} sm={6} md={2.4}>
+          <Box sx={{ marginLeft: 5 }}>
+            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>Partners</Typography>
+            {Partners.map((item, index) => (
+              <Typography key={index} sx={{ paddingY: 1 }}>
+                {item.name}
+              </Typography>
+            ))}
+          </Box>
+        </Grid>
+
+        <Grid item xs={6} sm={6} md={2.4}>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+            <Typography variant="body1" sx={{ fontWeight: 'bold' }}>About</Typography>
+            {About.map((item, index) => (
+              <Typography key={index} sx={{ paddingY: 1 }}>
+                {item.name}
+              </Typography>
+            ))}
+          </Box>
+        </Grid>
+      </Grid>
+
+      <Box sx={{ paddingY: 3, marginLeft: 5, paddingLeft: 5 }}>
+        <Button>
+          <img
+            src={USAflag}
+            alt="USA Flag"
+            style={{ width: '25px', height: '25px', borderRadius: '50%' }}
+          />
+        </Button>
+        <Button variant="text" sx={{ color: 'black' }}> PKR </Button>
       </Box>
+
+      <Typography sx={{ paddingBottom: 5, display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+        Booking.com is part of Booking Holdings Inc., the world leader in online travel and related services. <br />
+        Copyright © 1996–2025 Booking.com™. All rights reserved.
+      </Typography>
+
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: 5 }}>
+        <Typography sx={{ color: 'primary.main' }}><img src={Booking} alt="Booking" /></Typography>
+        <Typography sx={{ marginX: 3, color: 'info.main' }}><img src={Priceline} alt="Priceline" /></Typography>
+        <Typography><img src={KAYAKImg} alt="KAYAK" /></Typography>
+        <Typography><img src={Agoda} alt="Agoda" /></Typography>
+        <img src={OpenTable} alt="OpenTable" />
+      </Box>
+    </Box>
     </>
   )
 }

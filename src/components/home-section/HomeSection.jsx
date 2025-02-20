@@ -218,9 +218,6 @@ const HomeSection = () => {
     { name: "Careers" }, { name: "Investor relations" },
     { name: "Corporate contact" },
   ]
-
-  const [children] = useState(0);
-
   const navigate = useNavigate();
 
   return (
@@ -291,8 +288,7 @@ const HomeSection = () => {
             }}
             InputProps={{
               startAdornment: <PersonOutlineIcon sx={{ mr: 1 }} />,
-            }}
-            value={children}>
+            }}>
 
             <MenuItem value={0}>2 adults . 0 children . 1 room</MenuItem>
             <MenuItem value={1}>1 child</MenuItem>
@@ -326,7 +322,7 @@ const HomeSection = () => {
           <Typography className="text-black my-4 fw-bolder" variant="body2">
             Travel more, spend less
           </Typography>
-          
+
           <Card className="py-2 container mt-2">
             <Box className="d-flex justify-content-between">
               <Box><Typography variant="h5">Sign in, save money</Typography>
@@ -356,7 +352,7 @@ const HomeSection = () => {
             <Grid item xs={12} sm={6} lg={6}>
               <Box
                 sx={{
-                  position:'relative',
+                  position: 'relative',
                   borderRadius: 2, overflow: 'hidden',
                   textAlign: 'center',
                 }} >
@@ -379,7 +375,7 @@ const HomeSection = () => {
                       fontSize: { xs: '1rem', md: '1.25rem' },
                     }}  >
                     Lahore <img src={Pakistan}
-                      alt="Pakistan"  style={{
+                      alt="Pakistan" style={{
                         marginLeft: 8, width: '20px',
                         height: '20px'
                       }} />
@@ -403,10 +399,8 @@ const HomeSection = () => {
                     src={IslamabadImg}
                     alt="Islamabad"
                     style={{
-                      width: '100%',
-                      height: 'auto',
-                      display: 'block',
-                    }}
+                      width: '100%',  height: 'auto',
+                      display: 'block',  }}
                   />
 
                   <Typography
@@ -419,8 +413,7 @@ const HomeSection = () => {
                       backgroundColor: 'rgba(0, 0, 0, 0.6)',
                       borderRadius: 1,
                       padding: '6px 10px',
-                      color: '#fff',
-                      display: 'flex',
+                      color: '#fff',  display: 'flex',
                       alignItems: 'center',
                       fontSize: { xs: '1rem', md: '1.25rem' },
                     }}>
