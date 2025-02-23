@@ -1,5 +1,4 @@
 import { Box, CardContent, Button, Checkbox, Card, MenuItem, TextField, Toolbar, Typography, Chip, Grid } from '@mui/material';
-import React, { useState } from 'react'
 import KingBedIcon from "@mui/icons-material/KingBed";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
@@ -38,7 +37,7 @@ import OpenTable from '../../assets/OpenTable.png';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const HotelDetail = () => {
-
+  const navigate = useNavigate();
   const Btns = [
     { id: 1, name: "Flights", path: "/flights", icon: <FlightTakeoffIcon /> },
     {
@@ -72,6 +71,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 23,973',
       newPrice: 'PKR 17,980',
       taxes: '+ PKR 2,877 taxes and fees',
+      description: 'Located 3.8 miles from Shah Faisal Mosque, Shelton Ambassador offers 4-star accommodations in Islamabad and features a terrace, a restaurant and a bar. The property is around 6.9 miles from Lake View Park, 13 miles from Ayūb National Park and 24 miles from Taxila Museum. The property provides a 24-hour front desk, airport transportation, room service and free WiFi throughout the property.'
     },
     {
       id: 2,
@@ -86,6 +86,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 105,000',
       newPrice: 'PKR 63,000',
       taxes: '+ PKR 4,000 taxes and fees',
+      description: 'Located in Islamabad, within 3.4 miles of Shah Faisal Mosque and 5.8 miles of Lake View Park, Roomy Signature Hotel, Islamabad provides accommodations with a restaurant and free WiFi throughout the property as well as free private parking for guests who drive. This 3-star hotel offers room service and a 24-hour front desk. The property has airport transportation, while a car rental service is also available.'
     },
     {
       id: 3,
@@ -100,6 +101,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 37,350',
       newPrice: 'PKR 22,410',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'OWN IT - 2 Bedroom Apartment offers accommodations in Islamabad, 17 miles from Shah Faisal Mosque and 6.9 miles from Taxila Museum. Both free Wifi and parking on-site are available at the apartment free of charge. Ayūb National Park is 16 miles away and Lake View Park is 20 miles from the apartment.'
     },
     {
       id: 4,
@@ -114,6 +116,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 18,500',
       newPrice: 'PKR 10,347',
       taxes: '+ PKR 1,656 taxes and fees',
+      description: 'OWN IT - 2 Bedroom Apartment offers accommodations in Islamabad, 17 miles from Shah Faisal Mosque and 6.9 miles from Taxila Museum. Both free Wifi and parking on-site are available at the apartment free of charge. Ayūb National Park is 16 miles away and Lake View Park is 20 miles from the apartment.'
     },
   ];
 
@@ -389,6 +392,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 25,000',
       newPrice: 'PKR 17,980',
       taxes: '+ PKR 2,877 taxes and fees',
+      description: 'Located 3.8 miles from Shah Faisal Mosque, Shelton Ambassador offers 4-star accommodations in Islamabad and features a terrace, a restaurant and a bar. The property is around 6.9 miles from Lake View Park, 13 miles from Ayūb National Park and 24 miles from Taxila Museum. The property provides a 24-hour front desk, airport transportation, room service and free WiFi throughout the property.'
     },
     {
       id: 2,
@@ -403,6 +407,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 105,000',
       newPrice: 'PKR 77,000',
       taxes: '+ PKR 4,000 taxes and fees',
+      description: 'Each unit is fitted with a terrace offering mountain views, a cable flat-screen TV, a dining area, a well-fitted kitchen and a private bathroom with bidet, free toiletries and slippers. A fridge, a dishwasher and oven are also offered, as well as a coffee machine.'
     },
     {
       id: 3,
@@ -417,6 +422,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 37,350',
       newPrice: 'PKR 32,410',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'The hotel will provide guests with air-conditioned rooms with a desk, an electric tea pot, a minibar, a safety deposit box, a flat-screen TV and a shared bathroom with a shower. Guest rooms include a closet.'
     },
     {
       id: 4,
@@ -431,6 +437,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 40,350',
       newPrice: 'PKR 32,410',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'Located in Islamabad, 5.6 miles from Shah Faisal Mosque, Comfort Family Villa features views of the garden. Each room at the 5-star hotel has mountain views, and guests can enjoy access to a garden and to a terrace. The property provides a 24-hour front desk, airport transportation, room service and free WiFi.'
     },
     {
       id: 5,
@@ -445,6 +452,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 40,350',
       newPrice: 'PKR 32,410',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'The motel will provide guests with air-conditioned rooms offering a desk, a coffee machine, a fridge, a dishwasher, a safety deposit box, a flat-screen TV, a terrace and a private bathroom with a bidet. The rooms include an electric tea pot, while selected rooms also feature a balcony and others also feature city views. All rooms in Clifton Royal Family Guest House are equipped with free toiletries and an iPad.'
     },
     {
       id: 6,
@@ -459,6 +467,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 40,350',
       newPrice: 'PKR 32,410',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'Bahria Enclave islamabad offers accommodations in Islamabad, 15 miles from Shah Faisal Mosque and 13 miles from Lake View Park. Both free Wifi and parking on-site are available at the apartment free of charge. Islamabad Golf Club is 8.7 miles away and Jinnah Convention Centre is 9.1 miles from the apartment.'
     },
     {
       id: 7,
@@ -473,6 +482,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 43,000',
       newPrice: 'PKR 38,000',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'Ideally set in the G-6 Sector district of Islamabad, Reina Boutique Hotel - G6 is located 4 miles from Shah Faisal Mosque, 5.6 miles from Lake View Park and 14 miles from Ayūb National Park. The property is around 24 miles from Taxila Museum, a 17-minute walk from Pakistan National Council of Arts and 1.9 miles from Pakistan Sports Complex. The property has a 24-hour front desk, airport transportation, room service and free WiFi.'
     },
     {
       id: 8,
@@ -487,6 +497,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 43,000',
       newPrice: 'PKR 38,000',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'Genius discounts at this property are subject to booking dates, stay dates, and other available deals Located 14 miles from Shah Faisal Mosque, Jungle Retreat Resort offers a garden, and air-conditioned accommodations with a balcony and free WiFi.'
     },
     {
       id: 9,
@@ -501,6 +512,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 40,000',
       newPrice: 'PKR 38,000',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'Offering a garden and barbecue facilities, Blue Moon Residency Jinnah Super in Islamabad is close to Safa Gold Mall and Saidpur Village. This bed and breakfast features free private parking and a shared kitchen. The bed and breakfast offers city views, a sun terrace, a 24-hour front desk, and free Wifi is available throughout the property.'
     },
     {
       id: 11,
@@ -515,6 +527,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 45,000',
       newPrice: 'PKR 37,100',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'Offering air-conditioned rooms in the E-11 Sector district of Islamabad, Luxury Guest House in E11 by Urban Homes is 4.8 miles from Shah Faisal Mosque. This guest house provides free private parking and a shared kitchen. The guest house features mountain views, a picnic area, a 24-hour front desk, and free Wifi is available throughout the property.'
     },
     {
       id: 12,
@@ -529,6 +542,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 54,000',
       newPrice: 'PKR 50,100',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'At the guest house, every unit includes a wardrobe. A terrace, a satellite flat-screen TV with streaming services, an air conditioning, and a heating are offered in all units. At the guest house, units include a private bathroom with slippers and free toiletries.'
     },
     {
       id: 13,
@@ -543,6 +557,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 40,000',
       newPrice: 'PKR 35,100',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'Offering city views, Decent Lodge Guest House in Islamabad features accommodations, a garden, and a terrace. There is a private entrance at the guest house for the convenience of those who stay. The guest house also offers free Wifi and free private parking.'
     },
     {
       id: 14,
@@ -556,6 +571,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 40,000',
       newPrice: 'PKR 35,100',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'The Life Style Lodges opp Centaurus Mall is a recently renovated guest house in Islamabad near Safa Gold Mall. The guest house, set in a building dating back to 2013, is 2.1 miles from Shah Faisal Mosque and 7.4 miles from Lake View Park. There is an outdoor fireplace and guests can access free Wifi and free private parking.'
     },
     {
       id: 15,
@@ -569,6 +585,7 @@ const HotelDetail = () => {
       oldPrice: 'PKR 46,000',
       newPrice: 'PKR 35,100',
       taxes: '+ PKR 3,586 taxes and fees',
+      description: 'Shah Faisal Mosque in Islamabad, Hayat Grand Guest House provides accommodations with access to a steam room. A hot tub and a car rental service are available for guests. There is a sun terrace and guests can access free Wifi and free private parking.'
     }
   ]
 
@@ -609,9 +626,6 @@ const HotelDetail = () => {
     { name: "Content guidelines and reporting" }
   ]
 
-  const [children] = useState(0);
-
-  const navigate = useNavigate();
   return (
     <>
       <Box component="main" className="text-white"
@@ -675,13 +689,13 @@ const HotelDetail = () => {
           }}
           InputProps={{
             startAdornment: <PersonOutlineIcon sx={{ mr: 1 }} />,
-          }}
-          value={children} >
+          }}>
           <MenuItem value={0}>2 adults . 0 children . 1 room</MenuItem>
           <MenuItem value={1}>1 child</MenuItem>
           <MenuItem value={2}>2 children</MenuItem>
           <MenuItem value={3}>3 children</MenuItem>
         </TextField>
+
         <Button
           className="text-white"
           variant="contained"
@@ -861,7 +875,7 @@ const HotelDetail = () => {
                       </Typography>
                     </Box>
                     <Button
-                      onClick={() => navigate("/hotel-availability", { state: { hotel } })}
+                      onClick={() => navigate("/hotel-availibility", { state: { hotel } })}
                       variant="contained"
                       sx={{
                         backgroundColor: "#0071c2",
@@ -888,8 +902,8 @@ const HotelDetail = () => {
                   </Button>
                   <Button variant="contained"
                     sx={{ textTransform: "none" }}
-                    className="mt-3 text-white ms-2"
-                  > Register
+                    className="mt-3 text-white ms-2">
+                    Register
                   </Button>
                 </Box>
                 <Box>
@@ -897,125 +911,139 @@ const HotelDetail = () => {
                 </Box>
               </Box>
             </Card>
-            {SecondHotelData.map((hotel) => (
-              <Card className='mt-3'
-                key={hotel.id}
-                sx={{
-                  display: 'flex', flexDirection: { xs: 'column', sm: 'row' },
-                  borderRadius: '10px',
-                  boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
-                  overflow: 'hidden', border: '1px solid #ddd',
-                  marginBottom: '20px', color: "#0071c2"
-                }}>
-                <Box
+            <Box>
+              {SecondHotelData.map((hotel) => (
+                <Card
+                  className="mt-3"
+                  key={hotel.id}
                   sx={{
-                    width: { xs: '100%', sm: '30%' },
-                    position: 'relative',
-                  }}>
-                  <img src={hotel.image}
-                    alt={hotel.name}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                    }} />
-                  {hotel.breakfast && (
-                    <Chip
-                      label="Breakfast included"
+                    display: 'flex',
+                    flexDirection: { xs: 'column', sm: 'row' },
+                    borderRadius: '10px',
+                    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
+                    overflow: 'hidden',
+                    border: '1px solid #ddd',
+                    marginBottom: '20px',
+                    color: '#0071c2',
+                  }} >
+                  <Box
+                    sx={{
+                      width: { xs: '100%', sm: '30%' },
+                      position: 'relative',
+                    }} >
+                    <img
+                      src={hotel.image}
+                      alt={hotel.name}
+                      style={{
+                        width: '100%', height: '100%',
+                        objectFit: 'cover',
+                      }}
+                    />
+                    {hotel.breakfast && (
+                      <Chip
+                        label="Breakfast included"
+                        sx={{
+                          position: 'absolute',
+                          top: '10px',
+                          left: '10px',
+                          backgroundColor: '#28a745',
+                          color: '#fff',
+                          fontWeight: 'bold',
+                        }}
+                      />
+                    )}
+                    <FavoriteBorderIcon
                       sx={{
                         position: 'absolute',
                         top: '10px',
-                        left: '10px',
-                        backgroundColor: '#28a745',
-                        color: '#fff',
-                        fontWeight: 'bold',
-                      }} />
-                  )}
-                  <FavoriteBorderIcon
+                        right: '10px',
+                        backgroundColor: '#fff',
+                        borderRadius: '50%',
+                        padding: '5px',
+                        boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.3)',
+                        color: '#0071c2',
+                      }}
+                    />
+                  </Box>
+
+                  <CardContent
                     sx={{
-                      position: 'absolute',
-                      top: '10px', right: '10px',
-                      backgroundColor: '#fff',
-                      borderRadius: '50%', padding: '5px',
-                      boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.3)',
-                      color: '#0071c2',
-                    }} />
-                </Box>
-
-                <CardContent
-                  sx={{
-                    flex: 1, padding: '20px',
-                    display: 'flex', flexDirection: 'column',
-                    gap: '10px',
-                  }}>
-                  <Box display="flex" justifyContent="space-between" alignItems="center">
-                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                      {hotel.name} ★★★★
-                    </Typography>
-                    <Typography className='px-3 py-1'
-                      variant="body2"
-                      sx={{
-                        fontSize: '14px', fontWeight: 'bold',
-                        color: '#fff', background: '#003B95'
-                      }}>
-                      {hotel.rating}
-                    </Typography>
-                  </Box>
-
-                  <Typography variant="body2" color="textSecondary">
-                    {hotel.location}
-                  </Typography>
-
-                  <Typography variant="body2" sx={{ color: 'green', fontWeight: 'bold' }}>
-                    {hotel.deal}
-                  </Typography>
-                  <Typography variant="body2">{hotel.roomType}</Typography>
-
-                  <Box>
-                    <Typography variant="body2" color="textSecondary">
-                      <span style={{ color: 'green', fontWeight: 'bold' }}>
-                        {hotel.breakfast ? 'Breakfast included' : ''}
-                      </span>{' '}
-                      {hotel.cancellation}
-                    </Typography>
-                  </Box>
-
-                  <Box display="flex" alignItems="center"
-                    justifyContent="space-between" mt="auto" >
-                    <Box>
-                      <Typography variant="body1"
+                      flex: 1, padding: '20px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '10px',
+                    }} >
+                    <Box display="flex" justifyContent="space-between" alignItems="center">
+                      <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                        {hotel.name}
+                      </Typography>
+                      <Typography
+                        className="px-3 py-1"
+                        variant="body2"
                         sx={{
-                          textDecoration: 'line-through',
-                          fontSize: '14px', color: '#888',
+                          fontSize: '14px', fontWeight: 'bold',
+                          color: '#fff',
+                          background: '#003B95',
                         }}>
-                        {hotel.oldPrice}
-                      </Typography>
-                      <Typography variant="h6"
-                        sx={{ fontWeight: 'bold', color: '#0071c2' }} >
-                        {hotel.newPrice}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary">
-                        {hotel.taxes}
+                        {hotel.rating}
                       </Typography>
                     </Box>
-                    <Button
-                      onClick={() => navigate("/hotel-availability", { state: { hotel } })}
-                      variant="contained"
-                      sx={{
-                        backgroundColor: "#0071c2",
-                        color: "#fff",
-                        textTransform: "none",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      See availability
-                    </Button>
-                  </Box>
-                </CardContent>
-              </Card>
-            ))}
-            <Box className='d-flex justify-content-center'>
-              <Button variant='outlined' className='w-50 fw-bold py-2' >Load more results</Button>
+
+                    <Typography variant="body2" color="textSecondary">
+                      {hotel.location}
+                    </Typography>
+
+                    <Typography variant="body2" sx={{ color: 'green', fontWeight: 'bold' }}>
+                      {hotel.deal}
+                    </Typography>
+                    <Typography variant="body2">{hotel.roomType}</Typography>
+
+                    <Box>
+                      <Typography variant="body2" color="textSecondary">
+                        <span style={{ color: 'green', fontWeight: 'bold' }}>
+                          {hotel.breakfast ? 'Breakfast included' : ''}
+                        </span>{' '}
+                        {hotel.cancellation}
+                      </Typography>
+                    </Box>
+
+                    <Box display="flex" alignItems="center" justifyContent="space-between" mt="auto">
+                      <Box>
+                        <Typography
+                          variant="body1"
+                          sx={{
+                            textDecoration: 'line-through',
+                            fontSize: '14px', color: '#888',
+                          }}>
+                          {hotel.oldPrice}
+                        </Typography>
+                        <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#0071c2' }}>
+                          {hotel.newPrice}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary">
+                          {hotel.taxes}
+                        </Typography>
+                      </Box>
+                      <Button
+                        onClick={() => navigate('/hotel-availibility', { state: { hotel } })}
+                        variant="contained"
+                        sx={{
+                          backgroundColor: '#0071c2',
+                          color: '#fff',
+                          textTransform: 'none',
+                          fontWeight: 'bold',
+                        }}>
+                        See availability
+                      </Button>
+                    </Box>
+                  </CardContent>
+                </Card>
+              ))}
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+                <Button variant="outlined" sx={{ width: '50%', fontWeight: 'bold', py: 2 }}>
+                  Load more results
+                </Button>
+              </Box>
             </Box>
           </Box>
         </Box>

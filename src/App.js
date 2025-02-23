@@ -12,8 +12,8 @@ import Flights from "./Tabs/flights/Flights";
 import Stays from "./Tabs/stays/Stays";
 import CarRentals from "./Tabs/car-rentals/CarRentals";
 import PageNotFound from "./components/page-not-found/PageNotFound";
-import HotelAvailability from './components/hotel-availability/HotelAvailability'
 import ProtectRoute from "./components/protect-route/ProtectRoute";
+import HotelAvailibility from "./components/hotel-availibility/HotelAvailibility";
 
 const theme = createTheme({
   typography: {
@@ -49,12 +49,14 @@ function App() {
             element={<ProtectRoute><CarRentals /></ProtectRoute>
             }
           />
-          <Route path="/hotel-detail"
-            element={<ProtectRoute><HotelDetail /></ProtectRoute>
+          <Route
+            path="/hotel-availibility"
+            element={<ProtectRoute><HotelAvailibility /> </ProtectRoute>
             }
           />
-          <Route path="/hotel-availability"
-            element={<ProtectRoute><HotelAvailability /></ProtectRoute>
+
+          <Route path="/hotel-detail"
+            element={<ProtectRoute><HotelDetail /></ProtectRoute>
             }
           />
           <Route path="*" element={<PageNotFound />} />

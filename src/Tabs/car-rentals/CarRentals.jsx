@@ -1,5 +1,4 @@
 import { Box, Button, Toolbar, Accordion, AccordionSummary, AccordionDetails, CardMedia, Typography, TextField, MenuItem, Card, Grid, Checkbox } from "@mui/material";
-import React, { useState } from "react";
 import KingBedIcon from "@mui/icons-material/KingBed";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
@@ -163,7 +162,6 @@ const CarRental = () => {
     },
   ];
 
-  const [children, setChildren] = useState(0);
   const navigate = useNavigate();
 
   return (
@@ -234,8 +232,6 @@ const CarRental = () => {
           ))}
           <TextField
             select
-            value={children}
-            onChange={(e) => setChildren(e.target.value)}
             sx={{
               width: { xs: "100%", md: "12%" },
               backgroundColor: "white",

@@ -1,5 +1,4 @@
 import { Box, Button, Toolbar, Typography, TextField, MenuItem, Card, Grid, CardContent, CardMedia, Chip } from "@mui/material";
-import React, { useState } from "react";
 import KingBedIcon from "@mui/icons-material/KingBed";
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
@@ -189,7 +188,6 @@ const Stays = () => {
     { name: "Corporate contact" },
   ]
 
-  const [children] = useState(0);
   const navigate = useNavigate();
   return (
     <>
@@ -263,9 +261,7 @@ const Stays = () => {
               minWidth: "200px",
               backgroundColor: "white",
               borderRadius: "5px",
-            }}
-            value={children}
-          >
+            }}>
             <MenuItem value={0}>2 adults . 0 children . 1 room</MenuItem>
             <MenuItem value={1}>1 child</MenuItem>
             <MenuItem value={2}>2 children</MenuItem>
@@ -281,55 +277,62 @@ const Stays = () => {
             }}> Search </Button>
         </Box>
 
-        <Box className="text-black mt-5 my-2">
-          <Typography className="fw-bold" variant="h5">
+        <Box sx={{ color: 'text.primary', mt: 5, mb: 2 }}>
+          <Typography fontWeight="bold" variant="h5">
             Offers
           </Typography>
-          <Typography className="my-2">Promotions, deals, and special offers for you</Typography>
-        </Box>
-        <Card className="py-1 ps-3 mt-2">
-          <Box className="d-flex justify-content-between">
-            <Box>
-              <Typography variant="h5">Save on stays worldwide</Typography>
-              <Typography>
-                Start your year with an adventure, saving 15% or more with Early
-                2025 Deals.
-              </Typography>
-              <Button variant="contained"
-                sx={{ textTransform: "none" }}
-                className="mt-3"
-              >
-                Save 15% or more
-              </Button>
-            </Box>
-            <Box className='d-flex justify-content-center align-items-center me-2'>
-              <img width={130} src={WordWide} alt="Img" />
-            </Box>
-          </Box>
-        </Card>
-        <Box sx={{ paddingBottom: "50px" }} className='mt-4'>
-          <Typography className="text-black" variant="h5">
-            Travel more, spend less
+          <Typography sx={{ my: 2 }}>
+            Promotions, deals, and special offers for you
           </Typography>
-          <Card className="py-2 container mt-2">
-            <Box className="d-flex justify-content-between">
+
+          <Card sx={{ py: 1, px: 3, mt: 2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Box>
-                <Typography variant="h5">Sign in, save money</Typography>
+                <Typography variant="h5">Save on stays worldwide</Typography>
                 <Typography>
-                  Save 10% or more at participating properties – just look for the blue Genius label
+                  Start your year with an adventure, saving 15% or more with Early 2025 Deals.
                 </Typography>
-                <Button variant="contained"
-                  sx={{ textTransform: "none" }}
-                  className="mt-3"  >
-                  Sign in
+                <Button
+                  variant="contained"
+                  sx={{ textTransform: 'none', mt: 3 }}
+                >
+                  Save 15% or more
                 </Button>
-                <Button variant="outlined"
-                  sx={{ textTransform: "none" }}
-                  className="mt-3 ms-2"> Register
-                </Button> </Box>
-              <Box><img width={100} src={GiftImg} alt="Img" /></Box>
+              </Box>
+              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mr: 2 }}>
+                <img width={130} src={WordWide} alt="Worldwide" />
+              </Box>
             </Box>
           </Card>
+
+          <Box sx={{ pb: '50px', mt: 4 }}>
+            <Typography sx={{ color: 'text.primary' }} variant="h5">
+              Travel more, spend less
+            </Typography>
+            <Card sx={{ py: 2, px: 3, mt: 2 }}>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Box>
+                  <Typography variant="h5">Sign in, save money</Typography>
+                  <Typography>
+                    Save 10% or more at participating properties – just look for the blue Genius label
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    sx={{ textTransform: 'none', mt: 3 }} >
+                    Sign in
+                  </Button>
+                  <Button variant="outlined"
+                    sx={{ textTransform: 'none', mt: 3, ml: 2 }}
+                  >
+                    Register
+                  </Button>
+                </Box>
+                <Box>
+                  <img width={100} src={GiftImg} alt="Gift" />
+                </Box>
+              </Box>
+            </Card>
+          </Box>
         </Box>
 
         <Box>
@@ -346,8 +349,7 @@ const Stays = () => {
                 <img className="rounded-4"
                   src={LahoreImg} alt="Lahore-img"
                   style={{
-                    width: '100%',
-                    height: 'auto',
+                    width: '100%', height: 'auto',
                     display: 'block',
                   }}
                 />
@@ -357,11 +359,9 @@ const Stays = () => {
                     position: 'absolute',
                     top: 8, left: 8,
                     backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '4px 8px',
+                    borderRadius: 1, padding: '4px 8px',
                     color: '#fff',
-                  }}
-                >
+                  }} >
                   Lahore <img src={Pakistan} alt="Pakistan" />
                 </Typography>
               </Box>
@@ -369,12 +369,9 @@ const Stays = () => {
 
             <Grid item xs={12} sm={6} lg={6}>
               <Box sx={{
-                position: 'relative',
-                borderRadius: 2,
-                overflow: 'hidden',
-                textAlign: 'center',
-              }}
-              >
+                position: 'relative', borderRadius: 2,
+                overflow: 'hidden', textAlign: 'center',
+              }} >
                 <img className="rounded-4"
                   src={IslamabadImg}
                   alt="Islamabad-img"
@@ -388,14 +385,11 @@ const Stays = () => {
                   component="div"
                   sx={{
                     position: 'absolute',
-                    top: 8,
-                    left: 8,
+                    top: 8, left: 8,
                     backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '4px 8px',
+                    borderRadius: 1, padding: '4px 8px',
                     color: '#fff',
-                  }}
-                >
+                  }}>
                   Islamabad <img src={Pakistan} alt="Pakistan" />
                 </Typography>
               </Box>
@@ -407,10 +401,8 @@ const Stays = () => {
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
               <Box sx={{
-                position: 'relative',
-                borderRadius: 2,
-                overflow: 'hidden',
-                textAlign: 'center',
+                position: 'relative', borderRadius: 2,
+                overflow: 'hidden', textAlign: 'center',
               }}>
                 <img src={KarachiImg} alt="Karachi" style={{ width: '100%', height: 'auto' }} />
                 <Typography
@@ -428,10 +420,8 @@ const Stays = () => {
             <Grid item xs={12} sm={6} md={4}>
               <Box
                 sx={{
-                  position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  textAlign: 'center',
+                  position: 'relative', borderRadius: 2,
+                  overflow: 'hidden', textAlign: 'center',
                 }}
               >
                 <img
@@ -535,8 +525,7 @@ const Stays = () => {
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 1,
-                  px: 2,
+                  gap: 1, px: 2,
                   whiteSpace: "nowrap",
                 }}
               >
@@ -552,8 +541,7 @@ const Stays = () => {
                   className="text-dark rounded-5 pt-4"
                   sx={{
                     textTransform: "none",
-                    display: "flex",
-                    alignItems: "center",
+                    display: "flex", alignItems: "center",
                     gap: 1, px: 2,
                   }}
                 >
@@ -711,12 +699,14 @@ const Stays = () => {
               }}
             />
             <Box
-              className="text-white py-5 ms-5 ps-4 d-flex justify-content-center align-content-center"
               sx={{
                 position: "relative",
                 zIndex: 2, top: 6, left: 220,
-                display: "flex", flexDirection: "column",
-              }} >
+                display: "flex", justifyContent: "center",
+                 alignItems: "center", flexDirection: "column",
+                 color: "white", paddingY: "53",
+                 paddingLeft: "4", marginLeft: "5"
+              }}>
               <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
                 Find homes <br /> for your next trip
 
@@ -742,8 +732,7 @@ const Stays = () => {
                 variant="outlined"
                 className="outlined rounded-5 text-dark"
                 sx={{
-                  display: "flex",
-                  alignItems: "center",
+                  display: "flex", alignItems: "center",
                   px: 2, textTransform: 'none',
                   whiteSpace: "nowrap",
                 }}
@@ -759,8 +748,7 @@ const Stays = () => {
                     textTransform: "none",
                     display: "flex", alignItems: "center",
                     gap: 1, px: 2,
-                  }}
-                >
+                  }}>
                   {btns.name}
                 </Button>
               ))}
@@ -819,20 +807,17 @@ const Stays = () => {
           <Button variant="text" sx={{ textTransform: 'none' }}> <AddIcon className="" /> Show More </Button>
         </Grid>
 
-        <Box className="d-flex justify-content-center">
-          <Grid sx={{}}>
-            <Box className='d-flex'>
-              <Grid sx={12} sm={6} md={3} lg={8}>
-                <Box className='d-none d-md-block'>
-                  <Typography className="container me-4 text-dark"
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Grid container>
+            <Box sx={{ display: 'flex' }}>
+              <Grid item xs={12} sm={6} md={3} lg={8}>
+                <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                  <Typography
                     sx={{
-                      px: 2,
-                      textTransform: 'none',
-                      whiteSpace: "nowrap",
+                      px: 2,  textTransform: 'none',  whiteSpace: 'nowrap',
+                      color: 'text.primary',
                     }} >
-                    Countries . Regions . Cities . Districts Airports . Hotels . Places of interest .  Vacation Homes . Apartments . Resorts .
-                    Villas . Hostels .  B&Bs . Guest Houses . Unique places to stay . <br /> All destinations . All flight destinations . All car rental locations . All vacation destinations . Guides . Discover .  Reviews .
-                    Discover monthly stays
+                    Countries . Regions . Cities . Districts . Airports . Hotels . Places of interest . Vacation Homes . Apartments . Resorts . Villas . Hostels . B&Bs . Guest Houses . Unique places to stay . <br /> All destinations . All flight destinations . All car rental locations . All vacation destinations . Guides . Discover . Reviews . Discover monthly stays
                   </Typography>
                 </Box>
               </Grid>

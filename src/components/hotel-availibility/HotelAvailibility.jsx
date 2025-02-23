@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Box, Button, Card, CardMedia, Grid, MenuItem, TextField, Toolbar, Typography } from '@mui/material';
-import BabyChangingStationIcon from '@mui/icons-material/BabyChangingStation';
 import KingBedIcon from "@mui/icons-material/KingBed";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
@@ -8,14 +7,10 @@ import AttractionsIcon from "@mui/icons-material/Attractions";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import FlatwareIcon from '@mui/icons-material/Flatware';
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import OpenTable from '../../assets/OpenTable.png';
 import USAflag from '../../assets/AmericaFlag.png'
-import RosePetal1 from '../../assets/RosePetal-1.jpg';
-import RosePetal2 from '../../assets/RosePetal-2.jpg';
 import PlateImg from '../../assets/PlateImg.jpg';
 import ShareIcon from '@mui/icons-material/Share';
 import WifiIcon from "@mui/icons-material/Wifi";
@@ -27,7 +22,7 @@ import Booking from '../../assets/Booking.png';
 import Priceline from '../../assets/Priceline.png';
 import { useLocation, useNavigate } from "react-router";
 
-const HotelAvailability = () => {
+const HotelAvailibility = () => {
 
   const Btns = [
     { id: 1, name: "Flight", path: "/flights", icon: <FlightTakeoffIcon /> },
@@ -38,7 +33,6 @@ const HotelAvailability = () => {
     { id: 3, name: "Attraction", icon: <AttractionsIcon /> },
     { id: 4, name: "Airport taxis", icon: <LocalTaxiIcon /> }
   ];
-
 
   const Support = [
     { name: "Coronavirus (COVID-19) FAQs" }, { name: "Manage your trips" },
@@ -60,7 +54,7 @@ const HotelAvailability = () => {
   ]
 
   const Partners = [
-    { name: "Extranet login" }, { name: "Partner help" },
+    { name: "Extradite login" }, { name: "Partner help" },
     { name: "List your property" }, { name: "Become an affiliate" },
   ]
 
@@ -323,4 +317,4 @@ const HotelAvailability = () => {
   )
 }
 
-export default HotelAvailability
+export default HotelAvailibility;

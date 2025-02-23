@@ -1,5 +1,4 @@
 import { Box, Button, Toolbar, Typography, TextField, MenuItem, Card, Grid, CardContent, CardMedia, Chip } from "@mui/material";
-import React, { useState } from "react";
 import KingBedIcon from "@mui/icons-material/KingBed";
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
@@ -235,8 +234,6 @@ const Flights = () => {
       rating: '9.7', reviews: '630 reviews', start: 'Starting from', priceNew: 'PKR 51,570', }
   ]
 
-  const [children] = useState(0);
-
   const navigate = useNavigate();
   return (
     <>
@@ -317,9 +314,7 @@ const Flights = () => {
               minWidth: "200px",
               backgroundColor: "white",
               borderRadius: "5px",
-            }}
-            value={children}
-          >
+            }}>
             <MenuItem value={0}>2 adults . 0 children . 1 room</MenuItem>
             <MenuItem value={1}>1 child</MenuItem>
             <MenuItem value={2}>2 children</MenuItem>
