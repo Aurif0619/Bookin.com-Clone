@@ -3,26 +3,24 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
+import HotelAvailibility from "./components/hotel-availibility/HotelAvailibility";
 import HomeSection from "./components/home-section/HomeSection";
+import PageNotFound from "./components/page-not-found/PageNotFound";
+import ProtectRoute from "./components/protect-route/ProtectRoute";
 import HotelDetail from "./components/hotel-detail/HotelDetail";
-import Navbar from "./components/navbar/Navbar";
+import CarRentals from "./Tabs/car-rentals/CarRentals";
 import Register from "./components/register/Register";
+import Navbar from "./components/navbar/Navbar";
 import SignIn from "./components/signIn/SignIn";
 import Flights from "./Tabs/flights/Flights";
 import Stays from "./Tabs/stays/Stays";
-import CarRentals from "./Tabs/car-rentals/CarRentals";
-import PageNotFound from "./components/page-not-found/PageNotFound";
-import ProtectRoute from "./components/protect-route/ProtectRoute";
-import HotelAvailibility from "./components/hotel-availibility/HotelAvailibility";
 
-// Create a Material-UI theme
 const theme = createTheme({
   typography: {
     fontFamily: "Jost, serif",
   },
 });
 
-// Define the router configuration
 const router = createBrowserRouter([
   {
     element: (
@@ -72,7 +70,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-// App component
+
 function App() {
   return (
     <ThemeProvider theme={theme}>

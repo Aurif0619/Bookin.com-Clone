@@ -1,5 +1,4 @@
 import { Box, Button, Toolbar, Typography, TextField, MenuItem, Card, Grid, CardContent, CardMedia, Chip } from "@mui/material";
-import React, { useState } from "react";
 import KingBedIcon from "@mui/icons-material/KingBed";
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
@@ -132,7 +131,7 @@ const HomeSection = () => {
     start: 'Starting from', priceNew: 'PKR 104,338',
   },
   {
-    id: '3', Image: Agritusiam, title: 'Agriturismo Cabrele',
+    id: '3', Image: Agritusiam, title: 'Agritusiam Cabrele',
     location: 'Italy, Santorso', rating: '9.4', reviews: '291 reviews',
     start: 'Starting from', priceNew: 'PKR 87,817',
   },
@@ -196,7 +195,7 @@ const HomeSection = () => {
   const Discover = [
     { name: "Genius loyalty program" }, { name: "Seasonal and holiday deals" },
     { name: "Travel articles" }, { name: "Booking.com for Business" },
-    { name: "Traveller Review Awards" }, { name: "Car rental" },
+    { name: "Traveler Review Awards" }, { name: "Car rental" },
     { name: "Flight finder" }, { name: "Restaurant reservations" },
     { name: "Booking.com for Travel Agents" }
   ]
@@ -399,8 +398,9 @@ const HomeSection = () => {
                     src={IslamabadImg}
                     alt="Islamabad"
                     style={{
-                      width: '100%',  height: 'auto',
-                      display: 'block',  }}
+                      width: '100%', height: 'auto',
+                      display: 'block',
+                    }}
                   />
 
                   <Typography
@@ -413,7 +413,7 @@ const HomeSection = () => {
                       backgroundColor: 'rgba(0, 0, 0, 0.6)',
                       borderRadius: 1,
                       padding: '6px 10px',
-                      color: '#fff',  display: 'flex',
+                      color: '#fff', display: 'flex',
                       alignItems: 'center',
                       fontSize: { xs: '1rem', md: '1.25rem' },
                     }}>
@@ -476,7 +476,7 @@ const HomeSection = () => {
                       backgroundColor: 'rgba(0, 0, 0, 0.6)',
                       borderRadius: 1, padding: '4px 8px',
                     }}>
-                    Medina <img src={Makkah} alt="Medina" />
+                    Makkah <img src={Makkah} alt="Medina" />
                   </Typography>
                 </Button>
               </Box>
@@ -889,6 +889,7 @@ const HomeSection = () => {
           </Grid>
         </Box>
       </Box>
+
       <Box sx={{ background: '#F5F5F5' }} container>
         <Grid container spacing={3} className="my-4">
           <Grid item xs={6} sm={6} md={2.4}>
@@ -949,17 +950,19 @@ const HomeSection = () => {
           </Button>
           <Button variant="text" className="text-black"> PKR </Button>
         </Box>
-        <Typography className="pb-5 d-flex text-center justify-content-center align-items-center">
+        <Typography className="pb-4 d-flex text-center justify-content-center align-items-center">
           Booking.com is part of Booking Holdings Inc., the world leader in online travel and related services. <br />
           Copyright © 1996–2025 Booking.com™. All rights reserved.
         </Typography>
-        <Box className='container d-flex justify-content-center align-items-center pb-5'>
-          <Typography className="text-primary"><img src={Booking} alt="img" /></Typography>
-          <Typography className="mx-3 text-info"><img src={Priceline} alt="img" /></Typography>
-          <Typography><img src={KAYAKImg} alt="img" /></Typography>
-          <Typography><img src={Agoda} alt="img" /></Typography>
-          <img src={OpenTable} alt="img" />
-        </Box>
+        <Grid item sx={12}>
+          <Box className='d-flex justify-content-center align-items-center pb-5' sx={{ flexWrap: 'wrap', gap: 2 }}>
+            <img src={Booking} alt="img" />
+            <Typography className="mx-3"><img src={Priceline} alt="img" /></Typography>
+            <img src={KAYAKImg} alt="img" />
+            <Typography className="mx-2"><img src={Agoda} alt="img" /></Typography>
+            <img src={OpenTable} alt="img" />
+          </Box>
+        </Grid>
       </Box>
     </>
   );

@@ -3,6 +3,7 @@ import { AppBar, Box, Button, Toolbar, IconButton, Drawer, useMediaQuery, } from
 import { Menu as MenuIcon } from "@mui/icons-material";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import USAflag from '../../assets/AmericaFlag.png'
+import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
@@ -11,7 +12,10 @@ function Navbar() {
     const toggleDrawer = () => {
         setDrawerOpen(!drawerOpen);
     };
-
+    const handleLogout = () => {
+        localStorage.removeItem('userToken');
+        navigate("/sign-in")
+    }
     const navigate = useNavigate();
 
     return (
@@ -34,8 +38,7 @@ function Navbar() {
                                 PKR
                             </Button>
                             <Button onClick={(() => navigate("/"))}> <img className="rounded-5"
-                                src={USAflag}
-                                alt="USA flag"
+                                src={USAflag} alt="flag"
                                 style={{ width: "25px", height: "25px" }}
                             />
                             </Button>
@@ -45,6 +48,9 @@ function Navbar() {
                             <Button onClick={(() => navigate("/hotel-detail"))} variant="outlined"
                                 className="text-white"
                                 sx={{ textTransform: "capitalize" }} > List your property
+                            </Button>
+                            <Button onClick={handleLogout} variant="outlined" className="text-primary bg-white fw-bold border-white"
+                                sx={{ textTransform: "capitalize" }}>Logout <LogoutIcon />
                             </Button>
                             <Button onClick={(() => navigate("/register"))} variant="outlined"
                                 className="text-primary bg-white fw-bold border-white"

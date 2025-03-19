@@ -48,8 +48,10 @@ import { useNavigate } from "react-router";
 const Flights = () => {
   const Btns = [
     { id: 1, name: "Flights", path: "/flights", icon: <FlightTakeoffIcon /> },
-    { id: 2, name: "Car rentals", path: "/car-rentals", icon: 
-    <DirectionsCarIcon className="d-none d-sm-block" /> },
+    {
+      id: 2, name: "Car rentals", path: "/car-rentals", icon:
+        <DirectionsCarIcon className="d-none d-sm-block" />
+    },
     { id: 3, name: "Attraction", icon: <AttractionsIcon /> },
     { id: 4, name: "Airport taxis", icon: <LocalTaxiIcon /> }
   ];
@@ -226,12 +228,15 @@ const Flights = () => {
   ]
 
   const Interest = [
-    { id: '1', Image: Gulberg, title: 'Magnova Studios', location: 'Poland, Kiszkowo',
+    {
+      id: '1', Image: Gulberg, title: 'Magnova Studios', location: 'Poland, Kiszkowo',
       rating: '9.7', reviews: '630 reviews', start: 'Starting from', priceNew: 'PKR 51,570',
     },
 
-    { id: 2, Image: Das, title: 'Magnova Studios', location: 'Poland, Kiszkowo',
-      rating: '9.7', reviews: '630 reviews', start: 'Starting from', priceNew: 'PKR 51,570', }
+    {
+      id: 2, Image: Das, title: 'Magnova Studios', location: 'Poland, Kiszkowo',
+      rating: '9.7', reviews: '630 reviews', start: 'Starting from', priceNew: 'PKR 51,570',
+    }
   ]
 
   const navigate = useNavigate();
@@ -243,7 +248,7 @@ const Flights = () => {
         <Toolbar />
         <Box className="container"
           sx={{ flexWrap: "wrap", justifyContent: { xs: "center", md: "flex-start" }, }}>
-          <Button onClick={(()=>navigate(("/stays")))} className="border-white text-white rounded-5 gap-2 py-2"
+          <Button onClick={(() => navigate(("/stays")))} className="border-white text-white rounded-5 gap-2 py-2"
             variant="outlined"
             sx={{ textTransform: "none" }}>
             <KingBedIcon className="fs-4" /> Stays
@@ -253,7 +258,7 @@ const Flights = () => {
               key={btn.id}
               sx={{ textTransform: "none" }}> {btn.icon}
               {btn.name}
-              </Button>
+            </Button>
           ))}
 
           <Box sx={{ background: "#003B95", padding: "20px 0" }} className='mt-5'>
@@ -333,7 +338,7 @@ const Flights = () => {
             Search
           </Button>
         </Box>
-        
+
         <Box>
           <Typography variant="h5" className="mt-5 pt-2 fw-bolder">
             Still interested in these properties?
@@ -438,32 +443,29 @@ const Flights = () => {
                   borderRadius: 2,
                   overflow: 'hidden',
                   textAlign: 'center',
-                }}
-              >
-                <img className="rounded-4"
-                  src={LahoreImg}
-                  alt="Lahore-img"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                  }}
-                />
-                <Typography
-                  variant="h6"
-                  component="div"
-                  sx={{
-                    position: 'absolute',
-                    top: 8,
-                    left: 8,
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '4px 8px',
-                    color: '#fff',
-                  }}
-                >
-                  Lahore <img src={Pakistan} alt="Pakistan" />
-                </Typography>
+                }}> <Button onClick={(() => navigate("/hotel-Detail"))}>
+                  <img className="rounded-4"
+                    src={LahoreImg}
+                    alt="Lahore-img"
+                    style={{
+                      width: '100%', height: 'auto',
+                      display: 'block',
+                    }}
+                  />
+                  <Typography
+                    variant="h6"
+                    component="div"
+                    sx={{
+                      position: 'absolute',
+                      top: 8, left: 8,
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                      borderRadius: 1, padding: '4px 8px',
+                      color: '#fff',
+                    }}>
+                    Lahore
+                    <img src={Pakistan} alt="Pakistan" />
+                  </Typography>
+                </Button>
               </Box>
             </Grid>
 
@@ -471,35 +473,31 @@ const Flights = () => {
               <Box
                 sx={{
                   position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
+                  borderRadius: 2, overflow: 'hidden',
                   textAlign: 'center',
-                }}
-              >
-                <img className="rounded-4"
-                  src={IslamabadImg}
-                  alt="Islamabad-img"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                  }}
-                />
-                <Typography
-                  variant="h6"
-                  component="div"
-                  sx={{
-                    position: 'absolute',
-                    top: 8,
-                    left: 8,
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '4px 8px',
-                    color: '#fff',
-                  }}
-                >
-                  Islamabad <img src={Pakistan} alt="Pakistan" />
-                </Typography>
+                }}> <Button onClick={(() => navigate("/hotel-Detail"))}>
+                  <img className="rounded-4"
+                    src={IslamabadImg}
+                    alt="Islamabad-img"
+                    style={{
+                      width: '100%', height: 'auto',
+                      display: 'block',
+                    }}
+                  />
+                  <Typography
+                    variant="h6"
+                    component="div"
+                    sx={{
+                      position: 'absolute',
+                      top: 8, left: 8,
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                      borderRadius: 1,
+                      padding: '4px 8px', color: '#fff',
+                    }}>
+                    Islamabad
+                    <img src={Pakistan} alt="Pakistan" />
+                  </Typography>
+                </Button>
               </Box>
             </Grid>
           </Grid>
@@ -508,55 +506,53 @@ const Flights = () => {
         <Box className="d-flex my-3">
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  textAlign: 'center',
-                }}>
-                <img src={KarachiImg} alt="Karachi" style={{ width: '100%', height: 'auto' }} />
-                <Typography
-                  variant="h6"
-                  component="div"
-                  sx={{
-                    position: 'absolute',
-                    top: 8, left: 8, color: '#fff',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)', borderRadius: 1, padding: '4px 8px',
-                  }} >
-                  Karachi <img src={Pakistan} alt="Pakistan" /></Typography> </Box>
+              <Box sx={{
+                position: 'relative',
+                borderRadius: 2, overflow: 'hidden',
+                textAlign: 'center',
+              }}>
+                <Button onClick={(() => navigate("/hotel-Detail"))}>
+                  <img src={KarachiImg} alt="Karachi" style={{ width: '100%', height: 'auto' }} />
+                  <Typography
+                    variant="h6"
+                    component="div"
+                    sx={{
+                      position: 'absolute',
+                      top: 8, left: 8, color: '#fff',
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)', borderRadius: 1, padding: '4px 8px',
+                    }} >
+                    Karachi <img src={Pakistan} alt="Pakistan" />
+                  </Typography>
+                </Button>
+              </Box>
             </Grid>
 
             {/* Medina */}
             <Grid item xs={12} sm={6} md={4}>
-              <Box
-                sx={{
-                  position: 'relative',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  textAlign: 'center',
-                }}
-              >
-                <img
-                  src={MedinaImg}
-                  alt="Medina"
-                  style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-                />
-                <Typography
-                  variant="h6"
-                  component="div"
-                  sx={{
-                    position: 'absolute',
-                    top: 8,
-                    left: 8,
-                    color: '#fff',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '4px 8px',
-                  }}
-                >
-                  Medina <img src={Makkah} alt="Medina" />
-                </Typography>
+              <Box sx={{
+                position: 'relative',
+                borderRadius: 2, overflow: 'hidden',
+                textAlign: 'center',
+              }}>
+                <Button onClick={(() => navigate("/hotel-Detail"))}>
+                  <img
+                    src={MedinaImg}
+                    alt="Medina"
+                    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+                  />
+                  <Typography variant="h6" component="div"
+                    sx={{
+                      position: 'absolute',
+                      top: 8, left: 8,
+                      color: '#fff',
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                      borderRadius: 1,
+                      padding: '4px 8px',
+                    }}>
+                    Medina
+                    <img src={Makkah} alt="Medina" />
+                  </Typography>
+                </Button>
               </Box>
             </Grid>
 
@@ -567,25 +563,24 @@ const Flights = () => {
                   borderRadius: 2,
                   overflow: 'hidden',
                   textAlign: 'center',
-                }}
-              >
-                <img
-                  src={DubaiImg} alt="Dubai" style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-                />
-                <Typography
-                  variant="h6"
-                  component="div"
-                  sx={{
-                    position: 'absolute',
-                    top: 8,
-                    left: 8,
-                    color: '#fff',
-                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                    borderRadius: 1,
-                    padding: '4px 8px',
-                  }}>
-                  Dubai <img src={Dubai} alt="Dubai" />
-                </Typography>
+                }}>
+                <Button onClick={(() => navigate("/hotel-Detail"))}>
+                  <img src={DubaiImg} alt="Dubai"
+                    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+                  />
+                  <Typography
+                    variant="h6" component="div"
+                    sx={{
+                      position: 'absolute',
+                      top: 8, left: 8,
+                      color: '#fff',
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                      borderRadius: 1,
+                      padding: '4px 8px',
+                    }}>
+                    Dubai <img src={Dubai} alt="Dubai" />
+                  </Typography>
+                </Button>
               </Box>
             </Grid>
           </Grid>
@@ -600,16 +595,13 @@ const Flights = () => {
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 1,
-                  px: 2,
+                  gap: 1, px: 2,
                   whiteSpace: "nowrap",
-                }}
-              >
+                }}>
                 <LocationCityIcon />
                 <Typography sx={{ textTransform: "none" }}>City</Typography>
               </Button>
 
-              {/* Quick Buttons */}
               {QuickBtns.map((btn) => (
                 <Button
                   key={btn.id}
@@ -619,17 +611,15 @@ const Flights = () => {
                     textTransform: "none",
                     display: "flex",
                     alignItems: "center",
-                    gap: 1,
-                    px: 2,
-                  }}
-                >
+                    gap: 1, px: 2,
+                  }} >
                   {btn.icon} {btn.name}
                 </Button>
               ))}
             </Box>
           </Grid>
         </Grid>
-        {/* Heading Section (Explore Pakistan) */}
+
         <Grid item xs={12} className="mt-3">
           <Typography variant="h4" className="mt-5 fw-bold my-3">
             Explore Pakistan
@@ -670,8 +660,7 @@ const Flights = () => {
                     borderRadius: 2,
                     boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
                     overflow: "hidden", p: 1,
-                  }}
-                >
+                  }}>
                   <CardMedia
                     component="img"
                     image={hotels.Image}
@@ -697,7 +686,7 @@ const Flights = () => {
           </Grid>
         </Box>
 
-        {/* Dealing Hotels */}
+
         <Box className='mt-5'>
           <Typography variant="h5" fontWeight="bold" className="my-2 py-2">
             Deals for the weekend
@@ -893,7 +882,8 @@ const Flights = () => {
             </Box>
           </Card>
         </Box>
-        {/* Footer */}
+
+        {/* footer */}
         <Box className='mt-3'>
           <Typography variant="h5" className="fw-bold py-2">
             Popular with travelers from Pakistan
@@ -922,8 +912,7 @@ const Flights = () => {
                     display: "flex",
                     alignItems: "center",
                     gap: 1, px: 2,
-                  }}
-                >
+                  }}>
                   {btns.name}
                 </Button>
               ))}
@@ -931,7 +920,7 @@ const Flights = () => {
           </Grid>
         </Box>
 
-        {/* Footer items */}
+        {/* footer items */}
         <Grid container spacing={3} className="my-4">
           <Grid item xs={6} sm={6} md={2.4}>
             <Box>
@@ -1070,13 +1059,16 @@ const Flights = () => {
           Booking.com is part of Booking Holdings Inc., the world leader in online travel and related services. <br />
           Copyright © 1996–2025 Booking.com™. All rights reserved.
         </Typography>
-        <Box className='container d-flex justify-content-center align-items-center pb-5'>
-          <Typography className="text-primary"><img src={Booking} alt="img"/></Typography>
-          <Typography className="mx-3 text-info"><img src={Priceline} alt="img" /></Typography>
-          <Typography><img src={KAYAKImg} alt="img" /></Typography>
-          <Typography><img src={Agoda} alt="img" /></Typography>
-          <img src={OpenTable} alt="img" />
-        </Box>
+
+        <Grid item sx={12}>
+          <Box className='d-flex justify-content-center align-items-center pb-5' sx={{ flexWrap: 'wrap', gap: 2 }}>
+            <img src={Booking} alt="img" />
+            <Typography className="mx-3"><img src={Priceline} alt="img" /></Typography>
+            <img src={KAYAKImg} alt="img" />
+            <Typography className="mx-2"><img src={Agoda} alt="img" /></Typography>
+            <img src={OpenTable} alt="img" />
+          </Box>
+        </Grid>
       </Box>
     </>
   );

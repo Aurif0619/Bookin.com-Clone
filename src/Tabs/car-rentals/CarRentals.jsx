@@ -217,19 +217,19 @@ const CarRental = () => {
             { placeholder: "Time", icon: <AccessTimeIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },
             { placeholder: "Drop-off date", icon: <CalendarMonthIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },
             { placeholder: "Time", icon: <AccessTimeIcon sx={{ mr: 1 }} />, width: { xs: "48%", md: "14%" } },].map((field, index) => (
-            <TextField
-              key={index}
-              placeholder={field.placeholder}
-              sx={{
-                width: field.width,
-                backgroundColor: "white",
-                borderRadius: "8px",
-              }}
-              InputProps={{
-                startAdornment: field.icon,
-              }}
-            />
-          ))}
+              <TextField
+                key={index}
+                placeholder={field.placeholder}
+                sx={{
+                  width: field.width,
+                  backgroundColor: "white",
+                  borderRadius: "8px",
+                }}
+                InputProps={{
+                  startAdornment: field.icon,
+                }}
+              />
+            ))}
           <TextField
             select
             sx={{
@@ -507,13 +507,16 @@ const CarRental = () => {
           Booking.com is part of Booking Holdings Inc., the world leader in online travel and related services. <br />
           Copyright © 1996–2025 Booking.com™. All rights reserved.
         </Typography>
-        <Box className='container d-flex justify-content-center align-items-center pb-5'>
-          <Typography className="text-primary"><img src={Booking} alt="img"/></Typography>
-          <Typography className="mx-3 text-info"><img src={Priceline} alt="img" /></Typography>
-          <Typography><img src={KAYAKImg} alt="img" /></Typography>
-          <Typography><img src={Agoda} alt="img" /></Typography>
-          <img src={OpenTable} alt="img" />
-        </Box>
+
+        <Grid item sx={12}>
+          <Box className='d-flex justify-content-center align-items-center pb-5' sx={{ flexWrap: 'wrap', gap: 2 }}>
+            <img src={Booking} alt="img" />
+            <Typography className="mx-3"><img src={Priceline} alt="img" /></Typography>
+            <img src={KAYAKImg} alt="img" />
+            <Typography className="mx-2"><img src={Agoda} alt="img" /></Typography>
+            <img src={OpenTable} alt="img" />
+          </Box>
+        </Grid>
       </Box>
     </>
   );

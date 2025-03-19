@@ -1,13 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
@@ -18,32 +8,43 @@ body {
   box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.terms-box {
+  max-height: 200px;
+  /* Scroll area height */
+  overflow-y: auto;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Scrollbar Styling (for Chrome, Edge, Safari) */
+.terms-box::-webkit-scrollbar {
+  width: 6px;
 }
 
-.App-link {
-  color: #61dafb;
+.terms-box::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.terms-box::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.terms-box::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.term-item {
+  cursor: pointer;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.term-item:hover {
+  color: #007bff;
+  transform: translateX(5px);
+  font-weight: bold;
 }

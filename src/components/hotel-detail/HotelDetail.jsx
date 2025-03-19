@@ -3,7 +3,6 @@ import KingBedIcon from "@mui/icons-material/KingBed";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import AttractionsIcon from "@mui/icons-material/Attractions";
-import { useNavigate } from "react-router";
 import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
@@ -11,14 +10,15 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import SwapVertIcon from '@mui/icons-material/SwapVert';
 import Gulberg from '../../assets/Gulber.webp';
+import HotelIHS from '../../assets/HotelHS1.webp';
 import Premium from '../../assets/premium.webp';
 import Rose from '../../assets/Rose.webp';
 import GoldCrest from '../../assets/Gold crest.webp'
 import GiftImg from '../../assets/giftImg.png';
 import Luxurious from '../../assets/Luxurious.webp';
-import Dove from '../../assets/Dove.webp';
 import Goldcrest from '../../assets/Luxury appartment.webp';
 import LahoreContinent from '../../assets/LahoreContinental.webp';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Western from '../../assets/Western.webp';
 import Mukhtar from '../../assets/Mukhtar.webp';
 import Defence from '../../assets/Defence.webp';
@@ -26,7 +26,27 @@ import Premier from '../../assets/Premier Inn.webp';
 import Oasis from '../../assets/Oasis.webp';
 import HotelHS1 from '../../assets/HotelHS1.webp';
 import Luxus from '../../assets/Luxus.webp';
+import Agritusia from '../../assets/Agritusiam.webp';
+import Apartment from '../../assets/apartment.jpeg';
+import HotelAvailiblity from '../../assets/AvailabilityImg1.jpg';
+import HotelAvailiblity2 from '../../assets/AvailibilityImg2.jpg';
+import HotelAvailiblity3 from '../../assets/AvailibilityImg3.jpg';
+import HotelAvaliblity4 from '../../assets/AvailibilityImg4.jpg';
+import Boutiqua from '../../assets/BoutiquaGalata.jpg';
+import MakkahHotel from '../../assets/MakkahHotel.jpg';
+import Milan from '../../assets/Milan.jpg';
+import Nawazi from '../../assets/NawaziHotel.jpg';
+import Hotel from '../../assets/hotel.jpeg';
+import Bed from '../../assets/One.webp';
+import Phoenix from '../../assets/phoenix.jpg';
+import Premire from '../../assets/Premier Inn.webp';
+import RamdaHotel from '../../assets/RamadaHotel.jpg';
+import Restore from '../../assets/resort.jpeg';
+import RosePetal from '../../assets/RosePetal-1.jpg';
+import RosePetal2 from '../../assets/RosePetal-2.jpg';
 import Shelton from '../../assets/Shelton.webp';
+import SuitImg from '../../assets/suitesImg.jpg';
+import Dove from '../../assets/Dove.webp';
 import One from '../../assets/One.webp';
 import Faletti from '../../assets/Faletti.webp';
 import Booking from '../../assets/Booking.png';
@@ -34,7 +54,7 @@ import Priceline from '../../assets/Priceline.png';
 import KAYAKImg from '../../assets/KAYAK.png';
 import Agoda from '../../assets/agoda.png';
 import OpenTable from '../../assets/OpenTable.png';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { useNavigate } from "react-router";
 
 const HotelDetail = () => {
   const navigate = useNavigate();
@@ -54,14 +74,15 @@ const HotelDetail = () => {
   { name: 'Pakistan', icon: <ChevronRightIcon /> },
   { name: 'Punjab', icon: <ChevronRightIcon /> },
   { name: 'Lahore', icon: <ChevronRightIcon /> },
-  { name: 'Search result' }
-  ]
+  { name: 'Search result' }]
 
   const hotelData = [
     {
       id: 1,
       name: 'Gulberg Inn Hotel Lahore',
       image: Gulberg,
+      image2: Apartment,
+      image3: HotelIHS,
       rating: 8.1,
       location: 'Gulberg, Lahore • 7.4 km from downtown',
       deal: 'Early 2025 Deal',
@@ -77,6 +98,8 @@ const HotelDetail = () => {
       id: 2,
       name: 'Premium Signature Luxurious',
       image: Premium,
+      image2: Western,
+      image3: Agritusia,
       rating: 9.2,
       location: 'Karachi • 2.3 km from downtown',
       deal: 'Special Discount',
@@ -92,6 +115,8 @@ const HotelDetail = () => {
       id: 3,
       name: ' Rose Palace Hotel, Gulberg',
       image: Rose,
+      image2: Mukhtar,
+      image3: Nawazi,
       rating: 8.8,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
@@ -107,6 +132,8 @@ const HotelDetail = () => {
       id: 4,
       name: 'Hotel Grand Pakeeza',
       image: GoldCrest,
+      image2: Hotel,
+      image3: Shelton,
       rating: 8.3,
       location: 'Mall Road, Lahore • 10.2 km from downtown',
       deal: 'Limited Time Offer',
@@ -384,6 +411,8 @@ const HotelDetail = () => {
       name: 'Luxurious One-Bedroom Gold Crest',
       rating: 8.0,
       image: Luxurious,
+      image2: HotelAvailiblity,
+      image3: HotelAvailiblity2,
       location: 'Gulberg, Lahore • 7.4 km from downtown',
       deal: 'Early 2025 Deal',
       roomType: 'Deluxe Double Room • 1 queen bed',
@@ -399,6 +428,8 @@ const HotelDetail = () => {
       name: 'Dove Inn Hotel ',
       rating: 9.2,
       image: Dove,
+      image2: HotelAvailiblity3,
+      image3: HotelAvaliblity4,
       location: 'Karachi • 2.3 km from downtown',
       deal: 'Special Discount',
       roomType: 'Executive Room • 1 king bed',
@@ -413,6 +444,8 @@ const HotelDetail = () => {
       id: 3,
       name: 'Goldcrest Luxury Apartments',
       image: Goldcrest,
+      image2: Boutiqua,
+      image3: MakkahHotel,
       rating: 8.3,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
@@ -428,6 +461,8 @@ const HotelDetail = () => {
       id: 4,
       name: 'Lahore Continental Hotel',
       image: LahoreContinent,
+      image2: Milan,
+      image3: Bed,
       rating: 8.1,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
@@ -443,6 +478,8 @@ const HotelDetail = () => {
       id: 5,
       name: 'Best Western Premier Hotel Gulberg',
       image: Western,
+      image2: Phoenix,
+      image3: Premire,
       rating: 8.8,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
@@ -458,6 +495,8 @@ const HotelDetail = () => {
       id: 6,
       name: 'Mukhtar Homes Bahria Town Lahore',
       image: Mukhtar,
+      image2: Premium,
+      image3: RamdaHotel,
       rating: 8.5,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
@@ -473,6 +512,8 @@ const HotelDetail = () => {
       id: 7,
       name: 'Defence Raya Golf & Country Club',
       image: Defence,
+      image2: Restore,
+      image3: Rose,
       rating: 7.2,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
@@ -488,6 +529,8 @@ const HotelDetail = () => {
       id: 8,
       name: 'Premier Inn Express Gulberg',
       image: Premier,
+      image2: RosePetal,
+      image3: RosePetal2,
       rating: 7.8,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
@@ -503,6 +546,8 @@ const HotelDetail = () => {
       id: 9,
       name: 'The Oasis Hotel',
       image: Oasis,
+      image2: Shelton,
+      image3: Western,
       rating: 8.2,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
@@ -518,6 +563,8 @@ const HotelDetail = () => {
       id: 11,
       name: 'Luxus Grand Hotel',
       image: Luxus,
+      image2: SuitImg,
+      image3: Mukhtar,
       rating: 8.2,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
@@ -533,6 +580,8 @@ const HotelDetail = () => {
       id: 12,
       name: 'Shelton Rezidor Hotel Gulberg Lahore',
       image: Shelton,
+      image2: Rose,
+      image3: Dove,
       rating: 8.2,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
@@ -548,6 +597,8 @@ const HotelDetail = () => {
       id: 13,
       name: 'Hotel One The Mall, Lahore',
       image: One,
+      image2: Defence,
+      image3: MakkahHotel,
       rating: 6.2,
       location: 'Islamabad • 5.0 km from downtown',
       deal: 'Seasonal Offer',
@@ -563,6 +614,8 @@ const HotelDetail = () => {
       id: 14,
       name: 'Hotel HS1 ',
       image: HotelHS1,
+      image2: RamdaHotel,
+      image3: Western,
       rating: 5.2,
       deal: 'Seasonal Offer',
       roomType: 'Luxury Suite • 2 queen beds',
@@ -577,6 +630,8 @@ const HotelDetail = () => {
       id: 15,
       name: 'Faletti Express- Shimla Hill',
       image: Faletti,
+      image2: RosePetal2,
+      image3: Gulberg,
       rating: 5.6,
       deal: 'Seasonal Offer',
       roomType: 'Luxury Suite • 2 queen beds',
@@ -648,8 +703,7 @@ const HotelDetail = () => {
           ))}
         </Box>
       </Box>
-      <Box
-        marginTop={-4}
+      <Box marginTop={-4}
         className="rounded-3 p-1 d-flex gap-2 container
          justify-content-between align-items-center"
         sx={{
@@ -753,19 +807,18 @@ const HotelDetail = () => {
               </Box>
             ))}
           </Box>
-          <Box sx={{
-          }}>
-            <Box className='d-flex justify-content-between'>
+          <Box>
+            <Box sx={{display: "flex", justifyContent: "space-between"}}>
               <Box>
                 <Typography variant="h5" className="text-black fw-bold" sx={{ marginBottom: '20px' }}>
                   Lahore: 611 properties found
                 </Typography>
                 <Button variant='outlined' className='text-dark fs-6' sx={{ textTransform: 'none' }}>
-                  <SwapVertIcon className='fs-5 me-1' /> Sort by: Our top picks <KeyboardArrowUpIcon />
+                  <SwapVertIcon className='fs-5 me-1'/> Sort by: Our top picks <KeyboardArrowUpIcon />
                 </Button>
               </Box>
               <Box>
-                <Button className='rounded-5 px-2 gap-2 ' sx={{ background: "#ddd" }}>
+                <Button className='rounded-5 px-2 gap-2' sx={{ background: "#ddd" }}>
                   <Button className='rounded-5 bg-white text-dark px-4'>list</Button>
                   Grid
                 </Button>
@@ -787,16 +840,14 @@ const HotelDetail = () => {
                     width: { xs: '100%', sm: '30%' },
                     position: 'relative',
                   }}>
-                  <img src={hotel.image}
-                    alt={hotel.name}
+                  <img src={hotel.image} alt={Image}
                     style={{
                       width: '100%', height: '100%',
                       objectFit: 'cover',
                     }}
                   />
                   {hotel.breakfast && (
-                    <Chip
-                      label="Breakfast included"
+                    <Chip label="Breakfast included"
                       sx={{
                         position: 'absolute',
                         top: '10px', left: '10px',
@@ -913,8 +964,7 @@ const HotelDetail = () => {
             </Card>
             <Box>
               {SecondHotelData.map((hotel) => (
-                <Card
-                  className="mt-3"
+                <Card className="mt-3"
                   key={hotel.id}
                   sx={{
                     display: 'flex',
@@ -930,10 +980,8 @@ const HotelDetail = () => {
                     sx={{
                       width: { xs: '100%', sm: '30%' },
                       position: 'relative',
-                    }} >
-                    <img
-                      src={hotel.image}
-                      alt={hotel.name}
+                    }}>
+                    <img src={hotel.image} alt={hotel.name}
                       style={{
                         width: '100%', height: '100%',
                         objectFit: 'cover',
@@ -944,19 +992,16 @@ const HotelDetail = () => {
                         label="Breakfast included"
                         sx={{
                           position: 'absolute',
-                          top: '10px',
-                          left: '10px',
+                          top: '10px', left: '10px',
                           backgroundColor: '#28a745',
-                          color: '#fff',
-                          fontWeight: 'bold',
+                          color: '#fff', fontWeight: 'bold',
                         }}
                       />
                     )}
                     <FavoriteBorderIcon
                       sx={{
                         position: 'absolute',
-                        top: '10px',
-                        right: '10px',
+                        top: '10px', right: '10px',
                         backgroundColor: '#fff',
                         borderRadius: '50%',
                         padding: '5px',
@@ -1040,7 +1085,7 @@ const HotelDetail = () => {
                 </Card>
               ))}
               <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
-                <Button variant="outlined" sx={{ width: '50%', fontWeight: 'bold', py: 2 }}>
+                <Button variant="outlined" sx={{ width: '50%', fontWeight: 'bold', py: 1 }}>
                   Load more results
                 </Button>
               </Box>
@@ -1048,10 +1093,11 @@ const HotelDetail = () => {
           </Box>
         </Box>
       </Box>
+
       {/* footer */}
       <Box className='my-3' sx={{ background: '#003B95' }}>
-        <Box className='d-flex justify-content-center py-1' sx={{ borderBottom: '1px solid #fff' }}>
-          <Button variant='outlined' className='fw-bold py-2 text-white'>Load more results</Button>
+        <Box className='d-flex justify-content-center py-2' sx={{ borderBottom: '1px solid #fff' }}>
+          <Button variant='outlined' className='fw-bold py-1 text-white'>Load more results</Button>
         </Box>
         <Box className='container'>
           {FooterBtn.map((btn) => <Button sx={{ textTransform: 'none' }} className='text-white'
@@ -1112,13 +1158,15 @@ const HotelDetail = () => {
             Booking.com is part of Booking Holdings Inc., the world leader in online travel and related services.
           </Typography>
 
-          <Box className="container d-flex flex-wrap justify-content-center align-items-center gap-3 pb-4">
-            <img src={Booking} alt="Booking" className="img-fluid" />
-            <img src={Priceline} alt="Priceline" className="img-fluid mx-3" />
-            <img src={KAYAKImg} alt="KAYAK" className="img-fluid" />
-            <img src={Agoda} alt="Agoda" className="img-fluid" />
-            <img src={OpenTable} alt="OpenTable" className="img-fluid" />
-          </Box>
+          <Grid item sx={12}>
+            <Box className='d-flex justify-content-center align-items-center pb-5' sx={{ flexWrap: 'wrap', gap: 2 }}>
+              <img src={Booking} alt="img" />
+              <Typography className="mx-3"><img src={Priceline} alt="img" /></Typography>
+              <img src={KAYAKImg} alt="img" />
+              <Typography className="mx-2"><img src={Agoda} alt="img" /></Typography>
+              <img src={OpenTable} alt="img" />
+            </Box>
+          </Grid>
         </Box>
       </Box >
     </>
