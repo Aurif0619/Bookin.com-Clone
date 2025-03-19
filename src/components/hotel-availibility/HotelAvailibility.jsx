@@ -18,9 +18,10 @@ import Priceline from '../../assets/Priceline.png';
 import { useLocation, useNavigate } from "react-router";
 
 const HotelAvailibility = () => {
+
   const Btns = [
-    { id: 1, name: "Flight", path: "/flights", icon: <FlightTakeoffIcon /> },
-    { id: 2, name: "Car rentals", path: "/car-rentals", icon: <DirectionsCarIcon className="d-none d-sm-block" /> },
+    { id: 1, name: "Flights", path: "/flights", icon: <FlightTakeoffIcon /> },
+    { id: 2, name: "Car rentals", path: "/car-rentals", icon: <DirectionsCarIcon /> },
     { id: 3, name: "Attraction", icon: <AttractionsIcon /> },
     { id: 4, name: "Airport taxis", icon: <LocalTaxiIcon /> }
   ];
@@ -70,34 +71,34 @@ const HotelAvailibility = () => {
 
   return (
     <>
-      <Box component="main" className="text-white" sx={{ p: 2, background: "#003B95", height: { xs: "auto", md: "35vh" } }}>
+      <Box component="main" className="text-white"
+        sx={{ p: 2, background: "#003B95", height: "35vh", }}>
         <Toolbar />
-        <Box className="container" sx={{ display: 'flex', flexWrap: "wrap", justifyContent: { xs: "center", md: "flex-start" }, gap: 2 }}>
-          <Button onClick={() => navigate("/stays")} className="border-white text-white rounded-5 gap-2 py-2"
-            variant="outlined" sx={{ textTransform: "none" }}>
+        <Box className="container"
+          sx={{ flexWrap: "wrap", justifyContent: { xs: "center", md: "flex-start" }, }}>
+          <Button onClick={(() => navigate("/stays"))} className="border-white text-white rounded-5 gap-2 py-2"
+            variant="outlined"
+            sx={{ textTransform: "none" }}>
             <KingBedIcon className="fs-4" /> Stays
           </Button>
           {Btns.map((btn) => (
-            <Button onClick={() => navigate(btn.path)} className="text-white gap-2" key={btn.id}
-              sx={{ textTransform: "none" }}>
-              {btn.icon} {btn.name}
+            <Button onClick={(() => navigate(btn.path))} className="text-white gap-2 ms-3"
+              key={btn.id}
+              sx={{ textTransform: "none" }}> {btn.icon}
+              {btn.name}
+
             </Button>
           ))}
         </Box>
       </Box>
 
-      <Box marginTop={-4}
-        className="rounded-3 p-1 d-flex gap-2 container
+      <Box marginTop={-4} className="rounded-3 p-1 d-flex gap-2 container
          justify-content-between align-items-center"
-        sx={{
-          flexWrap: "wrap", backgroundColor: "orange",
-          border: "orange",
-        }}>
+        sx={{ flexWrap: "wrap", backgroundColor: "orange",
+          border: "orange", }}>
         <TextField
           placeholder="Where are you going?" fullWidth
-          sx={{
-            flex: 1,
-            minWidth: "200px",
+          sx={{ flex: 1, minWidth: "200px",
             backgroundColor: "white",
             borderRadius: "5px",
           }}
@@ -108,8 +109,7 @@ const HotelAvailibility = () => {
         <TextField className='text-black'
           placeholder="Check-in Date"
           type='date'
-          fullWidth
-          sx={{
+          fullWidth sx={{
             flex: 1, minWidth: "200px",
             backgroundColor: "white",
             borderRadius: "5px",

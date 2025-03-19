@@ -57,13 +57,10 @@ import OpenTable from '../../assets/OpenTable.png';
 import { useNavigate } from "react-router";
 
 const HotelDetail = () => {
-  const navigate = useNavigate();
+  
   const Btns = [
     { id: 1, name: "Flights", path: "/flights", icon: <FlightTakeoffIcon /> },
-    {
-      id: 2, name: "Car rentals", path: "/car-rentals", icon:
-        <DirectionsCarIcon className="d-none d-sm-block" />
-    },
+    { id: 2, name: "Car rentals", path: "/car-rentals", icon: <DirectionsCarIcon /> },
     { id: 3, name: "Attraction", icon: <AttractionsIcon /> },
     { id: 4, name: "Airport taxis", icon: <LocalTaxiIcon /> }
   ];
@@ -681,6 +678,8 @@ const HotelDetail = () => {
     { name: "Content guidelines and reporting" }
   ]
 
+  const navigate = useNavigate();
+
   return (
     <>
       <Box component="main" className="text-white"
@@ -703,6 +702,7 @@ const HotelDetail = () => {
           ))}
         </Box>
       </Box>
+      
       <Box marginTop={-4}
         className="rounded-3 p-1 d-flex gap-2 container
          justify-content-between align-items-center"
@@ -713,8 +713,7 @@ const HotelDetail = () => {
         <TextField
           placeholder="Where are you going?" fullWidth
           sx={{
-            flex: 1,
-            minWidth: "200px",
+            flex: 1, minWidth: "200px",
             backgroundColor: "white",
             borderRadius: "5px",
           }}
@@ -725,8 +724,7 @@ const HotelDetail = () => {
         <TextField className='text-black'
           placeholder="Check-in Date"
           type='date'
-          fullWidth
-          sx={{
+          fullWidth sx={{
             flex: 1, minWidth: "200px",
             backgroundColor: "white",
             borderRadius: "5px",
